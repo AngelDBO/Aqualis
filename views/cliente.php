@@ -1,8 +1,8 @@
-<?php include 'content/head.php'; ?>
+<?php include './content/head.php'; ?>
 <body>
     <!-- Left Panel -->
 
-    <?php include 'content/sidebar.php'; ?>
+    <?php include './content/sidebar.php'; ?>
     <!-- Left Panel -->
 
 
@@ -13,8 +13,8 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+                    <a class="navbar-brand" href="./"><img src="./../images/logo.png" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="./"><img src="./../images/logo2.png" alt="Logo"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>
@@ -96,7 +96,7 @@
 
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="./../images/admin.jpg" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">
@@ -128,8 +128,7 @@
                         <div class="page-header float-right">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="#">Dashboard</a></li>
-                                    <li><a href="#">Forms</a></li>
+                                    <li><a href="inicio.php">Home</a></li>
                                     <li class="active">Advanced</li>
                                 </ol>
                             </div>
@@ -154,61 +153,98 @@
 
                                     <nav>
                                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                            <a class="nav-item nav-link active" id="custom-nav-home-tab" data-toggle="tab" href="#custom-nav-home" role="tab" aria-controls="custom-nav-home" aria-selected="true">Cliente Natural</a>
+                                            <a class="nav-item nav-link active" id="custom-nav-home-tab" data-toggle="tab" href="#custom-nav-natural" role="tab" aria-controls="custom-nav-home" aria-selected="true">Cliente Natural</a>
                                             <a class="nav-item nav-link" id="custom-nav-profile-tab" data-toggle="tab" href="#custom-nav-profile" role="tab" aria-controls="custom-nav-profile" aria-selected="false">Cliente Juridico</a>
 
                                         </div>
                                     </nav>
                                     <div class="tab-content pl-3 pt-2" id="nav-tabContent">
-                                        <div class="tab-pane fade show active" id="custom-nav-home" role="tabpanel" aria-labelledby="custom-nav-home-tab">
+                                        <div class="tab-pane fade show active" id="custom-nav-natural" role="tabpanel" aria-labelledby="custom-nav-home-tab">
 
-                                            <!-- ============= | FORMULARIO PERSONA JURIDICA | ================-->
+                                            <!-- ============= | FORMULARIO PERSONA NATURAL | ================-->
 
                                             <form>
+                                                <br>
                                                 <div class="form-row">
+
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputEmail4">Email</label>
-                                                        <input type="email" class="form-control" id="inputEmail4">
+                                                        <label for="inputEmail4">Tipo Documento</label>
+                                                        <select id="inputState" class="form-control">
+                                                            <option selected></option>
+                                                            <option selected>CEDULA CIUDADANIA</option>
+                                                            <option>TARJETA DE IDENTIDAD</option>
+                                                            <option>REGISTRO CIVIL</option>
+                                                            <option>CEDULA EXTRANJERA</option>
+                                                            <option>LIBRETA MILITAR</option>
+                                                        </select>
                                                     </div>
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputPassword4">Password</label>
+                                                        <label for="inputPassword4">Numero Documento</label>
                                                         <input type="password" class="form-control" id="inputPassword4">
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="inputAddress">Address</label>
-                                                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="inputAddress2">Address 2</label>
-                                                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label for="inputAddress">Primer Nombre</label>
+                                                        <input type="text" class="form-control" id="inputAddress" placeholder="">
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="inputAddress2">Segundo Nombre</label>
+                                                        <input type="text" class="form-control" id="inputAddress2" placeholder="">
+                                                    </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputCity">City</label>
+                                                        <label for="inputAddress">Primer Apellido</label>
+                                                        <input type="text" class="form-control" id="inputAddress" placeholder="">
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="inputAddress2">Segundo Apellido</label>
+                                                        <input type="text" class="form-control" id="inputAddress2" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-3">
+                                                        <label for="inputCity">Departamento</label>
+                                                        <input type="text" class="form-control" id="inputCity">
+                                                    </div>
+                                                    <div class="form-group col-md-3">
+                                                        <label for="inputState">Ciudad</label>
+                                                        <input type="text" class="form-control" id="inputCity">
+                                                    </div>
+                                                    <div class="form-group col-md-3">
+                                                        <label for="inputZip">Barrio</label>
+                                                        <input type="text" class="form-control" id="inputZip">
+                                                    </div>
+                                                    <div class="form-group col-md-1">
+                                                        <label for="inputState">Carrera</label>
+                                                        <input type="text" class="form-control" id="inputCity">
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="inputZip">Calle</label>
+                                                        <input type="text" class="form-control" id="inputZip">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="inputCity">Telefono Personal</label>
                                                         <input type="text" class="form-control" id="inputCity">
                                                     </div>
                                                     <div class="form-group col-md-4">
-                                                        <label for="inputState">State</label>
-                                                        <select id="inputState" class="form-control">
-                                                            <option selected>Choose...</option>
-                                                            <option>...</option>
-                                                        </select>
+                                                        <label for="inputState">Telefono 2</label>
+                                                        <input type="text" class="form-control" id="inputCity">
                                                     </div>
-                                                    <div class="form-group col-md-2">
-                                                        <label for="inputZip">Zip</label>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="inputZip">Telefono 3</label>
                                                         <input type="text" class="form-control" id="inputZip">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                                                        <label class="form-check-label" for="gridCheck">
-                                                            Check me out
-                                                        </label>
-                                                    </div>
+                                                    <label for="inputAddress2">Correo</label>
+                                                    <input type="email" class="form-control" id="inputAddress2" placeholder="">
                                                 </div>
-                                                <button type="submit" class="btn btn-primary">Sign in</button>
+
+                                                <button type="button" class="btn btn-success" id="bt-registrarCliente">Guardar</button>
                                             </form>
                                         </div>
 
@@ -216,50 +252,90 @@
 
                                         <div class="tab-pane fade" id="custom-nav-profile" role="tabpanel" aria-labelledby="custom-nav-profile-tab">
                                             <form>
+                                                <br>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputEmail4">Email</label>
-                                                        <input type="email" class="form-control" id="inputEmail4">
+                                                        <label for="inputEmail4">Tipo Identificacion</label>
+                                                        <select id="inputState" class="form-control">
+                                                            <option selected>NIT</option>
+                                                        </select>
                                                     </div>
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputPassword4">Password</label>
+                                                        <label for="inputPassword4">Numero Identificacion</label>
                                                         <input type="password" class="form-control" id="inputPassword4">
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="inputAddress">Address</label>
-                                                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="inputAddress2">Address 2</label>
-                                                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                                                </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputCity">City</label>
+                                                        <label for="inputAddress">Nombre Empresa</label>
+                                                        <input type="text" class="form-control" id="inputAddress" placeholder="">
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="inputAddress2">Representante Legal</label>
+                                                        <input type="text" class="form-control" id="inputAddress2" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-3">
+                                                        <label for="inputCity">Razon Social</label>
                                                         <input type="text" class="form-control" id="inputCity">
                                                     </div>
-                                                    <div class="form-group col-md-4">
-                                                        <label for="inputState">State</label>
-                                                        <select id="inputState" class="form-control">
-                                                            <option selected>Choose...</option>
-                                                            <option>...</option>
-                                                        </select>
+                                                    <div class="form-group col-md-3">
+                                                        <label for="inputState">Tipo Actividad</label>
+                                                        <input type="text" class="form-control" id="inputCity">
                                                     </div>
-                                                    <div class="form-group col-md-2">
-                                                        <label for="inputZip">Zip</label>
+                                                    <div class="form-group col-md-3">
+                                                        <label for="inputZip">Regimen</label>
                                                         <input type="text" class="form-control" id="inputZip">
                                                     </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                                                        <label class="form-check-label" for="gridCheck">
-                                                            Check me out
-                                                        </label>
+                                                    <div class="form-group col-md-3">
+                                                        <label for="inputZip">Naturaleza</label>
+                                                        <input type="text" class="form-control" id="inputZip">
                                                     </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-3">
+                                                            <label for="inputCity">Departamento</label>
+                                                            <input type="text" class="form-control" id="inputCity">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="inputState">Ciudad</label>
+                                                            <input type="text" class="form-control" id="inputCity">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="inputZip">Barrio</label>
+                                                            <input type="text" class="form-control" id="inputZip">
+                                                        </div>
+                                                        <div class="form-group col-md-1">
+                                                            <label for="inputState">Carrera</label>
+                                                            <input type="text" class="form-control" id="inputCity">
+                                                        </div>
+                                                        <div class="form-group col-md-2">
+                                                            <label for="inputZip">Calle</label>
+                                                            <input type="text" class="form-control" id="inputZip">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputCity">Telefono Corporativo</label>
+                                                            <input type="text" class="form-control" id="inputCity">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputState">Telefono 2</label>
+                                                            <input type="text" class="form-control" id="inputCity">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputZip">Telefono 3</label>
+                                                            <input type="text" class="form-control" id="inputZip">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-lg-12">
+                                                        <label for="inputAddress2">Correo</label>
+                                                        <input type="email" class="form-control" id="inputAddress2" placeholder="">
+                                                    </div>
+
                                                 </div>
-                                                <button type="submit" class="btn btn-primary">Sign in</button>
+
+                                                <button type="button" class="btn btn-success" id="bt-registrarCliente">Guardar</button>
                                             </form>
                                         </div>
 
@@ -304,8 +380,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/lib/chosen/chosen.jquery.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/lib/chosen/chosen.jquery.min.js"></script>
 
     <script>
         jQuery(document).ready(function() {

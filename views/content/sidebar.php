@@ -17,7 +17,7 @@
                 <!-- ============= | GESTION MISIONES | ================-->
 
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Gestion de Mision</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Mision</a>
                     <ul class="sub-menu children dropdown-menu"><li><i class="fa fa-puzzle-piece"></i><a href="./inc/ui-buttons.html">Buttons</a></li>
                         <li><i class="fa fa-id-badge"></i><a href="./inc/ui-badges.html">Badges</a></li>
                         <li><i class="fa fa-bars"></i><a href="./inc/ui-tabs.html">Tabs</a></li>
@@ -35,7 +35,7 @@
                 <!-- ============= | GESTION SENSORES | ================-->
 
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Gestion de Sensores</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Sensores</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-table"></i><a href="./inc/tables-basic.html">Basic Table</a></li>
                         <li><i class="fa fa-table"></i><a href="./inc/tables-data.html">Data Table</a></li>
@@ -46,7 +46,7 @@
                 <!-- ============= | GESTION PARAMETROS | ================-->
 
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Gestion de Parametros</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Parametros</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="menu-icon fa fa-th"></i><a href="./inc/forms-basic.html">Basic Form</a></li>
                         <li><i class="menu-icon fa fa-th"></i><a href="./inc/forms-advanced.html">Advanced Form</a></li>
@@ -57,10 +57,10 @@
                 <!-- ============= | GESTION CLIENTES | ================-->
 
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Gestion de Clientes</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Clientes</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-fort-awesome"></i><a href="cliente.php">Registar Clientes</a></li>
-                        <li><i class="menu-icon ti-themify-logo"></i><a href="./inc/font-themify.html">Gestionar Clientes</a></li>
+                        <li><i class="menu-icon fa fa-fort-awesome"></i><a href="./cliente.php">Registar Clientes</a></li>
+                        <li><i class="menu-icon ti-themify-logo"></i><a href="./cliente2.php">Gestionar Clientes</a></li>
                     </ul>
                 </li>
 
@@ -68,7 +68,7 @@
                 <!-- ============= | GESTION REPORTES | ================-->
 
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Gestion Reportes</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Reportes</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="menu-icon fa fa-line-chart"></i><a href="./inc/charts-chartjs.html">Chart JS</a></li>
                         <li><i class="menu-icon fa fa-area-chart"></i><a href="./inc/charts-flot.html">Flot Chart</a></li>
