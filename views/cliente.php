@@ -163,88 +163,69 @@
 
                                             <!-- ============= | FORMULARIO PERSONA NATURAL | ================-->
 
-                                            <form>
+                                            <form id="FP_Natural">
                                                 <br>
                                                 <div class="form-row">
 
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputEmail4">Tipo Documento</label>
-                                                        <select id="inputState" class="form-control">
-                                                            <option selected></option>
-                                                            <option selected>CEDULA CIUDADANIA</option>
-                                                            <option>TARJETA DE IDENTIDAD</option>
-                                                            <option>REGISTRO CIVIL</option>
-                                                            <option>CEDULA EXTRANJERA</option>
-                                                            <option>LIBRETA MILITAR</option>
+                                                        <label for="Tipo Documento">Tipo Documento</label>
+                                                        <select id="TipoDocumento" name="Tipo_Documento" class="form-control">
+                                                            <option></option>
+                                                            <option selected value="CEDULA CIUDADANIA">CEDULA CIUDADANIA</option>
+                                                            <option value="TARJETA DE IDENTIDAD">TARJETA DE IDENTIDAD</option>
+                                                            <option value="REGISTRO CIVIL">REGISTRO CIVIL</option>
+                                                            <option value="CEDULA EXTRANJERA">CEDULA EXTRANJERA</option>
+                                                            <option value="LIBRETA MILITAR">LIBRETA MILITAR</option>
                                                         </select>
                                                     </div>
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputPassword4">Numero Documento</label>
-                                                        <input type="password" class="form-control" id="inputPassword4">
+                                                        <label for="Numero Documento">Numero Documento</label>
+                                                        <input type="text" name="Numero_Documento" class="form-control" id="Numero_Documento">
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputAddress">Primer Nombre</label>
-                                                        <input type="text" class="form-control" id="inputAddress" placeholder="">
+                                                        <label for="Primer Nombre">Primer Nombre</label>
+                                                        <input type="text" name="Primer_Nombre" class="form-control" id="Primer Nombre" placeholder="">
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="inputAddress2">Segundo Nombre</label>
-                                                        <input type="text" class="form-control" id="inputAddress2" placeholder="">
+                                                        <input type="text" name="Segundo_Nombre" class="form-control" id="Segundo_Nombre" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <label for="inputAddress">Primer Apellido</label>
-                                                        <input type="text" class="form-control" id="inputAddress" placeholder="">
+                                                        <input type="text" name="Primer_Apellido" class="form-control" id="Primer_Apellido" placeholder="">
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="inputAddress2">Segundo Apellido</label>
-                                                        <input type="text" class="form-control" id="inputAddress2" placeholder="">
+                                                        <input type="text" name="Segundo_Apellido" class="form-control" id="Segundo_Apellido" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
-                                                    <div class="form-group col-md-3">
-                                                        <label for="inputCity">Departamento</label>
-                                                        <input type="text" class="form-control" id="inputCity">
+                                                    <div class="form-group col-md-6">
+                                                        <label for="inputZip">Direccion</label>
+                                                        <input type="text" name="Direccion" class="form-control" id="Direccion">
                                                     </div>
                                                     <div class="form-group col-md-3">
-                                                        <label for="inputState">Ciudad</label>
-                                                        <input type="text" class="form-control" id="inputCity">
+                                                        <label for="inputState">Telefono 1</label>
+                                                        <input type="text" name="Telefono_1" class="form-control" id="Telefono_1">
                                                     </div>
                                                     <div class="form-group col-md-3">
-                                                        <label for="inputZip">Barrio</label>
-                                                        <input type="text" class="form-control" id="inputZip">
-                                                    </div>
-                                                    <div class="form-group col-md-1">
-                                                        <label for="inputState">Carrera</label>
-                                                        <input type="text" class="form-control" id="inputCity">
-                                                    </div>
-                                                    <div class="form-group col-md-2">
-                                                        <label for="inputZip">Calle</label>
-                                                        <input type="text" class="form-control" id="inputZip">
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-4">
-                                                        <label for="inputCity">Telefono Personal</label>
-                                                        <input type="text" class="form-control" id="inputCity">
-                                                    </div>
-                                                    <div class="form-group col-md-4">
                                                         <label for="inputState">Telefono 2</label>
-                                                        <input type="text" class="form-control" id="inputCity">
+                                                        <input type="text" name="Telefono_2" class="form-control" id="Telefono_2">
                                                     </div>
-                                                    <div class="form-group col-md-4">
-                                                        <label for="inputZip">Telefono 3</label>
-                                                        <input type="text" class="form-control" id="inputZip">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="inputAddress2">Correo</label>
-                                                    <input type="email" class="form-control" id="inputAddress2" placeholder="">
+
                                                 </div>
 
-                                                <button type="button" class="btn btn-success" id="bt-registrarCliente">Guardar</button>
+
+                                                <div class="form-group">
+                                                    <label for="inputAddress2">Correo</label>
+                                                    <input type="email" name="Correo" class="form-control" id="Correo" placeholder="">
+                                                </div>
+
+                                                <button type="button" class="btn btn-success" id="bt-registrarCliente" onclick="RegistarPersonaNatural()">Guardar</button>
                                             </form>
                                         </div>
 
@@ -332,27 +313,16 @@
                                                         <label for="inputAddress2">Correo</label>
                                                         <input type="email" class="form-control" id="inputAddress2" placeholder="">
                                                     </div>
-
                                                 </div>
-
-                                                <button type="button" class="btn btn-success" id="bt-registrarCliente">Guardar</button>
+                                                <button type="button" class="btn btn-success" id="bt-registrarCliente" >Guardar</button>
                                             </form>
                                         </div>
-
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
-
-
-
                 </div>
-
-
             </div><!-- .animated -->
         </div><!-- .content -->
         <div class="clearfix"></div>
@@ -381,16 +351,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/sweetalert.js"></script>
     <script src="../assets/js/lib/chosen/chosen.jquery.min.js"></script>
 
+    <script src="../ajax/Persona.js"></script>
+    <script src="../assets/jquery-3.2.1.js"></script>
+
     <script>
-        jQuery(document).ready(function() {
-            jQuery(".standardSelect").chosen({
-                disable_search_threshold: 10,
-                no_results_text: "Oops, nothing found!",
-                width: "100%"
-            });
-        });
+                                                    jQuery(document).ready(function() {
+                                                        jQuery(".standardSelect").chosen({
+                                                            disable_search_threshold: 10,
+                                                            no_results_text: "Oops, nothing found!",
+                                                            width: "100%"
+                                                        });
+                                                    });
     </script>
 
 </body>
