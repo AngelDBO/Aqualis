@@ -41,29 +41,25 @@ class ModelPersona {
     }
 
     public function RegistrarPersonaNatural($datos) {
-        $query = ("INSERT INTO PERSONA (TIPO_PERSONA_ID, ESTADO, CORREO, TIPO_DOCUMENTO, NUMERO_DOCUMENTO,"
-                . " NOMBRE_1, NOMBRE_2, APELLIDO_1, APELLIDO_2, TELEFONO_1, TELEFONO_2, DIRECCION ) VALUES ("
-                . ":TIPO_PERSONA_ID, :ESTADO: :CORREO, :TIPO_DOCUMENTO, :NUMERO_DOCUMENTO, :NOMBRE_1, :NOMBRE_2"
-                . ":APELLIDO_1, :APELLIDO_2, :TELEFONO_1, :TELEFONO_2, :DIRECCION)");
+        $query = ("INSERT INTO PERSONA (TIPO_PERSONA, ESTADO, CORREO, TIPO_DOCUMENTO, NUMERO_DOCUMENTO, NOMBRE_1, NOMBRE_2, APELLIDO_1, APELLIDO_2, TELEFONO_1, TELEFONO_2, DIRECCION)
+                  VALUES (:TIPO_PERSONA, :ESTADO, :CORREO, :TIPO_DOCUMENTO, :NUMERO_DOCUMENTO, :NOMBRE_1, :NOMBRE_2, :APELLIDO_1, :APELLIDO_2, :TELEFONO_1, :TELEFONO_2, :DIRECCION)");
         $base = $this->cnx->prepare($query);
-        $base->bindParam(":TIPO_PERSONA_ID", $datos[""], PDO::PARAM_INT);
-        $base->bindParam(":ESTADO", $datos[""], PDO::PARAM_STR);
-        $base->bindParam(":CORREO", $datos[""], PDO::PARAM_STR);
-        $base->bindParam(":TIPO_DOCUMENTO", $datos[""], PDO::PARAM_STR);
-        $base->bindParam(":NUMERO_DOCUMENTO", $datos[""], PDO::PARAM_INT);
-        $base->bindParam(":NOMBRE_1", $datos[""], PDO::PARAM_STR);
-        $base->bindParam(":NOMBRE_2", $datos[""], PDO::PARAM_STR);
-        $base->bindParam(":APELLIDO_1", $datos[""], PDO::PARAM_STR);
-        $base->bindParam(":APELLIDO_2", $datos[""], PDO::PARAM_STR);
-        $base->bindParam(":TELEFONO_1", $datos[""], PDO::PARAM_STR);
-        $base->bindParam(":TELEFONO_2", $datos[""], PDO::PARAM_STR);
-        $base->bindParam(":DIRECCION", $datos[""], PDO::PARAM_STR);
-
+        $base->bindParam(":TIPO_PERSONA", $datos["TIPO_PERSONA"], PDO::PARAM_STR);
+        $base->bindParam(":ESTADO", $datos["ESTADO"], PDO::PARAM_STR);
+        $base->bindParam(":CORREO", $datos["CORREO"], PDO::PARAM_STR);
+        $base->bindParam(":TIPO_DOCUMENTO", $datos["TIPO_DOCUMENTO"], PDO::PARAM_STR);
+        $base->bindParam(":NUMERO_DOCUMENTO", $datos["NUMERO_DOCUMENTO"], PDO::PARAM_INT);
+        $base->bindParam(":NOMBRE_1", $datos["NOMBRE_1"], PDO::PARAM_STR);
+        $base->bindParam(":NOMBRE_2", $datos["NOMBRE_2"], PDO::PARAM_STR);
+        $base->bindParam(":APELLIDO_1", $datos["APELLIDO_1"], PDO::PARAM_STR);
+        $base->bindParam(":APELLIDO_2", $datos["APELLIDO_2"], PDO::PARAM_STR);
+        $base->bindParam(":TELEFONO_1", $datos["TELEFONO_1"], PDO::PARAM_INT);
+        $base->bindParam(":TELEFONO_2", $datos["TELEFONO_2"], PDO::PARAM_INT);
+        $base->bindParam(":DIRECCION", $datos["DIRECCION"], PDO::PARAM_STR);
         if ($base->execute()) {
             return true;
         }
         return false;
-
         $base->close();
     }
 

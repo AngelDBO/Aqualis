@@ -5,21 +5,21 @@ require ('../models/ModelPersona.php');
 $Persona = new ModelPersona;
 
 $datos = array(
-    'TIPO_PERSONA_ID' => $_POST[''],
-    'ESTADO' => $_POST[''],
-    'CORREO' => $_POST[''],
-    'TIPO_DOCUMENTO' => $_POST[''],
-    'NUMERO_DOCUMENTO' => $_POST[''],
-    'NOMBRE_1' => $_POST[''],
-    'NOMBRE_2' => $_POST[''],
-    'APELLIDO_1' => $_POST[''],
-    'APELLIDO_2' => $_POST[''],
-    'TELEFONO_1' => $_POST[''],
-    'TELEFONO_2' => $_POST[''],
-    'DIRECCION' => $_POST[''],
+    'TIPO_PERSONA' => 'NATURAL',
+    'ESTADO' => 'ACTIVO',
+    'CORREO' => 'PRUEBA12@HOTMAIL.COM',
+    'TIPO_DOCUMENTO' => 'CEDULA CIUDADANIA',
+    'NUMERO_DOCUMENTO' => '1306794344',
+    'NOMBRE_1' => 'ANGEFL',
+    'NOMBRE_2' => 'DANIELF',
+    'APELLIDO_1' => 'BEDOYAF',
+    'APELLIDO_2' => 'ORTEGAF',
+    'TELEFONO_1' => '3107383191',
+    'DIRECCION' => 'FFDG 13 #10B-23'
 );
 
-if ($datos = $Persona->ListarPersonasJuridicas()) {
-    echo '<pre>';
-    echo json_encode($datos, JSON_PRETTY_PRINT);
+if ($Persona->RegistrarPersonaNatural($datos)) {
+    echo 'Ok';
+} else {
+    echo 'MAl';
 }
