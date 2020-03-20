@@ -1,3 +1,15 @@
+function ListarPersonaNatural() {
+    $.ajax({
+        type: 'POST',
+        url: './../controllers/PersonaController.php?opcion=Listar_Persona_Natural',
+        success: function(r) {
+            $('#TablaPersonaNatural').html(r);
+        }
+    });
+
+
+}
+
 function RegistarPersonaNatural() {
 
     $.ajax({
@@ -9,6 +21,7 @@ function RegistarPersonaNatural() {
             console.log(response);
             if (response == 1) {
                 console.log(response);
+                $('#FP_Natural')[0].reset();
                 Swal.fire(
                         'Exito!',
                         'Registro Exitoso',
@@ -27,6 +40,35 @@ function RegistarPersonaNatural() {
     });
 }
 
+
+function RegistarPersonaJuridica() {
+
+    $.ajax({
+        data: $('#FP_Juridica').serialize(),
+        type: "POST",
+        url: './../controllers/PersonaController.php?opcion=Registrar_Persona_Juridica',
+        beforeSend: function() {},
+        success: function(response) {
+            console.log(response);
+            if (response == 1) {
+                console.log(response);
+                $('#FP_Juridica')[0].reset();
+                Swal.fire(
+                        'Exito!',
+                        'Registro Exitoso',
+                        'success'
+                        );
+            } else if (response == 2) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Cliente no registrado',
+                });
+            }
+        }
+    });
+}
+
 function LimpiarCamposFNatural() {
     $('#Tipo_Documento').val("");
     $('#Numero_Documento').val("");
@@ -40,5 +82,5 @@ function LimpiarCamposFNatural() {
     $('#Correo').val("");
 
 }
-$('#N').val("");
+
 

@@ -20,79 +20,7 @@
             </div>
             <div class="top-right">
                 <div class="header-menu">
-                    <div class="header-left">
-                        <button class="search-trigger"><i class="fa fa-search"></i></button>
-                        <div class="form-inline">
-                            <form class="search-form">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
-                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
-                            </form>
-                        </div>
 
-                        <div class="dropdown for-notification">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-bell"></i>
-                                <span class="count bg-danger">3</span>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
-                                <a class="dropdown-item media" href="#">
-                                    <i class="fa fa-check"></i>
-                                    <p>Server #1 overloaded.</p>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <i class="fa fa-info"></i>
-                                    <p>Server #2 overloaded.</p>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <i class="fa fa-warning"></i>
-                                    <p>Server #3 overloaded.</p>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="dropdown for-message">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="message" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-envelope"></i>
-                                <span class="count bg-primary">4</span>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="message">
-                                <p class="red">You have 4 Mails</p>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/1.jpg"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Jonathan Smith</span>
-                                        <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/2.jpg"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Jack Sanders</span>
-                                        <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/3.jpg"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Cheryl Wheeler</span>
-                                        <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/4.jpg"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Rachel Santos</span>
-                                        <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -171,11 +99,11 @@
                                                         <label for="Tipo Documento">Tipo Documento</label>
                                                         <select id="TipoDocumento" name="Tipo_Documento" class="form-control">
                                                             <option></option>
-                                                            <option selected value="CEDULA CIUDADANIA">CEDULA CIUDADANIA</option>
-                                                            <option value="TARJETA DE IDENTIDAD">TARJETA DE IDENTIDAD</option>
-                                                            <option value="REGISTRO CIVIL">REGISTRO CIVIL</option>
-                                                            <option value="CEDULA EXTRANJERA">CEDULA EXTRANJERA</option>
-                                                            <option value="LIBRETA MILITAR">LIBRETA MILITAR</option>
+                                                            <option selected value="CC">CEDULA CIUDADANIA</option>
+                                                            <option value="TI">TARJETA DE IDENTIDAD</option>
+                                                            <option value="RC">REGISTRO CIVIL</option>
+                                                            <option value="CE">CEDULA EXTRANJERA</option>
+                                                            <option value="LM">LIBRETA MILITAR</option>
                                                         </select>
                                                     </div>
                                                     <div class="form-group col-md-6">
@@ -216,23 +144,21 @@
                                                         <label for="inputState">Telefono 2</label>
                                                         <input type="text" name="Telefono_2" class="form-control" id="Telefono_2">
                                                     </div>
-
                                                 </div>
-
-
                                                 <div class="form-group">
                                                     <label for="inputAddress2">Correo</label>
                                                     <input type="email" name="Correo" class="form-control" id="Correo" placeholder="">
                                                 </div>
-
                                                 <button type="button" class="btn btn-success" id="bt-registrarCliente" onclick="RegistarPersonaNatural()">Guardar</button>
                                             </form>
                                         </div>
 
+
+
                                         <!-- ============= | FORMULARIO PERSONA JURIDICA | ================-->
 
                                         <div class="tab-pane fade" id="custom-nav-profile" role="tabpanel" aria-labelledby="custom-nav-profile-tab">
-                                            <form>
+                                            <form id="FP_Juridica">
                                                 <br>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
@@ -243,78 +169,54 @@
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="inputPassword4">Numero Identificacion</label>
-                                                        <input type="password" class="form-control" id="inputPassword4">
+                                                        <input type="text" name="Nit" class="form-control" id="inputPassword4">
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <label for="inputAddress">Nombre Empresa</label>
-                                                        <input type="text" class="form-control" id="inputAddress" placeholder="">
+                                                        <input type="text" name="Nombre_Empresa" class="form-control" id="inputAddress" placeholder="">
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="inputAddress2">Representante Legal</label>
-                                                        <input type="text" class="form-control" id="inputAddress2" placeholder="">
+                                                        <input type="text" name="Representante_Legal" class="form-control" id="inputAddress2" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-3">
                                                         <label for="inputCity">Razon Social</label>
-                                                        <input type="text" class="form-control" id="inputCity">
+                                                        <input type="text" name="Razon_Social" class="form-control" id="inputCity">
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <label for="inputState">Tipo Actividad</label>
-                                                        <input type="text" class="form-control" id="inputCity">
+                                                        <input type="text" name="Tipo_Actividad" class="form-control" id="inputCity">
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <label for="inputZip">Regimen</label>
-                                                        <input type="text" class="form-control" id="inputZip">
+                                                        <input type="text" name="Regimen" class="form-control" id="inputZip">
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <label for="inputZip">Naturaleza</label>
-                                                        <input type="text" class="form-control" id="inputZip">
+                                                        <input type="text" name="Naturaleza" class="form-control" id="inputZip">
                                                     </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-3">
-                                                            <label for="inputCity">Departamento</label>
-                                                            <input type="text" class="form-control" id="inputCity">
-                                                        </div>
-                                                        <div class="form-group col-md-3">
-                                                            <label for="inputState">Ciudad</label>
-                                                            <input type="text" class="form-control" id="inputCity">
-                                                        </div>
-                                                        <div class="form-group col-md-3">
-                                                            <label for="inputZip">Barrio</label>
-                                                            <input type="text" class="form-control" id="inputZip">
-                                                        </div>
-                                                        <div class="form-group col-md-1">
-                                                            <label for="inputState">Carrera</label>
-                                                            <input type="text" class="form-control" id="inputCity">
-                                                        </div>
-                                                        <div class="form-group col-md-2">
-                                                            <label for="inputZip">Calle</label>
-                                                            <input type="text" class="form-control" id="inputZip">
-                                                        </div>
+                                                    <div class="form-group col-lg-6">
+                                                        <label for="inputAddress2">Telefono 1</label>
+                                                        <input type="text" name="Telefono_1" class="form-control" id="inputAddress2" placeholder="">
                                                     </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-4">
-                                                            <label for="inputCity">Telefono Corporativo</label>
-                                                            <input type="text" class="form-control" id="inputCity">
-                                                        </div>
-                                                        <div class="form-group col-md-4">
-                                                            <label for="inputState">Telefono 2</label>
-                                                            <input type="text" class="form-control" id="inputCity">
-                                                        </div>
-                                                        <div class="form-group col-md-4">
-                                                            <label for="inputZip">Telefono 3</label>
-                                                            <input type="text" class="form-control" id="inputZip">
-                                                        </div>
+                                                    <div class="form-group col-lg-6">
+                                                        <label for="inputAddress2">Telfono 2</label>
+                                                        <input type="text" name="Telefono_2" class="form-control" id="inputAddress2" placeholder="">
                                                     </div>
-                                                    <div class="form-group col-lg-12">
+                                                    <div class="form-group col-lg-6">
+                                                        <label for="inputAddress2">Direccion</label>
+                                                        <input type="text" name="Direccion" class="form-control" id="inputAddress2" placeholder="">
+                                                    </div>
+                                                    <div class="form-group col-lg-6">
                                                         <label for="inputAddress2">Correo</label>
-                                                        <input type="email" class="form-control" id="inputAddress2" placeholder="">
+                                                        <input type="email" name="Correo" class="form-control" id="inputAddress2" placeholder="">
                                                     </div>
                                                 </div>
-                                                <button type="button" class="btn btn-success" id="bt-registrarCliente" >Guardar</button>
+                                                <button type="button" class="btn btn-success" id="bt-registrarCliente"  onclick="RegistarPersonaJuridica()">Guardar</button>
                                             </form>
                                         </div>
                                     </div>
