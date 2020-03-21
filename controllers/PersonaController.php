@@ -51,7 +51,8 @@ switch ($_REQUEST["opcion"]) {
                                                 <td class="serial">' . $value['TIMESTAMP'] . '</td>
                                                 <td><span class="badge badge-complete">' . $value['ESTADO'] . '</span></td>
                                                 <td>
-                                                    <span class="btn btn-warning btn-sm">
+                                                    <span class="btn btn-warning btn-sm"  onclick="ObtenerDatoNaturalID(' . $value['ID'] . ')"
+                                                        data-toggle="modal" data-target="#MAPN1">
                                                     <i class="fa fa-edit"></i>
                                                     </span>
                                                 </td>
@@ -69,20 +70,21 @@ switch ($_REQUEST["opcion"]) {
             $tabla = '<table class = "table table-bordered table-hover">
                         <thead>
                             <tr>
-
                                 <th>Tipo Documento</th>
                                 <th>NIT</th>
-                                <th>Primer Nombre</th>
-                                <th>Segundo Nombre</th>
-                                <th>Primer Apellido</th>
-                                <th>Segundo Apellido</th>
-                                <th>Telefono Personal</th>
-                                <th>Telefono Alternativo</th>
+                                <th>Nombre</th>
+                                <th>Representante</th>
+                                <th>Razon Social</th>
+                                <th>Tipo Actividad</th>
+                                <th>Regimen</th>
+                                <th>Naturaleza</th>
+                                <th>Telefono</th>
+                                <th>Telfono Alternativo</th>
                                 <th>Direccion</th>
                                 <th>Correo</th>
                                 <th>Fecha Registro</th>
                                 <th>Estado</th>
-                                <th>Actualizar</th>
+                                <th>Opcion</th>
                             </tr>
                         </thead>
                         <tbody>';
@@ -92,11 +94,13 @@ switch ($_REQUEST["opcion"]) {
                 $datosTabla = $datosTabla . '<tr>
 
                                                 <td class="serial">' . $value['TIPO_DOCUMENTO'] . '</td>
-                                                <td class="serial">' . $value['NUMERO_DOCUMENTO'] . '</td>
-                                                <td class="serial">' . $value['NOMBRE_1'] . '</td>
-                                                <td class="serial">' . $value['NOMBRE_2'] . '</td>
-                                                <td class="serial">' . $value['APELLIDO_1'] . '</td>
-                                                <td class="serial">' . $value['APELLIDO_2'] . '</td>
+                                                <td class="serial">' . $value['NIT'] . '</td>
+                                                <td class="serial">' . $value['NOMBRE_EMPRESA'] . '</td>
+                                                <td class="serial">' . $value['REPRESENTANTE_EMPRESA'] . '</td>
+                                                <td class="serial">' . $value['RAZON_SOCIAL'] . '</td>
+                                                <td class="serial">' . $value['TIPO_ACTIVIDAD'] . '</td>
+                                                <td class="serial">' . $value['REGIMEN'] . '</td>
+                                                <td class="serial">' . $value['NATURALEZA'] . '</td>
                                                 <td class="serial">' . $value['TELEFONO_1'] . '</td>
                                                 <td class="serial">' . $value['TELEFONO_2'] . '</td>
                                                 <td class="serial">' . $value['DIRECCION'] . '</td>
@@ -169,6 +173,30 @@ switch ($_REQUEST["opcion"]) {
             }
         }
         echo $response;
+
+        break;
+
+    case 'ObtenerDatoNaturalID':
+        if (isset($_POST['ID']) && !empty($_POST['ID'])) {
+            $data = $Persona->ObtenerDatoNaturalID($_POST['ID']);
+            if ($data) {
+                $list[] = array(
+                    "ID" => $data['ID'],
+                    "TIPO_DOCUMENTO" => $data['TIPO_DOCUMENTO'],
+                    "NUMERO_DOCUMENTO" => $data['NUMERO_DOCUMENTO'],
+                    "NOMBRE_1" => $data['NOMBRE_1'],
+                    "NOMBRE_2" => $data['NOMBRE_2'],
+                    "APELLIDO_1" => $data['APELLIDO_1'],
+                    "APELLIDO_2" => $data['APELLIDO_2'],
+                    "TELEFONO_1" => $data['TELEFONO_1'],
+                    "TELEFONO_2" => $data['TELEFONO_2'],
+                    "DIRECCION" => $data['DIRECCION'],
+                    "CORREO" => $data['CORREO'],
+                    "ESTADO" => $data['ESTADO']
+                );
+                echo json_encode($list);
+            }
+        }
 
         break;
 }

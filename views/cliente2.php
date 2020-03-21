@@ -95,6 +95,7 @@
                                             <div class="table-stats order-table ov-h">
 
                                                 <div id="TablaPersonaNatural"></div>
+
                                             </div> <!-- /.table-stats -->
                                         </div>
 
@@ -103,110 +104,9 @@
                                         <div class="tab-pane fade" id="custom-nav-profile" role="tabpanel" aria-labelledby="custom-nav-profile-tab">
                                             <br>
                                             <div class="table-stats order-table ov-h">
-                                                <table class="table table-bordered">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="serial">#</th>
 
-                                                            <th>ID</th>
-                                                            <th>Name</th>
-                                                            <th>Product</th>
-                                                            <th>Quantity</th>
-                                                            <th>Status</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="serial">1.</td>
+                                                <div id="TablaPersonaJuridica"></div>
 
-                                                            <td> #5469 </td>
-                                                            <td>  <span class="name">Stanley</span> </td>
-                                                            <td> <span class="product">iMax</span> </td>
-                                                            <td><span class="count">231</span></td>
-                                                            <td>
-                                                                <span class="badge badge-complete">Complete</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="serial">4.</td>
-
-                                                            <td> #5466 </td>
-                                                            <td>  <span class="name">Mary Silva</span> </td>
-                                                            <td> <span class="product">Magic Mouse</span> </td>
-                                                            <td><span class="count">250</span></td>
-                                                            <td>
-                                                                <span class="badge badge-pending">Pending</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="serial">1.</td>
-
-                                                            <td> #5469 </td>
-                                                            <td>  <span class="name">Louis Stanley</span> </td>
-                                                            <td> <span class="product">iMax</span> </td>
-                                                            <td><span class="count">231</span></td>
-                                                            <td>
-                                                                <span class="badge badge-complete">Complete</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="serial">4.</td>
-
-                                                            <td> #5466 </td>
-                                                            <td>  <span class="name">Mary Silva</span> </td>
-                                                            <td> <span class="product">Magic Mouse</span> </td>
-                                                            <td><span class="count">250</span></td>
-                                                            <td>
-                                                                <span class="badge badge-pending">Pending</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="serial">1.</td>
-
-                                                            <td> #5469 </td>
-                                                            <td>  <span class="name">Louis Stanley</span> </td>
-                                                            <td> <span class="product">iMax</span> </td>
-                                                            <td><span class="count">231</span></td>
-                                                            <td>
-                                                                <span class="badge badge-complete">Complete</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="serial">4.</td>
-
-                                                            <td> #5466 </td>
-                                                            <td>  <span class="name">Mary Silva</span> </td>
-                                                            <td> <span class="product">Magic Mouse</span> </td>
-                                                            <td><span class="count">250</span></td>
-                                                            <td>
-                                                                <span class="badge badge-pending">Pending</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="serial">1.</td>
-
-                                                            <td> #5469 </td>
-                                                            <td>  <span class="name">Louis Stanley</span> </td>
-                                                            <td> <span class="product">iMax</span> </td>
-                                                            <td><span class="count">231</span></td>
-                                                            <td>
-                                                                <span class="badge badge-complete">Complete</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="serial">4.</td>
-
-                                                            <td> #5466 </td>
-                                                            <td>  <span class="name">Mary Silva</span> </td>
-                                                            <td> <span class="product">Magic Mouse</span> </td>
-                                                            <td><span class="count">250</span></td>
-                                                            <td>
-                                                                <span class="badge badge-pending">Pending</span>
-                                                            </td>
-                                                        </tr>
-
-                                                    </tbody>
-                                                </table>
                                             </div> <!-- /.table-stats -->
                                         </div>
 
@@ -216,17 +116,12 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
-
                 </div>
-
-
             </div><!-- .animated -->
         </div><!-- .content -->
         <div class="clearfix"></div>
+
+        <?php include './modals/Modal_ActualizarPN.php'; ?>
 
         <footer class="site-footer">
             <div class="footer-inner bg-white">
@@ -257,7 +152,11 @@
     <script src="../assets/jquery-3.2.1.js"></script>
     <script>
         ListarPersonaNatural();
+        ListarPersonaJuridica();
+        ObtenerDatoNaturalID();
+
     </script>
+
     <script>
         jQuery(document).ready(function() {
             jQuery(".standardSelect").chosen({

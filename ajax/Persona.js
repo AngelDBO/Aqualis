@@ -6,8 +6,16 @@ function ListarPersonaNatural() {
             $('#TablaPersonaNatural').html(r);
         }
     });
+}
 
-
+function ListarPersonaJuridica() {
+    $.ajax({
+        type: 'POST',
+        url: './../controllers/PersonaController.php?opcion=Listar_Persona_Juridica',
+        success: function(r) {
+            $('#TablaPersonaJuridica').html(r);
+        }
+    });
 }
 
 function RegistarPersonaNatural() {
@@ -40,7 +48,6 @@ function RegistarPersonaNatural() {
     });
 }
 
-
 function RegistarPersonaJuridica() {
 
     $.ajax({
@@ -69,18 +76,37 @@ function RegistarPersonaJuridica() {
     });
 }
 
-function LimpiarCamposFNatural() {
-    $('#Tipo_Documento').val("");
-    $('#Numero_Documento').val("");
-    $('#Primer_Nombre').val("");
-    $('#Segundo_Nombre').val("");
-    $('#Primer_Apellido').val("");
-    $('#Segundo_Apellido').val("");
-    $('#Direccion').val("");
-    $('#Telefono_1').val("");
-    $('#Telefono_2').val("");
-    $('#Correo').val("");
+function ActualizarPersonaNatural(ID) {
+    $.ajax({
 
+    })
+}
+
+function ObtenerDatoNaturalID(id) {
+    $.ajax({
+        type: "POST",
+        data: "ID=" + id,
+        url: "./../controllers/PersonaController.php?opcion=ObtenerDatoNaturalID",
+        success: function(r) {
+            console.log(r);
+            data = $.parseJSON(r);
+            if (data.length > 0) {
+                $('#ID').val(data[0]['ID']);
+                $('#TipoDocumentoU').val(data[0]['TIPO_DOCUMENTO']);
+                $('#Numero_DocumentoU').val(data[0]['NUMERO_DOCUMENTO']);
+                $('#Primer_NombreU').val(data[0]['NOMBRE_1']);
+                $('#Segundo_NombreU').val(data[0]['NOMBRE_2']);
+                $('#Primer_ApellidoU').val(data[0]['APELLIDO_1']);
+                $('#Segundo_ApellidoU').val(data[0]['APELLIDO_2']);
+                $('#Telefono_1U').val(data[0]['TELEFONO_1']);
+                $('#Telefono_2U').val(data[0]['TELEFONO_2']);
+                $('#DireccionU').val(data[0]['DIRECCION']);
+                $('#CorreoU').val(data[0]['CORREO']);
+                $('#EstadoU').val(data[0]['ESTADO']);
+
+            }
+        }
+    });
 }
 
 
