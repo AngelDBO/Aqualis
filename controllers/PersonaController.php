@@ -199,4 +199,30 @@ switch ($_REQUEST["opcion"]) {
         }
 
         break;
+
+    case 'Actualizar_Persona_Natural':
+        $datos = array(
+            'CORREO' => $_POST['CorreoU'],
+            'TIPO_DOCUMENTO' => $_POST['Tipo_DocumentoU'],
+            'NUMERO_DOCUMENTO' => $_POST['Numero_DocumentoU'],
+            'NOMBRE_1' => $_POST['Primer_NombreU'],
+            'NOMBRE_2' => $_POST['Segundo_NombreU'],
+            'APELLIDO_1' => $_POST['Primer_ApellidoU'],
+            'APELLIDO_2' => $_POST['Segundo_ApellidoU'],
+            'TELEFONO_1' => $_POST['Telefono_1U'],
+            'TELEFONO_2' => $_POST['Telefono_2U'],
+            'DIRECCION' => $_POST['DireccionU'],
+            'ESTADO' => $_POST['EstadoU'],
+            'ID' => $_POST['ID']
+        );
+
+
+        if ($Persona->EditarPersonaNatural($datos)) {
+            $response = 1;
+        } else {
+            $response = 2;
+        }
+
+        echo $response;
+        break;
 }

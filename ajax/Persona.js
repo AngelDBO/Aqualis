@@ -1,3 +1,10 @@
+function init() {
+    ListarPersonaNatural();
+    ListarPersonaJuridica();
+    ObtenerDatoNaturalID();
+    ActualizarPersonaNatural();
+}
+
 function ListarPersonaNatural() {
     $.ajax({
         type: 'POST',
@@ -42,7 +49,6 @@ function RegistarPersonaNatural() {
                     title: 'Oops...',
                     text: 'Usuario no registrado',
                 });
-
             }
         }
     });
@@ -76,10 +82,33 @@ function RegistarPersonaJuridica() {
     });
 }
 
-function ActualizarPersonaNatural(ID) {
+function ActualizarPersonaNatural() {
     $.ajax({
+        type: 'POST',
+        data: $('#FP_Ac_Natural').serialize(),
+        url: './../controllers/PersonaController.php?opcion=Actualizar_Persona_Natural',
+        success: function(r) {
+            if (r == 1) {
+                console.log(r);
+                Swal.fire(
+                        'Exito!',
+                        'Registro actualizado con exitoso',
+                        'success'
+                        );
+                ListarPersonaNatural();
+            } else if (r == 2) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Errpr Something went wrong!',
+                    footer: '<a href>Why do I have this issue?</a>'
+                });
+            }
+        }
+    });
 
-    })
+
+
 }
 
 function ObtenerDatoNaturalID(id) {
@@ -89,7 +118,7 @@ function ObtenerDatoNaturalID(id) {
         url: "./../controllers/PersonaController.php?opcion=ObtenerDatoNaturalID",
         success: function(r) {
             console.log(r);
-            data = $.parseJSON(r);
+            var data = $.parseJSON(r);
             if (data.length > 0) {
                 $('#ID').val(data[0]['ID']);
                 $('#TipoDocumentoU').val(data[0]['TIPO_DOCUMENTO']);
@@ -103,7 +132,6 @@ function ObtenerDatoNaturalID(id) {
                 $('#DireccionU').val(data[0]['DIRECCION']);
                 $('#CorreoU').val(data[0]['CORREO']);
                 $('#EstadoU').val(data[0]['ESTADO']);
-
             }
         }
     });

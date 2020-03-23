@@ -101,9 +101,9 @@ class ModelPersona {
         $base->bindParam(":NOMBRE_1", $datos['NOMBRE_1'], PDO::PARAM_STR);
         $base->bindParam(":NOMBRE_2", $datos['NOMBRE_2'], PDO::PARAM_STR);
         $base->bindParam(":APELLIDO_1", $datos['APELLIDO_1'], PDO::PARAM_STR);
-        $base->bindParam(":APELLIDO_2", $datos['APELLIDO_2'], PDO::PARAM_INT);
+        $base->bindParam(":APELLIDO_2", $datos['APELLIDO_2'], PDO::PARAM_STR);
         $base->bindParam(":TELEFONO_1", $datos['TELEFONO_1'], PDO::PARAM_INT);
-        $base->bindParam(":TELEFONO_2", $datos['TELEFONO_2'], PDO::PARAM_STR);
+        $base->bindParam(":TELEFONO_2", $datos['TELEFONO_2'], PDO::PARAM_INT);
         $base->bindParam(":DIRECCION", $datos['DIRECCION'], PDO::PARAM_STR);
         $base->bindParam(":CORREO", $datos['CORREO'], PDO::PARAM_STR);
         $base->bindParam(":ESTADO", $datos['ESTADO'], PDO::PARAM_STR);
