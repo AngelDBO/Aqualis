@@ -51,7 +51,7 @@ switch ($_REQUEST["opcion"]) {
                                                 <td class="serial">' . $value['TIMESTAMP'] . '</td>
                                                 <td><span class="badge badge-complete">' . $value['ESTADO'] . '</span></td>
                                                 <td>
-                                                    <span class="btn btn-warning btn-sm"  onclick="ObtenerDatoNaturalID(' . $value['ID'] . ')"
+                                                    <span class="btn btn-warning btn-sm"  onclick="ObtenerDatoNaturalID(' . $value['ID'] . ');"
                                                         data-toggle="modal" data-target="#MAPN1">
                                                     <i class="fa fa-edit"></i>
                                                     </span>

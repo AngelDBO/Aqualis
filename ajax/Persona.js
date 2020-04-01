@@ -1,9 +1,9 @@
 function init() {
     ListarPersonaNatural();
     ListarPersonaJuridica();
-    ObtenerDatoNaturalID();
-    ActualizarPersonaNatural();
-}
+   // ObtenerDatoNaturalID();
+   // ActualizarPersonaNatural();
+} 
 
 function ListarPersonaNatural() {
     $.ajax({
@@ -33,7 +33,7 @@ function RegistarPersonaNatural() {
         url: './../controllers/PersonaController.php?opcion=Registrar_Persona_Natural',
         beforeSend: function() {},
         success: function(response) {
-            console.log(response);
+          //  console.log(response);
             if (response == 1) {
                 console.log(response);
                 $('#FP_Natural')[0].reset();
@@ -62,7 +62,7 @@ function RegistarPersonaJuridica() {
         url: './../controllers/PersonaController.php?opcion=Registrar_Persona_Juridica',
         beforeSend: function() {},
         success: function(response) {
-            console.log(response);
+          //  console.log(response);
             if (response == 1) {
                 console.log(response);
                 $('#FP_Juridica')[0].reset();
@@ -82,43 +82,14 @@ function RegistarPersonaJuridica() {
     });
 }
 
-function ActualizarPersonaNatural() {
-    $.ajax({
-        type: 'POST',
-        data: $('#FP_Ac_Natural').serialize(),
-        url: './../controllers/PersonaController.php?opcion=Actualizar_Persona_Natural',
-        success: function(r) {
-            if (r == 1) {
-                console.log(r);
-                Swal.fire(
-                        'Exito!',
-                        'Registro actualizado con exitoso',
-                        'success'
-                        );
-                ListarPersonaNatural();
-            } else if (r == 2) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Errpr Something went wrong!',
-                    footer: '<a href>Why do I have this issue?</a>'
-                });
-            }
-        }
-    });
-
-
-
-}
-
 function ObtenerDatoNaturalID(id) {
     $.ajax({
         type: "POST",
         data: "ID=" + id,
         url: "./../controllers/PersonaController.php?opcion=ObtenerDatoNaturalID",
         success: function(r) {
-            console.log(r);
-            var data = $.parseJSON(r);
+           // console.log(r);
+              data = $.parseJSON(r);
             if (data.length > 0) {
                 $('#ID').val(data[0]['ID']);
                 $('#TipoDocumentoU').val(data[0]['TIPO_DOCUMENTO']);
@@ -135,6 +106,38 @@ function ObtenerDatoNaturalID(id) {
             }
         }
     });
+}
+
+
+
+function ActualizarPersonaNatural() {
+    $.ajax({
+        type: 'POST',
+        data: $('#FP_Ac_Natural').serialize(),
+        url: './../controllers/PersonaController.php?opcion=Actualizar_Persona_Natural',
+        success: function(r) {
+            if (r == 1) {
+               // console.log(r);
+               $('#FP_Ac_Natural')[0].reset();
+               
+                Swal.fire(
+                        'Exito!',
+                        'Registro actualizado con exitoso',
+                        'success'
+                        );
+                ListarPersonaNatural();
+            } else if (r == 2) {
+                Swal.fire({
+                    icon: 'Error',
+                    title: 'Problema',
+                    text: 'Fallo al actualizar el cliente'
+                });
+            }
+        }
+    });
+
+
+
 }
 
 

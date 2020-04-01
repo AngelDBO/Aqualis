@@ -135,7 +135,7 @@
 
                         <form id="FP_Ac_Natural">
                             <br>
-                            <input type="text" id="ID" name="ID" hidden="">
+                            <input type="text" id="ID" name="ID">
                             <div class="form-row">
 
                                 <div class="form-group col-md-6">
@@ -204,7 +204,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" id="btn-updatePN" onclick="ActualizarPersonaNatural()">Actualizar</button>
+                        <button type="button" class="btn btn-primary" id="btn-updatePN" onclick="ActualizarPersonaNatural();" data-dismiss="modal">Actualizar</button>
                     </div>
                 </div>
             </div>

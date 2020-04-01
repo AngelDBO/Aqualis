@@ -82,8 +82,22 @@ class ModelPersona {
         $base->close();
     }
 
+
+    public function ObtenerDatoNaturalID($id) {
+        $query = ("SELECT ID, TIPO_DOCUMENTO, NUMERO_DOCUMENTO, NOMBRE_1, NOMBRE_2, APELLIDO_1, APELLIDO_2, TELEFONO_1, TELEFONO_2, DIRECCION, CORREO, TIMESTAMP, ESTADO FROM PERSONA WHERE TIPO_PERSONA = 'NATURAL' AND ID=:ID");
+        $base = $this->cnx->prepare($query);
+        $base->bindParam(":ID", $id, PDO::PARAM_INT);
+
+        if ($base->execute()) {
+            return $base->fetch(PDO::FETCH_ASSOC);
+        }
+        return false;
+        $base->close();
+    }
+
+
     public function EditarPersonaNatural($datos) {
-        $query = ("UDPATE PERSONA SET TIPO_DOCUMENTO = :TIPO_DOCUMENTO,
+        $query = ("UPDATE PERSONA SET TIPO_DOCUMENTO = :TIPO_DOCUMENTO,
                                       NUMERO_DOCUMENTO = :NUMERO_DOCUMENTO,
                                       NOMBRE_1 = :NOMBRE_1,
                                       NOMBRE_2 = :NOMBRE_2,
@@ -117,16 +131,6 @@ class ModelPersona {
         $base->close();
     }
 
-    public function ObtenerDatoNaturalID($id) {
-        $query = ("SELECT ID, TIPO_DOCUMENTO, NUMERO_DOCUMENTO, NOMBRE_1, NOMBRE_2, APELLIDO_1, APELLIDO_2, TELEFONO_1, TELEFONO_2, DIRECCION, CORREO, TIMESTAMP, ESTADO FROM PERSONA WHERE TIPO_PERSONA = 'NATURAL' AND ID=:ID");
-        $base = $this->cnx->prepare($query);
-        $base->bindParam(":ID", $id, PDO::PARAM_INT);
 
-        if ($base->execute()) {
-            return $base->fetch(PDO::FETCH_ASSOC);
-        }
-        return false;
-        $base->close();
-    }
 
 }
