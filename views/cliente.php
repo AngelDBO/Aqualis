@@ -253,14 +253,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/jquery-3.2.1.js"></script>
     <script src="../assets/sweetalert.js"></script>
     <script src="../assets/js/lib/chosen/chosen.jquery.min.js"></script>
     <script src="../assets/funciones/funciones.js"></script>
     <script type="text/javascript">
-                                ValidarFormPersonaN();
-        </script>
+                                                    ValidarFormPersonaN();
+    </script>
     <script src="../ajax/Persona.js"></script>
-    <script src="../assets/jquery-3.2.1.js"></script>
+
 
     <script>
                                                     jQuery(document).ready(function() {

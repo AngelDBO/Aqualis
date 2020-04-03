@@ -108,7 +108,8 @@ switch ($_REQUEST["opcion"]) {
                                                 <td class="serial">' . $value['TIMESTAMP'] . '</td>
                                                 <td><span class="badge badge-complete">' . $value['ESTADO'] . '</span></td>
                                                 <td>
-                                                    <span class="btn btn-warning btn-sm">
+                                                    <span class="btn btn-warning btn-sm" onclick="ObtenerDatoJuridicoID(' . $value['ID'] . ');"
+                                                       data-toggle="modal" data-target="#MAPN2" >
                                                     <i class="fa fa-edit"></i>
                                                     </span>
                                                 </td>
@@ -200,6 +201,32 @@ switch ($_REQUEST["opcion"]) {
 
         break;
 
+    case 'ObtenerDatoJuridicoID':
+        if (isset($_POST['ID']) && !empty($_POST['ID'])) {
+            $data = $Persona->ObtenerDatoJuridicoID($_POST['ID']);
+            if ($data) {
+                $list[] = array(
+                    "ID" => $data['ID'],
+                    "TIPO_DOCUMENTO" => $data['TIPO_DOCUMENTO'],
+                    "NIT" => $data['NIT'],
+                    "NOMBRE_EMPRESA" => $data['NOMBRE_EMPRESA'],
+                    "REPRESENTANTE_EMPRESA" => $data['REPRESENTANTE_EMPRESA'],
+                    "RAZON_SOCIAL" => $data['RAZON_SOCIAL'],
+                    "TIPO_ACTIVIDAD" => $data['TIPO_ACTIVIDAD'],
+                    "REGIMEN" => $data['REGIMEN'],
+                    "NATURALEZA" => $data['NATURALEZA'],
+                    "TELEFONO_1" => $data['TELEFONO_1'],
+                    "TELEFONO_2" => $data['TELEFONO_2'],
+                    "DIRECCION" => $data['DIRECCION'],
+                    "CORREO" => $data['CORREO'],
+                    "ESTADO" => $data['ESTADO']
+                );
+                echo json_encode($list);
+            }
+        }
+
+        break;
+
     case 'Actualizar_Persona_Natural':
         $datos = array(
             'CORREO' => $_POST['CorreoU'],
@@ -224,5 +251,33 @@ switch ($_REQUEST["opcion"]) {
         }
 
         echo $response;
+        break;
+
+    case 'Actualizar_Persona_Juridica':
+        $datos = array(
+            'TIPO_DOCUMENTO' => $_POST['Tipo_IdentificacionU'],
+            'NIT' => $_POST['NitU'],
+            'NOMBRE_EMPRESA' => $_POST['Nombre_EmpresaU'],
+            'REPRESENTANTE_EMPRESA' => $_POST['Representante_LegalU'],
+            'RAZON_SOCIAL' => $_POST['Razon_SocialU'],
+            'TIPO_ACTIVIDAD' => $_POST['Tipo_ActividadU'],
+            'REGIMEN' => $_POST['RegimenU'],
+            'NATURALEZA' => $_POST['NaturalezaU'],
+            'TELEFONO_1' => $_POST['Telefono_1'],
+            'TELEFONO_2' => $_POST['Telefono_2U'],
+            'DIRECCION' => $_POST['DireccionU'],
+            'CORREO' => $_POST['CorreoU2'],
+            'ESTADO' => $_POST['EstadoU'],
+            'ID' => $_POST['IDu']
+        );
+
+        if ($Persona->EditarPersonaJuridica($datos)) {
+            $response = 1;
+        } else {
+            $response = 2;
+        }
+
+        echo $response;
+   
         break;
 }

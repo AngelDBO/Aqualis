@@ -121,12 +121,13 @@
         </div><!-- .content -->
         <div class="clearfix"></div>
 
-        <!-- Modal -->
+        <!-- Modal Persona Natural-->
+
         <div class="modal fade" id="MAPN1" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Actualizar Cliente</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Actualizar Cliente Natural</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -134,8 +135,8 @@
                     <div class="modal-body">
 
                         <form id="FP_Ac_Natural">
-                            <br>
-                            <input type="text" id="ID" name="ID">
+
+                            <input type="text" id="ID" name="ID" hidden="">
                             <div class="form-row">
 
                                 <div class="form-group col-md-6">
@@ -210,13 +211,100 @@
             </div>
         </div>
 
+        <!--MODAL PERSONA JURIDICA-->
 
+
+        <div class="modal fade" id="MAPN2" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Actualizar Cliente Juridico</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="FP_Ac_Juridica">
+                            <input type="text" id="IDu" name="IDu" hidden="">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Tipo Identificacion</label>
+                                    <select id="Tipo_IdentificacionU" class="form-control" name="Tipo_IdentificacionU">
+                                        <option selected>NIT</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword4">NIT(*)</label>
+                                    <input type="text" name="NitU" class="form-control" id="NitU">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputAddress">Nombre Empresa</label>
+                                    <input type="text" name="Nombre_EmpresaU" class="form-control" id="Nombre_EmpresaU" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputAddress2">Representante Legal</label>
+                                    <input type="text" name="Representante_LegalU" class="form-control" id="Representante_LegalU" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-row" autocomplete="off" >
+                                <div class="form-group col-md-3">
+                                    <label for="inputCity">Razon Social</label>
+                                    <input type="text" name="Razon_SocialU" class="form-control" id="Razon_SocialU">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputState">Tipo Actividad</label>
+                                    <input type="text" name="Tipo_ActividadU" class="form-control" id="Tipo_ActividadU">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputZip">Regimen</label>
+                                    <input type="text" name="RegimenU" class="form-control" id="RegimenU">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputZip">Naturaleza</label>
+                                    <input type="text" name="NaturalezaU" class="form-control" id="NaturalezaU">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="inputAddress2">Telefono 1</label>
+                                    <input type="text" name="Telefono_1" class="form-control" id="Telefono_11" placeholder="">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="inputAddress2">Telfono 2</label>
+                                    <input type="text" name="Telefono_2U" class="form-control" id="Telefono_22" placeholder="">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="inputAddress2">Direccion</label>
+                                    <input type="text" name="DireccionU" class="form-control" id="DireccionU2" placeholder="">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="inputAddress2">Correo</label>
+                                    <input type="email" name="CorreoU2" class="form-control" id="CorreoU2" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress2">Estado</label>
+                                <select id="Est_U" name="EstadoU" class="form-control">
+                                    <option value="Activo" selected>Activo</option>
+                                    <option value="Inactivo">Inactivo</option>
+                                </select>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" id="btn-updatePJ" data-dismiss="modal" onclick="ActualizarPersonaJuridica();">Actualizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <footer class="site-footer">
             <div class="footer-inner bg-white">
                 <div class="row">
                     <div class="col-sm-6">
-                        Copyright &copy; 2018 Ela Admin
+                        Copyright &copy; <?php echo date('Y'); ?> Aqualis
                     </div>
                     <div class="col-sm-6 text-right">
                         Designed by <a href="https://colorlib.com">Colorlib</a>
@@ -243,6 +331,7 @@
     <script type="text/javascript">
                             init();
     </script>
+
 
 </body>
 </html>

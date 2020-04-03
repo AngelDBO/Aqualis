@@ -1,9 +1,7 @@
 function init() {
     ListarPersonaNatural();
     ListarPersonaJuridica();
-   // ObtenerDatoNaturalID();
-   // ActualizarPersonaNatural();
-} 
+}
 
 function ListarPersonaNatural() {
     $.ajax({
@@ -33,7 +31,7 @@ function RegistarPersonaNatural() {
         url: './../controllers/PersonaController.php?opcion=Registrar_Persona_Natural',
         beforeSend: function() {},
         success: function(response) {
-          //  console.log(response);
+            //  console.log(response);
             if (response == 1) {
                 console.log(response);
                 $('#FP_Natural')[0].reset();
@@ -62,7 +60,7 @@ function RegistarPersonaJuridica() {
         url: './../controllers/PersonaController.php?opcion=Registrar_Persona_Juridica',
         beforeSend: function() {},
         success: function(response) {
-          //  console.log(response);
+            //  console.log(response);
             if (response == 1) {
                 console.log(response);
                 $('#FP_Juridica')[0].reset();
@@ -88,8 +86,8 @@ function ObtenerDatoNaturalID(id) {
         data: "ID=" + id,
         url: "./../controllers/PersonaController.php?opcion=ObtenerDatoNaturalID",
         success: function(r) {
-           // console.log(r);
-              data = $.parseJSON(r);
+            // console.log(r);
+            data = $.parseJSON(r);
             if (data.length > 0) {
                 $('#ID').val(data[0]['ID']);
                 $('#TipoDocumentoU').val(data[0]['TIPO_DOCUMENTO']);
@@ -108,6 +106,34 @@ function ObtenerDatoNaturalID(id) {
     });
 }
 
+function ObtenerDatoJuridicoID(id) {
+    $.ajax({ 
+        type: "POST",
+        data: "ID=" + id,
+        url: "./../controllers/PersonaController.php?opcion=ObtenerDatoJuridicoID",
+        success: function(r) {
+            console.log(r);
+            data = $.parseJSON(r);
+            if (data.length > 0) {
+                $('#IDu').val(data[0]['ID']);
+                $('#Tipo_IdentificacionU').val(data[0]['TIPO_DOCUMENTO']);
+                $('#NitU').val(data[0]['NIT']);
+                $('#Nombre_EmpresaU').val(data[0]['NOMBRE_EMPRESA']);
+                $('#Representante_LegalU').val(data[0]['REPRESENTANTE_EMPRESA']);
+                $('#Razon_SocialU').val(data[0]['RAZON_SOCIAL']);
+                $('#Tipo_ActividadU').val(data[0]['TIPO_ACTIVIDAD']);
+                $('#RegimenU').val(data[0]['REGIMEN']);
+                $('#NaturalezaU').val(data[0]['NATURALEZA']);
+                $('#Telefono_11').val(data[0]['TELEFONO_1']);
+                $('#Telefono_22').val(data[0]['TELEFONO_2']);
+                $('#DireccionU2').val(data[0]['DIRECCION']);
+                $('#CorreoU2').val(data[0]['CORREO']);
+                $('#Est_U').val(data[0]['ESTADO']);
+            }
+        }
+    });
+}
+
 
 
 function ActualizarPersonaNatural() {
@@ -117,9 +143,8 @@ function ActualizarPersonaNatural() {
         url: './../controllers/PersonaController.php?opcion=Actualizar_Persona_Natural',
         success: function(r) {
             if (r == 1) {
-               // console.log(r);
-               $('#FP_Ac_Natural')[0].reset();
-               
+                // console.log(r);
+                $('#FP_Ac_Natural')[0].reset();
                 Swal.fire(
                         'Exito!',
                         'Registro actualizado con exitoso',
@@ -135,9 +160,33 @@ function ActualizarPersonaNatural() {
             }
         }
     });
+}
 
-
-
+function ActualizarPersonaJuridica() {
+    
+   $.ajax({
+        type: 'POST',
+        data: $('#FP_Ac_Juridica').serialize(),
+        url: './../controllers/PersonaController.php?opcion=Actualizar_Persona_Juridica',
+        success: function(r) {
+            if (r == 1) {
+                console.log(r);
+                $('#FP_Ac_Juridica')[0].reset();
+                Swal.fire(
+                        'Exito!',
+                        'Registro actualizado con exitoso',
+                        'success'
+                        );
+                ListarPersonaJuridica();
+            } else if (r == 2) {
+                Swal.fire({
+                    icon: 'Error',
+                    title: 'Problema',
+                    text: 'Fallo al actualizar el cliente'
+                });
+            }
+        }
+    });
 }
 
 

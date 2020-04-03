@@ -24,7 +24,10 @@ class ModelPersona {
 
     public function ListarPersonasJuridicas() {
 
-        $query = ("SELECT ID, TIPO_DOCUMENTO, NIT, NOMBRE_EMPRESA, REPRESENTANTE_EMPRESA, RAZON_SOCIAL, TIPO_ACTIVIDAD, REGIMEN, NATURALEZA, TELEFONO_1, TELEFONO_2, DIRECCION, CORREO, TIMESTAMP, ESTADO FROM PERSONA WHERE TIPO_PERSONA = 'JURIDICA'");
+        $query = ("SELECT ID, TIPO_DOCUMENTO, NIT, 
+                          NOMBRE_EMPRESA, REPRESENTANTE_EMPRESA, RAZON_SOCIAL, TIPO_ACTIVIDAD, 
+                          REGIMEN, NATURALEZA, TELEFONO_1, TELEFONO_2, DIRECCION, CORREO, TIMESTAMP, ESTADO 
+                          FROM PERSONA WHERE TIPO_PERSONA = 'JURIDICA'");
         $base = $this->cnx->prepare($query);
         if ($base->execute()) {
             return $base->fetchALL(PDO::FETCH_ASSOC);
@@ -82,7 +85,6 @@ class ModelPersona {
         $base->close();
     }
 
-
     public function ObtenerDatoNaturalID($id) {
         $query = ("SELECT ID, TIPO_DOCUMENTO, NUMERO_DOCUMENTO, NOMBRE_1, NOMBRE_2, APELLIDO_1, APELLIDO_2, TELEFONO_1, TELEFONO_2, DIRECCION, CORREO, TIMESTAMP, ESTADO FROM PERSONA WHERE TIPO_PERSONA = 'NATURAL' AND ID=:ID");
         $base = $this->cnx->prepare($query);
@@ -95,6 +97,21 @@ class ModelPersona {
         $base->close();
     }
 
+    public function ObtenerDatoJuridicoID($id) {
+        $query = ("SELECT ID, TIPO_DOCUMENTO, NIT, 
+                          NOMBRE_EMPRESA, REPRESENTANTE_EMPRESA, RAZON_SOCIAL, 
+                          TIPO_ACTIVIDAD, REGIMEN, NATURALEZA, TELEFONO_1, TELEFONO_2, 
+                          DIRECCION, CORREO, TIMESTAMP, ESTADO FROM PERSONA 
+                          WHERE TIPO_PERSONA = 'JURIDICA' AND ID=:ID");
+        $base = $this->cnx->prepare($query);
+        $base->bindParam(":ID", $id, PDO::PARAM_INT);
+
+        if ($base->execute()) {
+            return $base->fetch(PDO::FETCH_ASSOC);
+        }
+        return false;
+        $base->close();
+    }
 
     public function EditarPersonaNatural($datos) {
         $query = ("UPDATE PERSONA SET TIPO_DOCUMENTO = :TIPO_DOCUMENTO,
@@ -131,6 +148,43 @@ class ModelPersona {
         $base->close();
     }
 
+    public function EditarPersonaJuridica($datos) {
+        $query = ("UPDATE PERSONA SET TIPO_DOCUMENTO = :TIPO_DOCUMENTO,
+                                      NIT = :NIT,
+                                      NOMBRE_EMPRESA = :NOMBRE_EMPRESA,
+                                      REPRESENTANTE_EMPRESA = :REPRESENTANTE_EMPRESA,
+                                      RAZON_SOCIAL = :RAZON_SOCIAL,
+                                      TIPO_ACTIVIDAD = :TIPO_ACTIVIDAD,
+                                      REGIMEN = :REGIMEN,
+                                      NATURALEZA = :NATURALEZA,
+                                      TELEFONO_1 = :TELEFONO_1,
+                                      TELEFONO_2 = :TELEFONO_2,
+                                      DIRECCION = :DIRECCION,
+                                      CORREO = :CORREO,
+                                      ESTADO = :ESTADO
+                                      WHERE ID = :ID");
+        $base = $this->cnx->prepare($query);
+        $base->bindParam(":TIPO_DOCUMENTO", $datos['TIPO_DOCUMENTO'], PDO::PARAM_STR);
+        $base->bindParam(":NIT", $datos['NIT'], PDO::PARAM_INT);
+        $base->bindParam(":NOMBRE_EMPRESA", $datos['NOMBRE_EMPRESA'], PDO::PARAM_STR);
+        $base->bindParam(":REPRESENTANTE_EMPRESA", $datos['REPRESENTANTE_EMPRESA'], PDO::PARAM_STR);
+        $base->bindParam(":RAZON_SOCIAL", $datos['RAZON_SOCIAL'], PDO::PARAM_STR);
+        $base->bindParam(":TIPO_ACTIVIDAD", $datos['TIPO_ACTIVIDAD'], PDO::PARAM_STR);
+        $base->bindParam(":REGIMEN", $datos['REGIMEN'], PDO::PARAM_STR);
+        $base->bindParam(":NATURALEZA", $datos['NATURALEZA'], PDO::PARAM_STR);
+        $base->bindParam(":TELEFONO_1", $datos['TELEFONO_1'], PDO::PARAM_INT);
+        $base->bindParam(":TELEFONO_2", $datos['TELEFONO_2'], PDO::PARAM_INT);
+        $base->bindParam(":DIRECCION", $datos['DIRECCION'], PDO::PARAM_STR);
+        $base->bindParam(":CORREO", $datos['CORREO'], PDO::PARAM_STR);
+        $base->bindParam(":ESTADO", $datos['ESTADO'], PDO::PARAM_STR);
+        $base->bindParam(":ID", $datos['ID'], PDO::PARAM_INT);
 
+        if ($base->execute()) {
+            return true;
+        }
+        return false;
+
+        $base->close();
+    }
 
 }
