@@ -26,7 +26,7 @@
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
     </head>
-    <body class="bg-dark">
+    <body class="bg-light">
 
         <div class="sufee-login d-flex align-content-center flex-wrap">
             <div class="container">
@@ -37,12 +37,12 @@
                     <div class="login-form">
                         <form id="fomr_1">
                             <div class="form-group">
-                                <label>Correo Electronico</label>
-                                <input type="email" class="form-control" id="Correo" name="Correo" placeholder="Email">
+                                <label>Correo </label>
+                                <input type="email" class="form-control" id="Correo" name="Correo" >
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" class="form-control" id="Password" name="Password" placeholder="Password">
+                                <input type="password" class="form-control" id="Password" name="Password" >
                             </div>
                             <button type="button" class="btn btn-success btn-flat m-b-30 m-t-30"  id="btn-guardar" onclick="ValidarUsuario()">Entrar</button>
                         </form>

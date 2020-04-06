@@ -1,3 +1,4 @@
+
 <?php include './content/head.php'; ?>
 
 <body>
@@ -123,7 +124,11 @@
 
     <?php include './content/scripts.php'; ?>
 
+    <script src="../ajax/Persona.js"></script>
 
+    <script>
+    Contar_Persona();
+    </script>
 
 </body>
 </html>

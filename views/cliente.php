@@ -108,48 +108,48 @@
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="Numero Documento">Numero Documento *</label>
-                                                        <input type="text" name="Numero_Documento" class="form-control" id="Numero_Documento" autofocus="">
+                                                        <input type="text" name="Numero_Documento" class="form-control" id="Numero_Documento" autofocus="" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <label for="Primer Nombre">Primer Nombre *</label>
-                                                        <input type="text" name="Primer_Nombre" class="form-control" id="Primer Nombre" placeholder="">
+                                                        <input type="text" name="Primer_Nombre" class="form-control" id="Primer Nombre" required>
                                                     </div>
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputAddress2">Segundo Nombre</label>
+                                                        <label for="Segundo Nombre">Segundo Nombre</label>
                                                         <input type="text" name="Segundo_Nombre" class="form-control" id="Segundo_Nombre" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputAddress">Primer Apellido *</label>
-                                                        <input type="text" name="Primer_Apellido" class="form-control" id="Primer_Apellido" placeholder="">
+                                                        <label for="Primer Apellido">Primer Apellido *</label>
+                                                        <input type="text" name="Primer_Apellido" class="form-control" id="Primer_Apellido" required>
                                                     </div>
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputAddress2">Segundo Apellido</label>
+                                                        <label for="Segundo Apellido">Segundo Apellido</label>
                                                         <input type="text" name="Segundo_Apellido" class="form-control" id="Segundo_Apellido" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputZip">Direccion *</label>
-                                                        <input type="text" name="Direccion" class="form-control" id="Direccion">
+                                                        <label for="Direccion">Direccion *</label>
+                                                        <input type="text" name="Direccion" class="form-control" id="Direccion" required>
                                                     </div>
                                                     <div class="form-group col-md-3">
-                                                        <label for="inputState">Telefono 1 *</label>
-                                                        <input type="text" name="Telefono_1" class="form-control" id="Telefono_1">
+                                                        <label for="Telefono 1">Telefono 1 *</label>
+                                                        <input type="text" name="Telefono_1" class="form-control" id="Telefono_1" required>
                                                     </div>
                                                     <div class="form-group col-md-3">
-                                                        <label for="inputState">Telefono 2</label>
+                                                        <label for="Telefono 2">Telefono 2</label>
                                                         <input type="text" name="Telefono_2" class="form-control" id="Telefono_2">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputAddress2">Correo *</label>
-                                                    <input type="email" name="Correo" class="form-control" id="Correo" placeholder="">
+                                                    <label for="Correo">Correo *</label>
+                                                    <input type="email" name="Correo" class="form-control" id="Correo" required>
                                                 </div>
-                                                <button type="button" class="btn btn-success" id="bt-registrarCliente" onclick="RegistarPersonaNatural()">Guardar</button>
+                                                <button type="button" class="btn btn-success" id="bt-registrarCliente" onclick="RegistarPersonaNatural();">Guardar</button>
                                             </form>
                                         </div>
 
@@ -257,9 +257,6 @@
     <script src="../assets/sweetalert.js"></script>
     <script src="../assets/js/lib/chosen/chosen.jquery.min.js"></script>
     <script src="../assets/funciones/funciones.js"></script>
-    <script type="text/javascript">
-                                                    ValidarFormPersonaN();
-    </script>
     <script src="../ajax/Persona.js"></script>
 
 

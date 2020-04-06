@@ -8,12 +8,12 @@
                     <div class="card-body">
                         <div class="stat-widget-five">
                             <div class="stat-icon dib flat-color-1">
-                                <i class="pe-7s-science"></i>
+                                <i class="fa fa-sitemap"></i>
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
                                     <div class="stat-text">$<span class="count">23569</span></div>
-                                    <div class="stat-heading">pH del Agua</div>
+                                    <div class="stat-heading">pH</div>
                                 </div>
                             </div>
                         </div>
@@ -26,12 +26,12 @@
                     <div class="card-body">
                         <div class="stat-widget-five">
                             <div class="stat-icon dib flat-color-2">
-                                <i class="pe-7s-drop"></i>
+                                <i class="fa fa-sitemap"></i>
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
                                     <div class="stat-text"><span class="count">3435</span></div>
-                                    <div class="stat-heading">Temperatura del Agua</div>
+                                    <div class="stat-heading">Temp Water</div>
                                 </div>
                             </div>
                         </div>
@@ -44,12 +44,12 @@
                     <div class="card-body">
                         <div class="stat-widget-five">
                             <div class="stat-icon dib flat-color-3">
-                                <i class="pe-7s-share"></i>
+                                <i class="fa fa-sitemap"></i>
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
                                     <div class="stat-text"><span class="count">349</span></div>
-                                    <div class="stat-heading">Total Solidos Disueltos</div>
+                                    <div class="stat-heading">TDS</div>
                                 </div>
                             </div>
                         </div>
@@ -62,12 +62,12 @@
                     <div class="card-body">
                         <div class="stat-widget-five">
                             <div class="stat-icon dib flat-color-4">
-                                <i class="pe-7s-gleam"></i>
+                                <i class="fa fa-sitemap"></i>
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
                                     <div class="stat-text"><span class="count">2986</span></div>
-                                    <div class="stat-heading">Conductividad Electrica</div>
+                                    <div class="stat-heading">EC</div>
                                 </div>
                             </div>
                         </div>
@@ -79,12 +79,12 @@
                     <div class="card-body">
                         <div class="stat-widget-five">
                             <div class="stat-icon dib flat-color-5">
-                                <i class="pe-7s-science"></i>
+                                <i class="fa fa-sitemap"></i>
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
                                     <div class="stat-text"><span class="count">2986</span></div>
-                                    <div class="stat-heading">Potencial Redox</div>
+                                    <div class="stat-heading">ORP</div>
                                 </div>
                             </div>
                         </div>
@@ -96,12 +96,12 @@
                     <div class="card-body">
                         <div class="stat-widget-five">
                             <div class="stat-icon dib flat-color-6">
-                                <i class="pe-7s-drop"></i>
+                                <i class="fa fa-sitemap"></i>
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
                                     <div class="stat-text"><span class="count">2986</span></div>
-                                    <div class="stat-heading">Turbidez del Agua</div>
+                                    <div class="stat-heading">Turbidity</div>
                                 </div>
                             </div>
                         </div>
@@ -113,12 +113,12 @@
                     <div class="card-body">
                         <div class="stat-widget-five">
                             <div class="stat-icon dib flat-color-7">
-                                <i class="pe-7s-graph3"></i>
+                                <i class="fa fa-sitemap"></i>
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
                                     <div class="stat-text"><span class="count">29</span></div>
-                                    <div class="stat-heading">Total Misiones</div>
+                                    <div class="stat-heading">Misiones</div>
                                 </div>
                             </div>
                         </div>
@@ -130,12 +130,12 @@
                     <div class="card-body">
                         <div class="stat-widget-five">
                             <div class="stat-icon dib flat-color-8">
-                                <i class="pe-7s-users"></i>
+                                <i class="menu-icon fa fa-user-o"></i>
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text"><span class="count">29</span></div>
-                                    <div class="stat-heading">Clientes Registrados</div>
+                                    <div class="stat-text" id="numeroP" ><span class="count">29</span></div>
+                                    <div class="stat-heading">Clientes</div>
                                 </div>
                             </div>
                         </div>
@@ -154,16 +154,16 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="card">
-                        <div class="card-body bg-info">
-                            <h4 style="color: white;" class="box-title">Misiones Historial </h4>
+                        <div class="card-body bg-light">
+                            <h4 style="color: black;" class="box-title">Misiones Historial </h4>
+                            <button type="reset">Update</button>
                         </div>
                         <div class="card-body--">
-                            <div class="table-stats order-table ov-h">
-                                <table class="table table-bordered">
+                            <div class="table-stats order-table ">
+                                <table class="table table-hover table-bordered">
                                     <thead>
                                         <tr>
-                                            <th class="serial">#</th>
-
+                                            <th>#</th>
                                             <th>ID</th>
                                             <th>Name</th>
                                             <th>Product</th>

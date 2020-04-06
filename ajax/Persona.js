@@ -190,3 +190,16 @@ function ActualizarPersonaJuridica() {
 }
 
 
+function Contar_Persona() {
+    $.ajax({ 
+        type: "POST",
+        url: "./../controllers/PersonaController.php?opcion=Contar_Personas",
+        success: function(r) {
+            console.log(r);
+            data = $.parseJSON(r);
+            if (data.length > 0) {
+                $('#numeroP').val(data[0]['numero']);
+            }
+        }
+    });
+}

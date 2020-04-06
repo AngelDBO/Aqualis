@@ -31,18 +31,10 @@ function ValidarFormPersonaN() {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'Debes ingresar el numero de documento',
+                    text: 'e documento',
                 });
                 return false;
-
-            } else if ($('#Password').val() == "") {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Debes ingresar la contraseña',
-                });
-                return false;
-            }
+            } 
         });
     });
 }

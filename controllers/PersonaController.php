@@ -280,4 +280,18 @@ switch ($_REQUEST["opcion"]) {
         echo $response;
    
         break;
+
+        case 'Contar_Personas':
+            if ($data = $Persona->contarCLientes()) {
+                if ($data) {
+                    $list[] = array(
+                        "Numero" => $data['numero'],    
+                    );
+                    echo json_encode($list);
+                }  
+            } else {
+                
+            }
+            
+        break;
 }

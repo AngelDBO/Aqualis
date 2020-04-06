@@ -187,4 +187,15 @@ class ModelPersona {
         $base->close();
     }
 
+    public function contarCLientes(){
+        $query = ("SELECT count(*) as numero from PERSONA");
+        $base = $this->cnx->prepare($query);
+        
+        if($base->execute()){
+            return $base->fetch(PDO::FETCH_ASSOC);
+        }
+        return false;
+        $base->close();
+    }
+
 }
