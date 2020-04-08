@@ -2,7 +2,7 @@
 
 define('SERVER', '127.0.0.1');
 
-define('DATABASE', 'aqualis');
+define('DATABASE', 'sistema');
 
 define('USER', 'root');
 

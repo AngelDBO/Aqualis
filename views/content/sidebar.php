@@ -1,6 +1,7 @@
 <aside id="left-panel" class="left-panel">
     <nav class="navbar navbar-expand-sm navbar-default">
         <div id="main-menu" class="main-menu collapse navbar-collapse">
+        <br>
             <ul class="nav navbar-nav">
 
                 <!-- ============= | INICIO | ================-->
@@ -9,51 +10,15 @@
                     <a href="inicio.php"><i class="menu-icon fa fa-tachometer"></i>Home </a>
                 </li>
 
-                <!-- ============= | TITULO MENU | ================-->
-
-                <li class="menu-title">Panel de Procesos</li><!-- /.menu-title -->
-
 
                 <!-- ============= | GESTION MISIONES | ================-->
 
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-eject"></i>Mision</a>
-                    <ul class="sub-menu children dropdown-menu"><li><i class="fa fa-puzzle-piece"></i><a href="./inc/ui-buttons.html">Registrar Mision</a></li>
-                        <li><i class="fa fa-id-badge"></i><a href="./inc/ui-badges.html">Detalles Mision</a></li>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-puzzle-piece"></i><a href="./mision.php">Registrar Mision</a></li>
+                        <li><i class="fa fa-sitemap"></i><a href="./sensor.php">Registrar mediciones</a></li>
                         <li><i class="fa fa-bars"></i><a href="./inc/ui-tabs.html">Historial Misiones</a></li>
-                    </ul>
-                </li>
-
-
-                <!-- ============= | GESTION SENSORES | ================-->
-
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sitemap"></i>Sensores</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-sitemap"></i><a href="./inc/tables-basic.html">Registrar Sensor</a></li>
-                        <li><i class="fa fa-sitemap"></i><a href="./inc/tables-data.html">Gestion Sensor</a></li>
-                    </ul>
-                </li>
-
-
-                <!-- ============= | GESTION PARAMETROS | ================-->
-
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-toggle-on"></i>Parametros</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-toggle-on"></i><a href="./parametro.php">Gestionar Parametro</a></li>
-                       
-                    </ul>
-                </li>
-
-
-                <!-- ============= | GESTION CLIENTES | ================-->
-
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Clientes</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-users"></i><a href="./cliente.php">Registar Clientes</a></li>
-                        <li><i class="menu-icon fa fa-users"></i><a href="./cliente2.php">Gestionar Clientes</a></li>
                     </ul>
                 </li>
 
@@ -86,7 +51,17 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sliders"></i>Configuracion</a>
                     <ul class="sub-menu children dropdown-menu">
+                    <li><i class="menu-icon fa fa-users"></i><a href="./cliente.php">Registar Clientes</a></li>
+                        <li><i class="menu-icon fa fa-users"></i><a href="./cliente2.php">Gestionar Clientes</a></li>
+                    <hr>
                         <li><i class="menu-icon fa fa-sliders"></i><a href="./usuario.php">Usuarios</a></li>
+                        <hr>
+                        <li><i class="menu-icon fa fa-toggle-on"></i><a href="./parametro.php">Parametros</a></li>
+                        <hr>
+                        <li><i class="fa fa-sitemap"></i><a href="./sensor.php">Registrar Sensor</a></li>
+                        <li><i class="fa fa-sitemap"></i><a href="./gestions.php">Gestion Sensor</a></li>
+                        <hr>
+                        
                     </ul>
                 </li>
             </ul>

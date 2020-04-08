@@ -3,7 +3,7 @@
     <div class="animated fadeIn">
         <!-- Widgets  -->
         <div class="row">
-            <div class="col-lg-3 col-md-6">
+           <!-- <div class="col-lg-3 col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-five">
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="col-lg-3 col-md-6">
                 <div class="card">
                     <div class="card-body">
@@ -112,8 +112,8 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-five">
-                            <div class="stat-icon dib flat-color-7">
-                                <i class="fa fa-sitemap"></i>
+                            <div class="stat-icon dib flat-color-1">
+                                <i class="fa fa-database"></i>
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
@@ -129,7 +129,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-five">
-                            <div class="stat-icon dib flat-color-8">
+                            <div class="stat-icon dib flat-color-2">
                                 <i class="menu-icon fa fa-user-o"></i>
                             </div>
                             <div class="stat-content">
@@ -154,28 +154,23 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="card">
-                        <div class="card-body bg-light">
-                            <h4 style="color: black;" class="box-title">Misiones Historial </h4>
-                            <button type="reset">Update</button>
-                        </div>
                         <div class="card-body--">
                             <div class="table-stats order-table ">
-                                <table class="table table-hover table-bordered">
+                                <table class="table  table-hover">
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Product</th>
-                                            <th>Quantity</th>
-                                            <th>Status</th>
+                                            <th>Nombre</th>
+                                            <th id="lugarmapa">Lugar</th>
+                                            <th>Fecha</th>
+                                            <th>Estado</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td class="serial">1.</td>
 
-                                            <td> #5469 </td>
+                                            
                                             <td>  <span class="name">Louis Stanley</span> </td>
                                             <td> <span class="product">iMax</span> </td>
                                             <td><span class="count">231</span></td>
@@ -186,7 +181,7 @@
                                         <tr>
                                             <td class="serial">4.</td>
 
-                                            <td> #5466 </td>
+                                            
                                             <td>  <span class="name">Mary Silva</span> </td>
                                             <td> <span class="product">Magic Mouse</span> </td>
                                             <td><span class="count">250</span></td>
@@ -197,7 +192,7 @@
                                         <tr>
                                             <td class="serial">1.</td>
 
-                                            <td> #5469 </td>
+                                            
                                             <td>  <span class="name">Louis Stanley</span> </td>
                                             <td> <span class="product">iMax</span> </td>
                                             <td><span class="count">231</span></td>
@@ -208,7 +203,7 @@
                                         <tr>
                                             <td class="serial">4.</td>
 
-                                            <td> #5466 </td>
+                                            
                                             <td>  <span class="name">Mary Silva</span> </td>
                                             <td> <span class="product">Magic Mouse</span> </td>
                                             <td><span class="count">250</span></td>
@@ -219,7 +214,7 @@
                                         <tr>
                                             <td class="serial">1.</td>
 
-                                            <td> #5469 </td>
+                                            
                                             <td>  <span class="name">Louis Stanley</span> </td>
                                             <td> <span class="product">iMax</span> </td>
                                             <td><span class="count">231</span></td>
@@ -230,7 +225,7 @@
                                         <tr>
                                             <td class="serial">4.</td>
 
-                                            <td> #5466 </td>
+                                            
                                             <td>  <span class="name">Mary Silva</span> </td>
                                             <td> <span class="product">Magic Mouse</span> </td>
                                             <td><span class="count">250</span></td>
@@ -241,7 +236,7 @@
                                         <tr>
                                             <td class="serial">1.</td>
 
-                                            <td> #5469 </td>
+                                           
                                             <td>  <span class="name">Louis Stanley</span> </td>
                                             <td> <span class="product">iMax</span> </td>
                                             <td><span class="count">231</span></td>
@@ -252,7 +247,7 @@
                                         <tr>
                                             <td class="serial">4.</td>
 
-                                            <td> #5466 </td>
+                                           
                                             <td>  <span class="name">Mary Silva</span> </td>
                                             <td> <span class="product">Magic Mouse</span> </td>
                                             <td><span class="count">250</span></td>
@@ -260,13 +255,26 @@
                                                 <span class="badge badge-pending">Pending</span>
                                             </td>
                                         </tr>
-
                                     </tbody>
                                 </table>
                             </div> <!-- /.table-stats -->
                         </div>
                     </div> <!-- /.card -->
                 </div>  <!-- /.col-lg-8 -->
+
+                <!--===============================-->
+
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-body--">
+                        <div id="grafica1">
+                            
+                            </div>                          
+                        </div>
+                    </div> 
+                </div> 
+                
+                 
             </div>
         </div>
     </div>
