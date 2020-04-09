@@ -48,7 +48,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Gestion Parametros</h1>
+                                <h1>Gestion Sensor</h1>
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
                                     <li><a href="inicio.php">Home</a></li>
-                                    <li class="active">Gestion Parametro</li>
+                                    <li class="active">Advanced</li>
                                 </ol>
                             </div>
                         </div>
@@ -66,26 +66,93 @@
             </div>
         </div>
 
-        <div class="content ">
+        <div class="content">
             <div class="animated fadeIn">
 
                 <div class="row">
 
                     <div class="col-xs-6 col-sm-6 col-lg-12">
-                        <div class="card ">
+                        <div class="card">
                             <div class="card-header">
-                               
-                                <div>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-                                   Nuevo
-                                </button>
-                                </div>
+                                <strong>Registro de Sensores</strong>
                             </div>
-
                             <div class="card-body">
-                                <div class="table-stats order-table ov-h">
-                                    <div id="TablaParametro"></div>
-                                </div> <!-- /.table-stats -->
+                                <!-- ============= | FORMULARIO PERSONA NATURAL | ================-->
+
+                                <form id="FP_Natural" autocomplete="off">
+                                    <br>
+                                    <div class="form-row">
+
+                                        <div class="form-group col-md-6">
+                                            <label for="Usuario">Tipo Parametro</label>
+                                            <select id="UsuarioMision" name="UsuarioMision" class="form-control">
+                                                <option></option>
+                                                <option selected value="CC">--</option>
+                                                <option value="TDS">Total de Solidos Disueltos</option>
+                                                <option value="TDS">pH</option>
+                                                <option value="TDS">Temperatura Agua</option>
+                                                <option value="TDS">Conductividad Electrica</option>
+                                                <option value="TDS">Turbidez</option>
+                                                <option value="TDS">Potencial de Reduccion de la Oxidacion</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="Nombre Mision">Rango Medicion</label>
+                                            <input type="text" name="Nombre_Mision" class="form-control" id="Nombre_Mision" autofocus="" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                       <div class="form-group col-md-6">
+                                       <label for="Correo">Lugar Mision</label>
+                                        <input type="text" name="Lugar_Mision" class="form-control" id="Lugar_Mision" required>
+                                       </div>
+                                       <div class="form-group col-md-6">
+                                       <label for="Correo">Fecha Inicio</label>
+                                        <input type="date" name="Lugar_Mision" class="form-control" id="Lugar_Mision" required>
+                                       </div>
+                                    </div>
+                                    <div class="form-row">
+                                    <div>
+                                    <label for="Correo">Longitud Lugar</label>
+                                    </div>
+                                    </div>
+                                    <div class="input-group  col-mb-3">
+                                    
+                                        <input type="text" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="button">Obtener</button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                    <br>
+                                    <label for="Correo">Latitud Lugar</label>
+                                    </div>
+                                    <div class="input-group  col-mb-3">
+                                    
+                                        <input type="text" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="button">Obtener</button>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="Correo">Tipo Medicion</label>
+                                        <select id="Tipo_Medicion" name="Tipo_Medicion" class="form-control">
+                                                <option></option>
+                                                <option selected value="CC">--</option>
+                                                <option value="Acueducto">Acueducto</option>
+                                                <option value="In Situ">In Situ</option>
+                                                <option value="Zona de Extraccion">Zona de Extraccion</option>
+
+                                            </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Descripcion</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
+                                    <button type="button" class="btn btn-success" id="bt-registrarMision">Guardar</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -94,97 +161,11 @@
         </div><!-- .content -->
         <div class="clearfix"></div>
 
-        <!-- Modal Persona Natural-->
-
-        <div class="modal fade" id="P_Modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Actualizar Parametro</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="Actualizar_P">
-                            <input type="text" id="ID" name="ID" hidden="">                         
-                            <div class="form-group">
-                                <label for="inputAddress2">Nombre Parametro</label>
-                                <input type="text" name="Nombre_ParametroU" class="form-control" id="Nombre_ParametroU" placeholder="">
-                            </div> 
-                            <div class="form-group">
-                                <label for="inputAddress2">Valor Optimo</label>
-                                <input type="text" name="Valor_OptimoU" class="form-control" id="Valor_OptimoU" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputAddress2">Valor Riesgo</label>
-                                <input type="text" name="Valor_RiesgoU" class="form-control" id="Valor_RiesgU" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputAddress2">Unidad</label>
-                                <input type="text" name="UnidadU" class="form-control" id="UnidadU" placeholder="">
-                            </div>                          
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" id="btn-updatePN" onclick="Actualizar_Parametro();" data-dismiss="modal">Actualizar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--MODAL NUEVO-->
-        <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Registrar Parametro</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <form id="Registar_Parametro">
-
-
-        <div class="form-group">
-            <label for="inputAddress2">Nombre Parametro</label>
-            <input type="text" name="Nombre_Parametro" class="form-control" id="Nombre_Parametro" placeholder="">
-        </div> 
-
-
-        <div class="form-group">
-            <label for="Valor Optimo">Valor Optimo</label>
-            <input type="text" name="Valor_Optimo" class="form-control" id="Valor_Optimo" placeholder="">
-        </div>
-        <div class="form-group">
-            <label for="Valor Riesgo">Valor Riesgo</label>
-            <input type="text" name="Valor_Riesgo" class="form-control" id="Valor_Riesgo" placeholder="">
-        </div>
-        <div class="form-group">
-            <label for="Unidad">Unidad</label>
-            <input type="text" name="Unidad" class="form-control" id="Unidad" placeholder="">
-        </div>
-
-    </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" data-dismiss="modal" onclick="RegistrarParametro();">Guardar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-       
-
         <footer class="site-footer">
             <div class="footer-inner bg-white">
                 <div class="row">
                     <div class="col-sm-6">
-                        Copyright &copy; <?php echo date('Y'); ?> Aqualis
+                        Copyright &copy; <?php echo date('Y');?> Aqualis
                     </div>
                     <div class="col-sm-6 text-right">
                         Designed by <a href="https://colorlib.com">Colorlib</a>
@@ -204,14 +185,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/lib/chosen/chosen.jquery.min.js"></script>
-    <script src="../ajax/Parametro.js"></script>
-    <script src="../assets/sweetalert.js"></script>
     <script src="../assets/jquery-3.2.1.js"></script>
-    <script type="text/javascript">
-                            init();
-    </script>
+    <script src="../assets/sweetalert.js"></script>
+    <script src="../assets/js/lib/chosen/chosen.jquery.min.js"></script>
+    <script src="../assets/funciones/funciones.js"></script>
 
+
+
+    <script>
+        jQuery(document).ready(function() {
+            jQuery(".standardSelect").chosen({
+                disable_search_threshold: 10,
+                no_results_text: "Oops, nothing found!",
+                width: "100%"
+            });
+        });
+    </script>
 
 </body>
 </html>

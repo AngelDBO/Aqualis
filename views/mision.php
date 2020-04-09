@@ -97,12 +97,20 @@
                                             <input type="text" name="Nombre_Mision" class="form-control" id="Nombre_Mision" autofocus="" required>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="Correo">Lugar Mision</label>
+                                    <div class="form-row">
+                                       <div class="form-group col-md-6">
+                                       <label for="Correo">Lugar Mision</label>
                                         <input type="text" name="Lugar_Mision" class="form-control" id="Lugar_Mision" required>
+                                       </div>
+                                       <div class="form-group col-md-6">
+                                       <label for="Correo">Fecha Inicio</label>
+                                        <input type="date" name="Lugar_Mision" class="form-control" id="Lugar_Mision" required>
+                                       </div>
                                     </div>
+                                    <div class="form-row">
                                     <div>
                                     <label for="Correo">Longitud Lugar</label>
+                                    </div>
                                     </div>
                                     <div class="input-group  col-mb-3">
                                     
@@ -125,13 +133,20 @@
                                     <br>
                                     <div class="form-group">
                                         <label for="Correo">Tipo Medicion</label>
-                                        <input type="text" name="Lugar_Mision" class="form-control" id="Lugar_Mision" required>
+                                        <select id="Tipo_Medicion" name="Tipo_Medicion" class="form-control">
+                                                <option></option>
+                                                <option selected value="CC">--</option>
+                                                <option value="Acueducto">Acueducto</option>
+                                                <option value="In Situ">In Situ</option>
+                                                <option value="Zona de Extraccion">Zona de Extraccion</option>
+
+                                            </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlTextarea1">Descripcion</label>
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                     </div>
-                                    <button type="button" class="btn btn-success" id="bt-registrarCliente">Guardar</button>
+                                    <button type="button" class="btn btn-success" id="bt-registrarMision">Guardar</button>
                                 </form>
                             </div>
                         </div>
@@ -145,7 +160,7 @@
             <div class="footer-inner bg-white">
                 <div class="row">
                     <div class="col-sm-6">
-                        Copyright &copy; 2018 Ela Admin
+                        Copyright &copy; <?php echo date('Y');?> Aqualis
                     </div>
                     <div class="col-sm-6 text-right">
                         Designed by <a href="https://colorlib.com">Colorlib</a>
