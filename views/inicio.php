@@ -22,14 +22,13 @@
             <div class="top-right">
                 <div class="header-menu">
                     <div class="header-left">
-
                         <div class="dropdown for-notification">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-bell"></i>
                                 <span class="count bg-danger">3</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
+                                <p class="red">Tienes 3 Notificaciones</p>
                                 <a class="dropdown-item media" href="#">
                                     <i class="fa fa-check"></i>
                                     <p>Server #1 overloaded.</p>
@@ -94,13 +93,10 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
-
-                            <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
-
-                            <a class="nav-link" href="../index.php"><i class="fa fa-power -off"></i>Logout</a>
+                            <a class="nav-link" href="./usuario.php"><i class="fa fa- user"></i>Mi perfil</a>
+                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Notificaciones <span class="count">13</span></a>
+                            <a class="nav-link" href="#"><i class="fa fa -cog"></i>Ajustes</a>
+                            <a class="nav-link" href="../index.php"><i class="fa fa-power -off"></i>Cerrar sesion</a>
                         </div>
                     </div>
 

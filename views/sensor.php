@@ -103,54 +103,23 @@
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                       <div class="form-group col-md-6">
-                                       <label for="Correo">Lugar Mision</label>
-                                        <input type="text" name="Lugar_Mision" class="form-control" id="Lugar_Mision" required>
-                                       </div>
-                                       <div class="form-group col-md-6">
-                                       <label for="Correo">Fecha Inicio</label>
-                                        <input type="date" name="Lugar_Mision" class="form-control" id="Lugar_Mision" required>
-                                       </div>
-                                    </div>
-                                    <div class="form-row">
-                                    <div>
-                                    <label for="Correo">Longitud Lugar</label>
-                                    </div>
-                                    </div>
-                                    <div class="input-group  col-mb-3">
-                                    
-                                        <input type="text" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button">Obtener</button>
-                                        </div>
-                                    </div>
-                                    <div>
-                                    <br>
-                                    <label for="Correo">Latitud Lugar</label>
-                                    </div>
-                                    <div class="input-group  col-mb-3">
-                                    
-                                        <input type="text" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button">Obtener</button>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <label for="Correo">Tipo Medicion</label>
+                                    <div class="form-group col-md-6">
+                                        <label for="Correo">Estado sensor</label>
                                         <select id="Tipo_Medicion" name="Tipo_Medicion" class="form-control">
                                                 <option></option>
-                                                <option selected value="CC">--</option>
-                                                <option value="Acueducto">Acueducto</option>
-                                                <option value="In Situ">In Situ</option>
-                                                <option value="Zona de Extraccion">Zona de Extraccion</option>
-
+                                                <option selected value="">--</option>
+                                                <option value="Activo">Activo</option>
+                                                <option value="Inactivo">Inactivo</option>
+                                                
                                             </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">Descripcion</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        
+                                    <div class="form-group col-md-6">
+                                            <label for="Nombre Mision">Precision Sensor</label>
+                                            <input type="text" name="Nombre_Mision" class="form-control" id="Nombre_Mision" autofocus="" required>
+                                        </div>
                                     </div>
+                                   
                                     <button type="button" class="btn btn-success" id="bt-registrarMision">Guardar</button>
                                 </form>
                             </div>
@@ -173,8 +142,6 @@
                 </div>
             </div>
         </footer>
-
-
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
@@ -189,9 +156,6 @@
     <script src="../assets/sweetalert.js"></script>
     <script src="../assets/js/lib/chosen/chosen.jquery.min.js"></script>
     <script src="../assets/funciones/funciones.js"></script>
-
-
-
     <script>
         jQuery(document).ready(function() {
             jQuery(".standardSelect").chosen({
@@ -201,6 +165,5 @@
             });
         });
     </script>
-
 </body>
 </html>

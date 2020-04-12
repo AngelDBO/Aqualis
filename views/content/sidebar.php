@@ -59,7 +59,8 @@
                         <li><i class="menu-icon fa fa-toggle-on"></i><a href="./parametro.php">Parametros</a></li>
                         <hr>
                         <li><i class="fa fa-sitemap"></i><a href="./sensor.php">Registrar Sensor</a></li>
-                        <li><i class="fa fa-sitemap"></i><a href="./gestions.php">Gestion Sensor</a></li>
+                        <li><i class="fa fa-sitemap"></i><a href="./mantenimiento.php">Gestion Sensor</a></li>
+                        <li><i class="fa fa-sitemap"></i><a href="./mantenimiento.php">Lectura Sensor</a></li>
                         <hr>
                         
                     </ul>

@@ -1,3 +1,20 @@
+function init(){
+    ListarUsuarios();
+}
+
+
+function ListarUsuarios(){
+    $.ajax({
+        type: 'POST',
+        url: './../controllers/UsuarioController.php?opcion=Listar_Usuario',
+        success: function (response) {
+            $('#TablaUsuario').html(response);
+        }
+    });
+}
+
+
+
 function ValidarUsuario() {
 
     $.ajax({
@@ -24,6 +41,32 @@ function ValidarUsuario() {
             }
         }
     });
+}
+
+function RegistrarUsuario(){
+   $.ajax({
+        type: 'POST',
+        url: './../controllers/UsuarioController.php?opcion=Registrar_Usuario',
+        data: $('#F_Usuario').serialize(),
+        success: function(response){
+            if (response == 1) {
+                $('#F_Usuario')[0].reset();
+                Swal.fire(
+                    'Exito!',
+                    'Usuario registrado exitosamente',
+                    'success'
+                    );
+            } else if (response == 2){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Usuario no encontrado',
+                });
+            }
+        }
+    }); 
+
+  
 }
 
 function LimpiarCampos() {

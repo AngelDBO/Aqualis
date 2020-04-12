@@ -11,25 +11,37 @@ class ModelUsuario {
         $this->cnx = conexion::conectar();
     }
 
-    public function RegistrarUsuario($datos) {
-        $query = ("INSERT INTO PERFIL (ROL, USUARIO, PASSWORD) VALUES (:ROL, :USUARIO, :PASSWORD)");
+    public function ListarUsuarios(){
+        $query = ("SELECT ID, NOMBRE, APELLIDO, ROL, USUARIO, CORREO, ESTADO, TIMESTAMP FROM USUARIO");
         $base = $this->cnx->prepare($query);
+        
+        if ($base->execute()) {
+            return $base->fetchALL(PDO::FETCH_ASSOC);
+        } 
+        return false;
+        $base->close();
+    }
+
+    public function RegistrarUsuario($datos) {
+        $query = ("INSERT INTO USUARIO (NOMBRE, APELLIDO, ROL, USUARIO, PASSWORD, CORREO, ESTADO) VALUES (:NOMBRE, :APELLIDO, :ROL, :USUARIO, :PASSWORD, :CORREO, :ESTADO)");
+        $base = $this->cnx->prepare($query);
+        $base->bindParam(":NOMBRE", $datos['NOMBRE'], PDO::PARAM_STR);
+        $base->bindParam(":APELLIDO", $datos['APELLIDO'], PDO::PARAM_STR);
         $base->bindParam(":ROL", $datos['ROL'], PDO::PARAM_STR);
         $base->bindParam(":USUARIO", $datos['USUARIO'], PDO::PARAM_STR);
         $pass = password_hash($datos['PASSWORD'], PASSWORD_DEFAULT);
         $base->bindParam(":PASSWORD", $pass, PDO::PARAM_STR);
-
+        $base->bindParam(":CORREO", $datos['CORREO'], PDO::PARAM_STR);
+        $base->bindParam(":ESTADO", $datos['ESTADO'], PDO::PARAM_STR);
         if ($base->execute()) {
             return true;
         }
         return false;
-
         $base->close();
     }
 
     public function ValidarUsuario($correo, $clave) {
-        $query = ("SELECT PF.ID, PF.ROL, PF.USUARIO, PF.PASSWORD, PF.TIMESTAMP AS FECHA_CREACION, PS.CORREO
-                       FROM PERFIL PF INNER JOIN PERSONA PS WHERE PS.CORREO = :CORREO");
+        $query = ("SELECT CORREO, PASSWORD FROM USUARIO WHERE CORREO = :CORREO");
         $base = $this->cnx->prepare($query);
         $base->bindParam(":CORREO", $correo);
         $base->execute();
@@ -39,8 +51,7 @@ class ModelUsuario {
             return true;
         }
         return false;
-
-
+        $fila=null;
         $base->close();
     }
 
