@@ -1,7 +1,7 @@
 <aside id="left-panel" class="left-panel">
     <nav class="navbar navbar-expand-sm navbar-default">
         <div id="main-menu" class="main-menu collapse navbar-collapse">
-        <br>
+            <br>
             <ul class="nav navbar-nav">
 
                 <!-- ============= | INICIO | ================-->
@@ -51,18 +51,18 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sliders"></i>Configuracion</a>
                     <ul class="sub-menu children dropdown-menu">
-                    <li><i class="menu-icon fa fa-users"></i><a href="./cliente.php">Registar Clientes</a></li>
+                        <li><i class="menu-icon fa fa-users"></i><a href="./cliente.php">Registar Clientes</a></li>
                         <li><i class="menu-icon fa fa-users"></i><a href="./cliente2.php">Gestionar Clientes</a></li>
-                    <hr>
+                        <hr>
                         <li><i class="menu-icon fa fa-sliders"></i><a href="./usuario.php">Usuarios</a></li>
                         <hr>
                         <li><i class="menu-icon fa fa-toggle-on"></i><a href="./parametro.php">Parametros</a></li>
                         <hr>
                         <li><i class="fa fa-sitemap"></i><a href="./sensor.php">Registrar Sensor</a></li>
                         <li><i class="fa fa-sitemap"></i><a href="./mantenimiento.php">Gestion Sensor</a></li>
-                        <li><i class="fa fa-sitemap"></i><a href="./mantenimiento.php">Lectura Sensor</a></li>
+                        <li><i class="fa fa-sitemap"></i><a href="./lectura.php">Lectura Sensor</a></li>
                         <hr>
-                        
+
                     </ul>
                 </li>
             </ul>

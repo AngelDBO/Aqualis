@@ -75,90 +75,85 @@
                 <div class="card-deck mb-3 text-center">
                     <div class="card mb-4 box-shadow">
                         <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">Free</h4>
+                            <h4 class="my-0 font-weight-normal">Temperatura</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>10 users included</li>
-                                <li>2 GB of storage</li>
-                                <li>Email support</li>
-                                <li>Help center access</li>
-                            </ul>
-                            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+                            <h1 class="card-title pricing-card-title" id="val_temp">00.00 <small class="text-muted" > °c</small></h1>
+                            <div>
+                            <img src="./../images/iconos/temp.png" alt="" class="img-responsibe">
+                            <br>
+                            </div>
+                           
+                            <button type="button" class="align-self-end btn btn-lg btn-block btn-success">Obtener valor TEMP</button>
+                            
                         </div>
                     </div>
                     <div class="card mb-4 box-shadow">
                         <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">Pro</h4>
+                            <h4 class="my-0 font-weight-normal">pH</h4>
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>20 users included</li>
-                                <li>10 GB of storage</li>
-                            </ul>
-                            <button type="button" class="align-self-end btn btn-lg btn-block btn-primary" style="margin-top: auto;">Get started</button>
+                            <h1 class="card-title pricing-card-title">00.00 <small class="text-muted"></small></h1>
+                            <div>
+                            <img src="./../images/iconos/ppm.png" alt="" class="img-responsibe">
+                            <br>
+                            </div>                  
+                            <button type="button" class="align-self-end btn btn-lg btn-block btn-success" style="margin-top: auto;">Obtener valor pH</button>
                         </div>
                     </div>
                     <div class="card mb-4 box-shadow">
                         <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">Enterprise</h4>
+                            <h4 class="my-0 font-weight-normal">Total Solidos Disueltos</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>30 users included</li>
-                                <li>15 GB of storage</li>
-                                <li>Phone and email support</li>
-                                <li>Help center access</li>
-                            </ul>
-                            <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
+                            <h1 class="card-title pricing-card-title">00.00 <small class="text-muted"> ppm</small></h1>
+                            <div>
+                            <img src="./../images/iconos/ppm.png" alt="" class="img-responsibe">
+                            <br>
+                            </div> 
+                            <button type="button" class="align-self-end btn btn-lg btn-block btn-success">Obtener valor TDS</button>
                         </div>
                     </div>
                 </div>
                 <div class="card-deck mb-3 text-center">
                     <div class="card mb-4 box-shadow">
                         <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">Free</h4>
+                            <h4 class="my-0 font-weight-normal">Conductividad Electrica</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>10 users included</li>
-                                <li>2 GB of storage</li>
-                                <li>Email support</li>
-                                <li>Help center access</li>
-                            </ul>
-                            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+                            <h1 class="card-title pricing-card-title">00.00 <small class="text-muted">ms/cm</small></h1>
+                            <div>
+                            <img src="./../images/iconos/meter.png" alt="" class="img-responsibe">
+                           
+                            </div> 
+                            <br>
+                            <button type="button" class="align-self-end btn btn-lg btn-block btn-success">Obtener valor EC</button>
                         </div>
                     </div>
                     <div class="card mb-4 box-shadow">
                         <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">Pro</h4>
+                            <h4 class="my-0 font-weight-normal">Potencial REDOX</h4>
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>20 users included</li>
-                                <li>10 GB of storage</li>
-                            </ul>
-                            <button type="button" class="align-self-end btn btn-lg btn-block btn-primary" style="margin-top: auto;">Get started</button>
+                            <h1 class="card-title pricing-card-title">00.00 <small class="text-muted"> mV </small></h1>
+                            <div>
+                            <img src="./../images/iconos/meter.png" alt="" class="img-responsibe">
+                            <br>
+                            </div> 
+                            <button type="button" class="align-self-end btn btn-lg btn-block btn-success" style="margin-top: auto;">Obtener valor ORP</button>
                         </div>
                     </div>
                     <div class="card mb-4 box-shadow">
                         <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">Enterprise</h4>
+                            <h4 class="my-0 font-weight-normal">Turbidez</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>30 users included</li>
-                                <li>15 GB of storage</li>
-                                <li>Phone and email support</li>
-                                <li>Help center access</li>
-                            </ul>
-                            <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
+                            <h1 class="card-title pricing-card-title">00.00<small class="text-muted"> UNT </small></h1>
+                            <div>
+                            <img src="./../images/iconos/tds.png" alt="" class="img-responsibe">
+                            </div>
+                            <br>
+                            <button type="button" class="btn btn-lg btn-block btn-success">Obtener valor NTF</button>
                         </div>
                     </div>
                 </div>

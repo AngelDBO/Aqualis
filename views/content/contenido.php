@@ -25,9 +25,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-five">
-                            <div class="stat-icon dib flat-color-2">
-                                <i class="fa fa-sitemap"></i>
-                            </div>
+                            
                             <div class="stat-content">
                                 <div class="text-left dib">
                                     <div class="stat-text"><span class="count">3435</span></div>
@@ -36,7 +34,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div><div class="stat-icon dib flat-color-2">
+                                <i class="fa fa-sitemap"></i>
+                            </div>
             </div>
 
             <div class="col-lg-3 col-md-6">
