@@ -92,9 +92,9 @@
                                             <!-- ============= | FORMULARIO PERSONA NATURAL | ================-->
 
                                             <form id="FP_Natural" autocomplete="off">
-                                                <br>
+                                                
+                                                <p class="spam">* campos obligatorios</p>
                                                 <div class="form-row">
-
                                                     <div class="form-group col-md-6">
                                                         <label for="Tipo Documento">Tipo Documento</label>
                                                         <select id="TipoDocumento" name="Tipo_Documento" class="form-control">
@@ -107,13 +107,13 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group col-md-6">
-                                                        <label for="Numero Documento">Numero Documento *</label>
+                                                        <label for="Numero Documento">* Numero Documento</label>
                                                         <input type="text" name="Numero_Documento" class="form-control" id="Numero_Documento" autofocus="" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <label for="Primer Nombre">Primer Nombre *</label>
+                                                        <label for="Primer Nombre">* Primer Nombre</label>
                                                         <input type="text" name="Primer_Nombre" class="form-control" id="Primer Nombre" required>
                                                     </div>
                                                     <div class="form-group col-md-6">
@@ -123,7 +123,7 @@
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <label for="Primer Apellido">Primer Apellido *</label>
+                                                        <label for="Primer Apellido">* Primer Apellido</label>
                                                         <input type="text" name="Primer_Apellido" class="form-control" id="Primer_Apellido" required>
                                                     </div>
                                                     <div class="form-group col-md-6">
@@ -133,11 +133,11 @@
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <label for="Direccion">Direccion *</label>
+                                                        <label for="Direccion">Direccion</label>
                                                         <input type="text" name="Direccion" class="form-control" id="Direccion" required>
                                                     </div>
                                                     <div class="form-group col-md-3">
-                                                        <label for="Telefono 1">Telefono 1 *</label>
+                                                        <label for="Telefono 1">* Telefono</label>
                                                         <input type="text" name="Telefono_1" class="form-control" id="Telefono_1" required>
                                                     </div>
                                                     <div class="form-group col-md-3">
@@ -146,7 +146,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="Correo">Correo *</label>
+                                                    <label for="Correo">* Correo</label>
                                                     <input type="email" name="Correo" class="form-control" id="Correo" required>
                                                 </div>
                                                 <button type="button" class="btn btn-success" id="bt-registrarCliente" onclick="RegistarPersonaNatural();">Guardar</button>

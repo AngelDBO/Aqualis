@@ -13,51 +13,49 @@ switch ($_REQUEST["opcion"]) {
 
         if ($Datos = $Persona->ListarPersonasNaturales()) {
 
-            $tabla = '<table class = "table table-bordered table-hover">
-                        <thead>
-                            <tr>
-
-                                <th>Tipo Documento</th>
-                                <th>Numero Identificacion</th>
-                                <th>Primer Nombre</th>
-                                <th>Segundo Nombre</th>
-                                <th>Primer Apellido</th>
-                                <th>Segundo Apellido</th>
-                                <th>Telefono Personal</th>
-                                <th>Telefono Alternativo</th>
-                                <th>Direccion</th>
-                                <th>Correo</th>
-                                <th>Fecha Registro</th>
-                                <th>Estado</th>
-                                <th>Actualizar</th>
-                            </tr>
-                        </thead>
-                        <tbody>';
+            $tabla = '<table id="myTable" class = "table table-bordered table-hover dt-responsive nowrap">
+            <thead>
+            <tr>
+            <th>Documento</th>
+            <th>Numero</th>
+            <th>Nombre</th>
+           <!-- <th>Segundo Nombre</th> -->
+            <th>Apellido</th>
+           <!-- <th>Segundo Apellido</th> -->
+            <th>Telefono</th>
+           <!-- <th>Telefono Alternativo</th> -->
+            <!--<th>Direccion</th> -->
+            <th>Correo</th>
+           <!-- <th>Registro</th> -->
+            <th>Estado</th>
+            <th>Actualizar</th>
+            </tr>
+            </thead>
+            <tbody>';
             $datosTabla = "";
 
             foreach ($Datos as $key => $value) {
                 $datosTabla = $datosTabla . '<tr>
 
-                                                <td class="serial">' . $value['TIPO_DOCUMENTO'] . '</td>
-                                                <td class="serial">' . $value['NUMERO_DOCUMENTO'] . '</td>
-                                                <td class="serial">' . $value['NOMBRE_1'] . '</td>
-                                                <td class="serial">' . $value['NOMBRE_2'] . '</td>
-                                                <td class="serial">' . $value['APELLIDO_1'] . '</td>
-                                                <td class="serial">' . $value['APELLIDO_2'] . '</td>
-                                                <td class="serial">' . $value['TELEFONO_1'] . '</td>
-                                                <td class="serial">' . $value['TELEFONO_2'] . '</td>
-                                                <td class="serial">' . $value['DIRECCION'] . '</td>
-                                                <td class="serial">' . $value['CORREO'] . '</td>
-                                                <td class="serial">' . $value['TIMESTAMP'] . '</td>
-                                                <td><span class="badge badge-complete">' . $value['ESTADO'] . '</span></td>
-                                                <td>
-                                                    <span class="btn btn-warning btn-sm"  onclick="ObtenerDatoNaturalID(' . $value['ID'] . ');"
-                                                        data-toggle="modal" data-target="#MAPN1">
-                                                    <i class="fa fa-edit"></i>
-                                                    </span>
-                                                </td>
-
-                                            </tr>';
+                <td class="serial">' . $value['TIPO_DOCUMENTO'] . '</td>
+                <td class="serial">' . $value['NUMERO_DOCUMENTO'] . '</td>
+                <td class="serial">' . $value['NOMBRE_1'] . '</td>
+               <!-- <td class="serial">' . $value['NOMBRE_2'] . '</td> -->
+                <td class="serial">' . $value['APELLIDO_1'] . '</td>
+               <!-- <td class="serial">' . $value['APELLIDO_2'] . '</td> -->
+                <td class="serial">' . $value['TELEFONO_1'] . '</td>
+                <!--<td class="serial">' . $value['TELEFONO_2'] . '</td> -->
+               <!-- <td class="serial">' . $value['DIRECCION'] . '</td> -->
+                <td class="serial">' . $value['CORREO'] . '</td>
+               <!-- <td class="serial">' . $value['TIMESTAMP'] . '</td> -->
+                <td><span class="badge badge-complete">' . $value['ESTADO'] . '</span></td>
+                <td>
+                <span class="btn btn-warning btn-sm"  onclick="ObtenerDatoNaturalID(' . $value['ID'] . ');"
+                data-toggle="modal" data-target="#MAPN1">
+                <i class="fa fa-edit"></i>
+                </span>
+                </td>
+                </tr>';
             }
             echo $tabla . $datosTabla . '</tbody></table>';
         }
@@ -68,53 +66,53 @@ switch ($_REQUEST["opcion"]) {
         if ($Datos = $Persona->ListarPersonasJuridicas()) {
 
             $tabla = '<table class = "table table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>Tipo Documento</th>
-                                <th>NIT</th>
-                                <th>Nombre</th>
-                                <th>Representante</th>
-                                <th>Razon Social</th>
-                                <th>Tipo Actividad</th>
-                                <th>Regimen</th>
-                                <th>Naturaleza</th>
-                                <th>Telefono</th>
-                                <th>Telfono Alternativo</th>
-                                <th>Direccion</th>
-                                <th>Correo</th>
-                                <th>Fecha Registro</th>
-                                <th>Estado</th>
-                                <th>Opcion</th>
-                            </tr>
-                        </thead>
-                        <tbody>';
+            <thead>
+            <tr>
+            <th>Documento</th>
+            <th>NIT</th>
+            <th>Nombre</th>
+            <th>Representante</th>
+           <!-- <th>Razon Social</th> -->
+           <!-- <th>Tipo Actividad</th> -->
+            <th>Regimen</th>
+           <!-- <th>Naturaleza</th> -->
+            <th>Telefono</th>
+           <!-- <th>Telfono Alternativo</th> -->
+           <!-- <th>Direccion</th> -->
+            <th>Correo</th>
+           <!-- <th>Registro</th> -->
+            <th>Estado</th>
+            <th>Opcion</th>
+            </tr>
+            </thead>
+            <tbody>';
             $datosTabla = "";
 
             foreach ($Datos as $key => $value) {
                 $datosTabla = $datosTabla . '<tr>
 
-                                                <td class="serial">' . $value['TIPO_DOCUMENTO'] . '</td>
-                                                <td class="serial">' . $value['NIT'] . '</td>
-                                                <td class="serial">' . $value['NOMBRE_EMPRESA'] . '</td>
-                                                <td class="serial">' . $value['REPRESENTANTE_EMPRESA'] . '</td>
-                                                <td class="serial">' . $value['RAZON_SOCIAL'] . '</td>
-                                                <td class="serial">' . $value['TIPO_ACTIVIDAD'] . '</td>
-                                                <td class="serial">' . $value['REGIMEN'] . '</td>
-                                                <td class="serial">' . $value['NATURALEZA'] . '</td>
-                                                <td class="serial">' . $value['TELEFONO_1'] . '</td>
-                                                <td class="serial">' . $value['TELEFONO_2'] . '</td>
-                                                <td class="serial">' . $value['DIRECCION'] . '</td>
-                                                <td class="serial">' . $value['CORREO'] . '</td>
-                                                <td class="serial">' . $value['TIMESTAMP'] . '</td>
-                                                <td><span class="badge badge-complete">' . $value['ESTADO'] . '</span></td>
-                                                <td>
-                                                    <span class="btn btn-warning btn-sm" onclick="ObtenerDatoJuridicoID(' . $value['ID'] . ');"
-                                                       data-toggle="modal" data-target="#MAPN2" >
-                                                    <i class="fa fa-edit"></i>
-                                                    </span>
-                                                </td>
+                <td class="serial">' . $value['TIPO_DOCUMENTO'] . '</td>
+                <td class="serial">' . $value['NIT'] . '</td>
+                <td class="serial">' . $value['NOMBRE_EMPRESA'] . '</td>
+                <td class="serial">' . $value['REPRESENTANTE_EMPRESA'] . '</td>
+               <!-- <td class="serial">' . $value['RAZON_SOCIAL'] . '</td> -->
+               <!-- <td class="serial">' . $value['TIPO_ACTIVIDAD'] . '</td> -->
+                <td class="serial">' . $value['REGIMEN'] . '</td>
+               <!-- <td class="serial">' . $value['NATURALEZA'] . '</td> -->
+                <td class="serial">' . $value['TELEFONO_1'] . '</td>
+                <!-- <td class="serial">' . $value['TELEFONO_2'] . '</td> -->
+               <!-- <td class="serial">' . $value['DIRECCION'] . '</td> -->
+                <td class="serial">' . $value['CORREO'] . '</td>
+               <!-- <td class="serial">' . $value['TIMESTAMP'] . '</td> -->
+                <td><span class="badge badge-complete">' . $value['ESTADO'] . '</span></td>
+                <td>
+                <span class="btn btn-warning btn-sm" onclick="ObtenerDatoJuridicoID(' . $value['ID'] . ');"
+                data-toggle="modal" data-target="#MAPN2" >
+                <i class="fa fa-edit"></i>
+                </span>
+                </td>
 
-                                            </tr>';
+                </tr>';
             }
             echo $tabla . $datosTabla . '</tbody></table>';
         }
@@ -122,29 +120,37 @@ switch ($_REQUEST["opcion"]) {
 
 
     case 'Registrar_Persona_Natural':
+        $val = htmlspecialchars($_POST['Numero_Documento']);
+        $correo = htmlspecialchars($_POST['Correo']);
+        $numero = htmlspecialchars($_POST['Numero_Documento']);
+        $nombre1 = htmlspecialchars($_POST['Primer_Nombre']);
+        $telefono1 = htmlspecialchars($_POST['Telefono_1']);
+        $apellido1 = htmlspecialchars($_POST['Primer_Apellido']);
 
-        $datos = array(
-            'TIPO_PERSONA' => 'NATURAL',
-            'CORREO' => $_POST['Correo'],
-            'TIPO_DOCUMENTO' => $_POST['Tipo_Documento'],
-            'NUMERO_DOCUMENTO' => $_POST['Numero_Documento'],
-            'NOMBRE_1' => $_POST['Primer_Nombre'],
-            'NOMBRE_2' => $_POST['Segundo_Nombre'],
-            'APELLIDO_1' => $_POST['Primer_Apellido'],
-            'APELLIDO_2' => $_POST['Segundo_Apellido'],
-            'TELEFONO_1' => $_POST['Telefono_1'],
-            'TELEFONO_2' => $_POST['Telefono_2'],
-            'DIRECCION' => $_POST['Direccion']
-        );
 
-        if (!empty($datos)) {
-            if ($Persona->RegistrarPersonaNatural($datos)) {
-                $response = 1;
-            } else {
-                $response = 2;
-            }
+        if (empty($correo) or empty($numero) or empty($nombre1) or empty($apellido1) or empty($telefono1)) {
+            $response = 2;
+        } else if ($Persona->Validar_Cliente_Natural($val)) {
+            $response = 3;
+        } else {
+            $datos = array(
+                'TIPO_PERSONA' => 'NATURAL',
+                'CORREO' => $_POST['Correo'],
+                'TIPO_DOCUMENTO' => $_POST['Tipo_Documento'],
+                'NUMERO_DOCUMENTO' => $_POST['Numero_Documento'],
+                'NOMBRE_1' => $_POST['Primer_Nombre'],
+                'NOMBRE_2' => $_POST['Segundo_Nombre'],
+                'APELLIDO_1' => $_POST['Primer_Apellido'],
+                'APELLIDO_2' => $_POST['Segundo_Apellido'],
+                'TELEFONO_1' => $_POST['Telefono_1'],
+                'TELEFONO_2' => $_POST['Telefono_2'],
+                'DIRECCION' => $_POST['Direccion']
+            );
+            $Persona->RegistrarPersonaNatural($datos);
+            $response = 1;
         }
         echo $response;
+
 
         break;
 
@@ -166,13 +172,12 @@ switch ($_REQUEST["opcion"]) {
             'DIRECCION' => $_POST['Direccion']
         );
 
-        if (!empty($datos)) {
-            if ($Persona->RegistrarPersonaJuridica($datos)) {
-                $response = 1;
-            } else {
-                $response = 2;
-            }
+        if ($Persona->RegistrarPersonaJuridica($datos)) {
+            $response = 2;
+        } else {
+            $response = 1;
         }
+
         echo $response;
 
         break;
@@ -278,20 +283,31 @@ switch ($_REQUEST["opcion"]) {
         }
 
         echo $response;
-   
+
         break;
 
-        case 'Contar_Personas':
-            if ($data = $Persona->contarCLientes()) {
-                if ($data) {
-                    $list[] = array(
-                        "Numero" => $data['numero'],    
-                    );
-                    echo json_encode($list);
-                }  
-            } else {
-                
+    case 'Contar_Personas':
+        if ($data = $Persona->contarCLientes()) {
+            if ($data) {
+                $list[] = array(
+                    "Numero" => $data['numero'],
+                );
+                echo json_encode($list);
             }
-            
+        } else {
+
+        }
+
+        break;
+
+
+    case 'Validar_CLiente':
+        $numero = 12345;
+        if ($Persona->Validar_Cliente_Natural($numero)) {
+            echo "Ya existe";
+        } else {
+            echo "No existe";
+        }
+
         break;
 }

@@ -141,7 +141,7 @@
 
                                 <div class="form-group col-md-6">
                                     <label for="Tipo Documento">Tipo Documento</label>
-                                    <select id="TipoDocumentoU" name="Tipo_DocumentoU" class="form-control">
+                                    <select id="TipoDocumentoU" name="Tipo_DocumentoU" class="form-control" disabled="">
                                         <option></option>
                                         <option selected value="CC">CEDULA CIUDADANIA</option>
                                         <option value="TI">TARJETA DE IDENTIDAD</option>
@@ -152,7 +152,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="Numero Documento">Numero Documento</label>
-                                    <input type="text" name="Numero_DocumentoU"  class="form-control" id="Numero_DocumentoU">
+                                    <input type="text" name="Numero_DocumentoU"  class="form-control" id="Numero_DocumentoU" disabled="">
                                 </div>
                             </div>
                             <div class="form-row">
@@ -322,14 +322,19 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/lib/chosen/chosen.jquery.min.js"></script>
     <script src="../ajax/Persona.js"></script>
     <script src="../assets/sweetalert.js"></script>
-    <script src="../assets/jquery-3.2.1.js"></script>
+    <script src="../assets/jquery-3.2.1.js" type="text/javascript"></script>
     <script type="text/javascript">
                             init();
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        });
     </script>
 
 

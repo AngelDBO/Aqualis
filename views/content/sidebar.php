@@ -32,6 +32,16 @@
                     </ul>
                 </li>
 
+                <!-- ============= | GESTION CLIENTES | ================-->
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-file-archive-o"></i>Clientes</a>
+                    <ul class="sub-menu children dropdown-menu">
+                    <li><i class="menu-icon fa fa-users"></i><a href="./cliente.php">Registar Clientes</a></li>
+                    <li><i class="menu-icon fa fa-users"></i><a href="./cliente2.php">Gestionar Clientes</a></li>
+                    </ul>
+                </li>
+
 
                 <!-- ============= | GESTION REPORTES | ================-->
 
@@ -51,8 +61,7 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sliders"></i>Configuracion</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-users"></i><a href="./cliente.php">Registar Clientes</a></li>
-                        <li><i class="menu-icon fa fa-users"></i><a href="./cliente2.php">Gestionar Clientes</a></li>
+                       
                         <hr>
                         <li><i class="menu-icon fa fa-sliders"></i><a href="./usuario.php">Usuarios</a></li>
                         <hr>

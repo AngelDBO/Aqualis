@@ -24,10 +24,10 @@ class ModelPersona {
 
     public function ListarPersonasJuridicas() {
 
-        $query = ("SELECT ID, TIPO_DOCUMENTO, NIT, 
-                          NOMBRE_EMPRESA, REPRESENTANTE_EMPRESA, RAZON_SOCIAL, TIPO_ACTIVIDAD, 
-                          REGIMEN, NATURALEZA, TELEFONO_1, TELEFONO_2, DIRECCION, CORREO, TIMESTAMP, ESTADO 
-                          FROM PERSONA WHERE TIPO_PERSONA = 'JURIDICA'");
+        $query = ("SELECT ID, TIPO_DOCUMENTO, NIT,
+        NOMBRE_EMPRESA, REPRESENTANTE_EMPRESA, RAZON_SOCIAL, TIPO_ACTIVIDAD,
+        REGIMEN, NATURALEZA, TELEFONO_1, TELEFONO_2, DIRECCION, CORREO, TIMESTAMP, ESTADO
+        FROM PERSONA WHERE TIPO_PERSONA = 'JURIDICA'");
         $base = $this->cnx->prepare($query);
         if ($base->execute()) {
             return $base->fetchALL(PDO::FETCH_ASSOC);
@@ -37,9 +37,21 @@ class ModelPersona {
         $base->close();
     }
 
+    public function Validar_Cliente_Natural($numero) {
+        $query = ("SELECT * FROM PERSONA WHERE TIPO_PERSONA = 'NATURAL' AND NUMERO_DOCUMENTO = :NUMERO_DOCUMENTO");
+        $base = $this->cnx->prepare($query);
+        $base->bindParam(":NUMERO_DOCUMENTO", $numero, PDO::PARAM_INT);
+        $base->execute();
+        $filas = $base->fetchColumn();
+        if ($filas > 0) {
+            return true;
+        }
+    }
+
     public function RegistrarPersonaNatural($datos) {
+
         $query = ("INSERT INTO PERSONA (TIPO_PERSONA, CORREO, TIPO_DOCUMENTO, NUMERO_DOCUMENTO, NOMBRE_1, NOMBRE_2, APELLIDO_1, APELLIDO_2, TELEFONO_1, TELEFONO_2, DIRECCION)
-                  VALUES (:TIPO_PERSONA, :CORREO, :TIPO_DOCUMENTO, :NUMERO_DOCUMENTO, :NOMBRE_1, :NOMBRE_2, :APELLIDO_1, :APELLIDO_2, :TELEFONO_1, :TELEFONO_2, :DIRECCION)");
+        VALUES (:TIPO_PERSONA, :CORREO, :TIPO_DOCUMENTO, :NUMERO_DOCUMENTO, :NOMBRE_1, :NOMBRE_2, :APELLIDO_1, :APELLIDO_2, :TELEFONO_1, :TELEFONO_2, :DIRECCION)");
         $base = $this->cnx->prepare($query);
         $base->bindParam(":TIPO_PERSONA", $datos["TIPO_PERSONA"], PDO::PARAM_STR);
         $base->bindParam(":CORREO", $datos["CORREO"], PDO::PARAM_STR);
@@ -55,13 +67,13 @@ class ModelPersona {
         if ($base->execute()) {
             return true;
         }
-        return false;
+
         $base->close();
     }
 
     public function RegistrarPersonaJuridica($datos) {
         $query = ("INSERT INTO PERSONA (TIPO_DOCUMENTO, TIPO_PERSONA, CORREO, NIT, NOMBRE_EMPRESA, REPRESENTANTE_EMPRESA, RAZON_SOCIAL, TIPO_ACTIVIDAD, REGIMEN, NATURALEZA, TELEFONO_1, TELEFONO_2, DIRECCION )
-                  VALUES(:TIPO_DOCUMENTO, :TIPO_PERSONA, :CORREO, :NIT, :NOMBRE_EMPRESA, :REPRESENTANTE_EMPRESA, :RAZON_SOCIAL, :TIPO_ACTIVIDAD, :REGIMEN, :NATURALEZA, :TELEFONO_1, :TELEFONO_2, :DIRECCION)");
+        VALUES(:TIPO_DOCUMENTO, :TIPO_PERSONA, :CORREO, :NIT, :NOMBRE_EMPRESA, :REPRESENTANTE_EMPRESA, :RAZON_SOCIAL, :TIPO_ACTIVIDAD, :REGIMEN, :NATURALEZA, :TELEFONO_1, :TELEFONO_2, :DIRECCION)");
         $base = $this->cnx->prepare($query);
         $base->bindParam(":TIPO_DOCUMENTO", $datos["TIPO_DOCUMENTO"], PDO::PARAM_STR);
         $base->bindParam(":TIPO_PERSONA", $datos["TIPO_PERSONA"], PDO::PARAM_STR);
@@ -98,11 +110,11 @@ class ModelPersona {
     }
 
     public function ObtenerDatoJuridicoID($id) {
-        $query = ("SELECT ID, TIPO_DOCUMENTO, NIT, 
-                          NOMBRE_EMPRESA, REPRESENTANTE_EMPRESA, RAZON_SOCIAL, 
-                          TIPO_ACTIVIDAD, REGIMEN, NATURALEZA, TELEFONO_1, TELEFONO_2, 
-                          DIRECCION, CORREO, TIMESTAMP, ESTADO FROM PERSONA 
-                          WHERE TIPO_PERSONA = 'JURIDICA' AND ID=:ID");
+        $query = ("SELECT ID, TIPO_DOCUMENTO, NIT,
+        NOMBRE_EMPRESA, REPRESENTANTE_EMPRESA, RAZON_SOCIAL,
+        TIPO_ACTIVIDAD, REGIMEN, NATURALEZA, TELEFONO_1, TELEFONO_2,
+        DIRECCION, CORREO, TIMESTAMP, ESTADO FROM PERSONA
+        WHERE TIPO_PERSONA = 'JURIDICA' AND ID=:ID");
         $base = $this->cnx->prepare($query);
         $base->bindParam(":ID", $id, PDO::PARAM_INT);
 
@@ -115,17 +127,17 @@ class ModelPersona {
 
     public function EditarPersonaNatural($datos) {
         $query = ("UPDATE PERSONA SET TIPO_DOCUMENTO = :TIPO_DOCUMENTO,
-                                      NUMERO_DOCUMENTO = :NUMERO_DOCUMENTO,
-                                      NOMBRE_1 = :NOMBRE_1,
-                                      NOMBRE_2 = :NOMBRE_2,
-                                      APELLIDO_1 = :APELLIDO_1,
-                                      APELLIDO_2 = :APELLIDO_2,
-                                      TELEFONO_1 = :TELEFONO_1,
-                                      TELEFONO_2 = :TELEFONO_2,
-                                      DIRECCION = :DIRECCION,
-                                      CORREO = :CORREO,
-                                      ESTADO = :ESTADO
-                                      WHERE ID = :ID");
+        NUMERO_DOCUMENTO = :NUMERO_DOCUMENTO,
+        NOMBRE_1 = :NOMBRE_1,
+        NOMBRE_2 = :NOMBRE_2,
+        APELLIDO_1 = :APELLIDO_1,
+        APELLIDO_2 = :APELLIDO_2,
+        TELEFONO_1 = :TELEFONO_1,
+        TELEFONO_2 = :TELEFONO_2,
+        DIRECCION = :DIRECCION,
+        CORREO = :CORREO,
+        ESTADO = :ESTADO
+        WHERE ID = :ID");
         $base = $this->cnx->prepare($query);
         $base->bindParam(":TIPO_DOCUMENTO", $datos['TIPO_DOCUMENTO'], PDO::PARAM_STR);
         $base->bindParam(":NUMERO_DOCUMENTO", $datos['NUMERO_DOCUMENTO'], PDO::PARAM_INT);
@@ -150,19 +162,19 @@ class ModelPersona {
 
     public function EditarPersonaJuridica($datos) {
         $query = ("UPDATE PERSONA SET TIPO_DOCUMENTO = :TIPO_DOCUMENTO,
-                                      NIT = :NIT,
-                                      NOMBRE_EMPRESA = :NOMBRE_EMPRESA,
-                                      REPRESENTANTE_EMPRESA = :REPRESENTANTE_EMPRESA,
-                                      RAZON_SOCIAL = :RAZON_SOCIAL,
-                                      TIPO_ACTIVIDAD = :TIPO_ACTIVIDAD,
-                                      REGIMEN = :REGIMEN,
-                                      NATURALEZA = :NATURALEZA,
-                                      TELEFONO_1 = :TELEFONO_1,
-                                      TELEFONO_2 = :TELEFONO_2,
-                                      DIRECCION = :DIRECCION,
-                                      CORREO = :CORREO,
-                                      ESTADO = :ESTADO
-                                      WHERE ID = :ID");
+        NIT = :NIT,
+        NOMBRE_EMPRESA = :NOMBRE_EMPRESA,
+        REPRESENTANTE_EMPRESA = :REPRESENTANTE_EMPRESA,
+        RAZON_SOCIAL = :RAZON_SOCIAL,
+        TIPO_ACTIVIDAD = :TIPO_ACTIVIDAD,
+        REGIMEN = :REGIMEN,
+        NATURALEZA = :NATURALEZA,
+        TELEFONO_1 = :TELEFONO_1,
+        TELEFONO_2 = :TELEFONO_2,
+        DIRECCION = :DIRECCION,
+        CORREO = :CORREO,
+        ESTADO = :ESTADO
+        WHERE ID = :ID");
         $base = $this->cnx->prepare($query);
         $base->bindParam(":TIPO_DOCUMENTO", $datos['TIPO_DOCUMENTO'], PDO::PARAM_STR);
         $base->bindParam(":NIT", $datos['NIT'], PDO::PARAM_INT);
@@ -187,11 +199,11 @@ class ModelPersona {
         $base->close();
     }
 
-    public function contarCLientes(){
+    public function contarCLientes() {
         $query = ("SELECT count(*) as numero from PERSONA");
         $base = $this->cnx->prepare($query);
-        
-        if($base->execute()){
+
+        if ($base->execute()) {
             return $base->fetch(PDO::FETCH_ASSOC);
         }
         return false;

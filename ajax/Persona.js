@@ -37,19 +37,29 @@ function RegistarPersonaNatural() {
                 $('#FP_Natural')[0].reset();
                 Swal.fire(
                         'Exito!',
-                        'Registro Exitoso',
+                        'Registro Exitoso!!',
                         'success'
                         );
                 LimpiarCamposFNatural();
             } else if (response == 2) {
+                console.log(response);
                 Swal.fire({
                     icon: 'error',
-                    title: 'Oops...',
-                    text: 'Usuario no registrado',
+                    title: '!Validacion¡',
+                    text: '(*) Campos obligatorios vacios!!'
+                });
+            }else if(response == 3){
+                console.log(response);
+                Swal.fire({
+                    icon: 'error',
+                    title: '¡Validacion!',
+                    text: 'Ya se encuentra registrado'
                 });
             }
         }
     });
+
+    return false;
 }
 
 function RegistarPersonaJuridica() {
@@ -203,3 +213,5 @@ function Contar_Persona() {
         }
     });
 }
+
+
