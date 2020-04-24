@@ -56,8 +56,8 @@
                         <div class="page-header float-right">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="inicio.php">Home</a></li>
-                                    <li class="active">Advanced</li>
+                                    <li><a href="cliente2.php">Gestion Clientes</a></li>
+                                    
                                 </ol>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
 
                                             <form id="FP_Natural" autocomplete="off">
                                                 
-                                                <p class="spam">* campos obligatorios</p>
+                                                <p class="spam">* Campos obligatorios</p>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <label for="Tipo Documento">Tipo Documento</label>
@@ -159,26 +159,26 @@
 
                                         <div class="tab-pane fade" id="custom-nav-profile" role="tabpanel" aria-labelledby="custom-nav-profile-tab">
                                             <form id="FP_Juridica">
-                                                <br>
+                                            <p class="spam">* Campos obligatorios</p>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputEmail4">Tipo Identificacion</label>
+                                                        <label for="Tipo Identificacion">Tipo Identificacion</label>
                                                         <select id="inputState" class="form-control">
                                                             <option selected>NIT</option>
                                                         </select>
                                                     </div>
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputPassword4">Numero Identificacion(*)</label>
+                                                        <label for="inputPassword4">* Numero</label>
                                                         <input type="text" name="Nit" class="form-control" id="inputPassword4">
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputAddress">Nombre Empresa</label>
+                                                        <label for="inputAddress">* Nombre Empresa</label>
                                                         <input type="text" name="Nombre_Empresa" class="form-control" id="inputAddress" placeholder="">
                                                     </div>
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputAddress2">Representante Legal</label>
+                                                        <label for="inputAddress2">* Representante Legal</label>
                                                         <input type="text" name="Representante_Legal" class="form-control" id="inputAddress2" placeholder="">
                                                     </div>
                                                 </div>
@@ -192,7 +192,7 @@
                                                         <input type="text" name="Tipo_Actividad" class="form-control" id="inputCity">
                                                     </div>
                                                     <div class="form-group col-md-3">
-                                                        <label for="inputZip">Regimen</label>
+                                                        <label for="inputZip">* Regimen</label>
                                                         <input type="text" name="Regimen" class="form-control" id="inputZip">
                                                     </div>
                                                     <div class="form-group col-md-3">
@@ -200,7 +200,7 @@
                                                         <input type="text" name="Naturaleza" class="form-control" id="inputZip">
                                                     </div>
                                                     <div class="form-group col-lg-6">
-                                                        <label for="inputAddress2">Telefono 1</label>
+                                                        <label for="inputAddress2">* Telefono 1</label>
                                                         <input type="text" name="Telefono_1" class="form-control" id="inputAddress2" placeholder="">
                                                     </div>
                                                     <div class="form-group col-lg-6">
@@ -212,7 +212,7 @@
                                                         <input type="text" name="Direccion" class="form-control" id="inputAddress2" placeholder="">
                                                     </div>
                                                     <div class="form-group col-lg-6">
-                                                        <label for="inputAddress2">Correo</label>
+                                                        <label for="inputAddress2">* Correo</label>
                                                         <input type="email" name="Correo" class="form-control" id="inputAddress2" placeholder="">
                                                     </div>
                                                 </div>
@@ -229,7 +229,7 @@
         </div><!-- .content -->
         <div class="clearfix"></div>
 
-        <footer class="site-footer">
+        <!--<footer class="site-footer">
             <div class="footer-inner bg-white">
                 <div class="row">
                     <div class="col-sm-6">
@@ -240,7 +240,7 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer> -->
 
 
     </div><!-- /#right-panel -->

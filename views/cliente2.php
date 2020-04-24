@@ -56,8 +56,8 @@
                         <div class="page-header float-right">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="inicio.php">Home</a></li>
-                                    <li class="active">Advanced</li>
+                                    <li><a href="cliente.php">Registrar Clientes</a></li>
+                                    <!--<li class="active">Advanced</li> -->
                                 </ol>
                             </div>
                         </div>
@@ -140,8 +140,8 @@
                             <div class="form-row">
 
                                 <div class="form-group col-md-6">
-                                    <label for="Tipo Documento">Tipo Documento</label>
-                                    <select id="TipoDocumentoU" name="Tipo_DocumentoU" class="form-control" disabled="">
+                                    <label hidden="" for="Tipo Documento">Tipo Documento</label>
+                                    <select hidden="" id="TipoDocumentoU" name="Tipo_DocumentoU" class="form-control" >
                                         <option></option>
                                         <option selected value="CC">CEDULA CIUDADANIA</option>
                                         <option value="TI">TARJETA DE IDENTIDAD</option>
@@ -151,8 +151,8 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="Numero Documento">Numero Documento</label>
-                                    <input type="text" name="Numero_DocumentoU"  class="form-control" id="Numero_DocumentoU" disabled="">
+                                    <label hidden="" for="Numero Documento">Numero Documento</label>
+                                    <input hidden="" type="text" name="Numero_DocumentoU"  class="form-control" id="Numero_DocumentoU" >
                                 </div>
                             </div>
                             <div class="form-row">
@@ -228,14 +228,14 @@
                             <input type="text" id="IDu" name="IDu" hidden="">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Tipo Identificacion</label>
-                                    <select id="Tipo_IdentificacionU" class="form-control" name="Tipo_IdentificacionU">
+                                    <label hidden="" for="inputEmail4">Tipo Identificacion</label>
+                                    <select hidden="" id="Tipo_IdentificacionU" class="form-control" name="Tipo_IdentificacionU">
                                         <option selected>NIT</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="inputPassword4">NIT(*)</label>
-                                    <input type="text" name="NitU" class="form-control" id="NitU">
+                                    <label hidden="" for="inputPassword4">NIT(*)</label>
+                                    <input hidden="" type="text" name="NitU" class="form-control" id="NitU">
                                 </div>
                             </div>
                             <div class="form-row">

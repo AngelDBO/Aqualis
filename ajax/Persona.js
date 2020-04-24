@@ -36,7 +36,7 @@ function RegistarPersonaNatural() {
                 console.log(response);
                 $('#FP_Natural')[0].reset();
                 Swal.fire(
-                        'Exito!',
+                        'Exito',
                         'Registro Exitoso!!',
                         'success'
                         );
@@ -45,15 +45,15 @@ function RegistarPersonaNatural() {
                 console.log(response);
                 Swal.fire({
                     icon: 'error',
-                    title: '!Validacion¡',
+                    title: 'Validacion',
                     text: '(*) Campos obligatorios vacios!!'
                 });
-            }else if(response == 3){
+            } else if (response == 3) {
                 console.log(response);
                 Swal.fire({
                     icon: 'error',
-                    title: '¡Validacion!',
-                    text: 'Ya se encuentra registrado'
+                    title: 'Validacion',
+                    text: 'Este número de documento ya está registrado'
                 });
             }
         }
@@ -70,7 +70,7 @@ function RegistarPersonaJuridica() {
         url: './../controllers/PersonaController.php?opcion=Registrar_Persona_Juridica',
         beforeSend: function() {},
         success: function(response) {
-            //  console.log(response);
+            console.log(response);
             if (response == 1) {
                 console.log(response);
                 $('#FP_Juridica')[0].reset();
@@ -80,10 +80,18 @@ function RegistarPersonaJuridica() {
                         'success'
                         );
             } else if (response == 2) {
+                console.log(response);
                 Swal.fire({
                     icon: 'error',
-                    title: 'Oops...',
-                    text: 'Cliente no registrado',
+                    title: 'Validacion',
+                    text: '(*) Campos obligatorios vacios!!'
+                });
+            } else if (response == 3) {
+                console.log(response);
+                Swal.fire({
+                    icon: 'error',
+                    title: '¡Validacion!',
+                    text: 'Este número de documento ya está registrado'
                 });
             }
         }
@@ -117,7 +125,7 @@ function ObtenerDatoNaturalID(id) {
 }
 
 function ObtenerDatoJuridicoID(id) {
-    $.ajax({ 
+    $.ajax({
         type: "POST",
         data: "ID=" + id,
         url: "./../controllers/PersonaController.php?opcion=ObtenerDatoJuridicoID",
@@ -144,8 +152,6 @@ function ObtenerDatoJuridicoID(id) {
     });
 }
 
-
-
 function ActualizarPersonaNatural() {
     $.ajax({
         type: 'POST',
@@ -153,10 +159,10 @@ function ActualizarPersonaNatural() {
         url: './../controllers/PersonaController.php?opcion=Actualizar_Persona_Natural',
         success: function(r) {
             if (r == 1) {
-                // console.log(r);
+                console.log(r);
                 $('#FP_Ac_Natural')[0].reset();
                 Swal.fire(
-                        'Exito!',
+                        'Exito',
                         'Registro actualizado con exitoso',
                         'success'
                         );
@@ -167,14 +173,15 @@ function ActualizarPersonaNatural() {
                     title: 'Problema',
                     text: 'Fallo al actualizar el cliente'
                 });
+                
             }
         }
     });
 }
 
 function ActualizarPersonaJuridica() {
-    
-   $.ajax({
+
+    $.ajax({
         type: 'POST',
         data: $('#FP_Ac_Juridica').serialize(),
         url: './../controllers/PersonaController.php?opcion=Actualizar_Persona_Juridica',
@@ -201,7 +208,7 @@ function ActualizarPersonaJuridica() {
 
 
 function Contar_Persona() {
-    $.ajax({ 
+    $.ajax({
         type: "POST",
         url: "./../controllers/PersonaController.php?opcion=Contar_Personas",
         success: function(r) {

@@ -46,10 +46,22 @@ class ModelPersona {
         if ($filas > 0) {
             return true;
         }
+        $base->close();
+    }
+
+    public function Validar_Cliente_Juridico($numero) {
+        $query = ("SELECT * FROM PERSONA WHERE TIPO_PERSONA = 'JURIDICA' AND NIT = :NIT");
+        $base = $this->cnx->prepare($query);
+        $base->bindParam(":NIT", $numero, PDO::PARAM_INT);
+        $base->execute();
+        $filas = $base->fetchColumn();
+        if ($filas > 0) {
+            return true;
+        }
+        $base->close();
     }
 
     public function RegistrarPersonaNatural($datos) {
-
         $query = ("INSERT INTO PERSONA (TIPO_PERSONA, CORREO, TIPO_DOCUMENTO, NUMERO_DOCUMENTO, NOMBRE_1, NOMBRE_2, APELLIDO_1, APELLIDO_2, TELEFONO_1, TELEFONO_2, DIRECCION)
         VALUES (:TIPO_PERSONA, :CORREO, :TIPO_DOCUMENTO, :NUMERO_DOCUMENTO, :NOMBRE_1, :NOMBRE_2, :APELLIDO_1, :APELLIDO_2, :TELEFONO_1, :TELEFONO_2, :DIRECCION)");
         $base = $this->cnx->prepare($query);
@@ -126,8 +138,8 @@ class ModelPersona {
     }
 
     public function EditarPersonaNatural($datos) {
-        $query = ("UPDATE PERSONA SET TIPO_DOCUMENTO = :TIPO_DOCUMENTO,
-        NUMERO_DOCUMENTO = :NUMERO_DOCUMENTO,
+        $query = ("UPDATE PERSONA SET /*TIPO_DOCUMENTO = :TIPO_DOCUMENTO,
+        NUMERO_DOCUMENTO = :NUMERO_DOCUMENTO,*/
         NOMBRE_1 = :NOMBRE_1,
         NOMBRE_2 = :NOMBRE_2,
         APELLIDO_1 = :APELLIDO_1,
@@ -139,8 +151,8 @@ class ModelPersona {
         ESTADO = :ESTADO
         WHERE ID = :ID");
         $base = $this->cnx->prepare($query);
-        $base->bindParam(":TIPO_DOCUMENTO", $datos['TIPO_DOCUMENTO'], PDO::PARAM_STR);
-        $base->bindParam(":NUMERO_DOCUMENTO", $datos['NUMERO_DOCUMENTO'], PDO::PARAM_INT);
+        //$base->bindParam(":TIPO_DOCUMENTO", $datos['TIPO_DOCUMENTO'], PDO::PARAM_STR);
+        //$base->bindParam(":NUMERO_DOCUMENTO", $datos['NUMERO_DOCUMENTO'], PDO::PARAM_INT);
         $base->bindParam(":NOMBRE_1", $datos['NOMBRE_1'], PDO::PARAM_STR);
         $base->bindParam(":NOMBRE_2", $datos['NOMBRE_2'], PDO::PARAM_STR);
         $base->bindParam(":APELLIDO_1", $datos['APELLIDO_1'], PDO::PARAM_STR);
