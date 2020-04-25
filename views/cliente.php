@@ -57,7 +57,7 @@
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
                                     <li><a href="cliente2.php">Gestion Clientes</a></li>
-                                    
+
                                 </ol>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
 
                     <div class="col-xs-6 col-sm-6 col-lg-12">
                         <div class="card ">
-                            <div class="card-header">
+                            <div class="card-header text-center">
                                 <strong>Formulario de Registro</strong>
                             </div>
                             <div class="card-body">
@@ -92,8 +92,8 @@
                                             <!-- ============= | FORMULARIO PERSONA NATURAL | ================-->
 
                                             <form id="FP_Natural" autocomplete="off">
-                                                
-                                                <p class="spam">* Campos obligatorios</p>
+
+                                                <p class="spam ">* Campos obligatorios</p>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <label for="Tipo Documento">Tipo Documento</label>
@@ -159,7 +159,7 @@
 
                                         <div class="tab-pane fade" id="custom-nav-profile" role="tabpanel" aria-labelledby="custom-nav-profile-tab">
                                             <form id="FP_Juridica">
-                                            <p class="spam">* Campos obligatorios</p>
+                                                <p class="spam">* Campos obligatorios</p>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <label for="Tipo Identificacion">Tipo Identificacion</label>

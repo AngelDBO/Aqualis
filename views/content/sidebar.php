@@ -37,8 +37,18 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-file-archive-o"></i>Clientes</a>
                     <ul class="sub-menu children dropdown-menu">
-                    <li><i class="menu-icon fa fa-users"></i><a href="./cliente.php">Registar Clientes</a></li>
-                    <li><i class="menu-icon fa fa-users"></i><a href="./cliente2.php">Gestionar Clientes</a></li>
+                        <li><i class="menu-icon fa fa-users"></i><a href="./cliente.php">Registar Clientes</a></li>
+                        <!--<li><i class="menu-icon fa fa-users"></i><a href="./cliente2.php">Gestionar Clientes</a></li> -->
+                    </ul>
+                </li>
+
+                <!-- ============= | GESTION SENSORES | ================-->
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-file-archive-o"></i>Sensores</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-users"></i><a href="./sensor.php">Gestion Sensores</a></li>
+                        <!--<li><i class="menu-icon fa fa-users"></i><a href="./cliente2.php">Gestionar Clientes</a></li> -->
                     </ul>
                 </li>
 
@@ -61,20 +71,27 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sliders"></i>Configuracion</a>
                     <ul class="sub-menu children dropdown-menu">
-                       
                         <hr>
                         <li><i class="menu-icon fa fa-sliders"></i><a href="./usuario.php">Usuarios</a></li>
                         <hr>
                         <li><i class="menu-icon fa fa-toggle-on"></i><a href="./parametro.php">Parametros</a></li>
                         <hr>
-                        <li><i class="fa fa-sitemap"></i><a href="./sensor.php">Registrar Sensor</a></li>
-                        <li><i class="fa fa-sitemap"></i><a href="./mantenimiento.php">Gestion Sensor</a></li>
-                        <li><i class="fa fa-sitemap"></i><a href="./lectura.php">Lectura Sensor</a></li>
-                        <hr>
-
                     </ul>
                 </li>
-            </ul>
+                <!--<br>
+                <br>
+                <br>
+                <br>
+                <br>
+                
+                <br>
+                <br>
+                <br>
+                <li class="menu-item-has-children dropdown">
+                    <img src="./../images/logo.png" width="250px;" alt="">
+                    <hr>
+                </li>
+            </ul>-->
         </div><!-- /.navbar-collapse -->
     </nav>
 </aside>

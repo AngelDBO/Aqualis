@@ -9,20 +9,30 @@
 <script src="../../assets/jquery-3.2.1.js" type="text/javascript"></script>
 <!--Grafica de entrada-->
 <script>
-    var trace1 = {
-        x: [1, 2, 3, 4, 5, 4, 7, 3],
-        y: [10, 15, 16, 17, 18, 20, 25, 36],
-        type: 'scatter'
-    };
+var trace1 = {
+  x: [0, 1, 2, 3, 4],
+  y: [1, 5, 3, 7, 5],
+  mode: 'lines+markers',
+  type: 'scatter'
+};
 
-    var trace2 = {
-        x: [1, 2, 3, 4, 5, 6, 7, 8],
-        y: [16, 5, 11, 9],
-        type: 'scatter'
-    };
+var trace2 = {
+  x: [0, 2, 3, 4, 5],
+  y: [4, 2, 4, 6, 8],
+  mode: 'lines+markers',
+  type: 'scatter'
+};
 
-    var data = [trace1, trace2];
+var trace3 = {
+  x: [0, 2, 3, 4, 5],
+  y: [2, 4, 6, 9, 11],
+  mode: 'lines+markers',
+  type: 'scatter'
+};
 
-    Plotly.newPlot('grafica1', data);
+var data = [trace1, trace2, trace3];
+var layout = {title: 'Gafica Misiones vs Meses'};
+
+Plotly.newPlot('grafica1', data, layout, {editable: true});
 
 </script>
