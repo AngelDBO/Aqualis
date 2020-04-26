@@ -56,8 +56,10 @@
                         <div class="page-header float-right">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="inicio.php">Home</a></li>
-                                    <li class="active">Advanced</li>
+                                    <li><a href="sensor.php"><span class="badge badge-primary">Registrar</span></a></li>
+                                    <li><a href="mantenimiento.php"><span class="badge badge-danger">Mantenimiento</span></a></li>
+                                    <li><a href="lectura.php"><span class="badge badge-success">Lectura sensor</span></a></li>
+                                    <!--                                    <li class="active">Advanced</li>-->
                                 </ol>
                             </div>
                         </div>
@@ -68,7 +70,42 @@
 
         <div class="content">
             <div class="animated fadeIn">
-
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-lg-12">
+                        <div class="card ">
+                            <div class="card-header">
+                                <strong>Registros </strong>
+                            </div>
+                            <div class="card-body">
+                                <!-- ============= | FORMULARIO MANTENIMIENTO | ================-->
+                                <form id="F_Mantenimiento" autocomplete="off">
+                                    <br>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="Sensor">Seleccione sensor</label>
+                                            <select id="Sensor_nombre" name="Nombre_sensor" class="form-control"></select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="Fecha Mantenimiento">Fecha mantenimiento</label>
+                                            <input type="date" name="Fecha_Mantenimiento" class="form-control" id="Fecha_Mantenimiento"  required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="Tipo Mantenimiento">Tipo mantenimiento</label>
+                                            <input type="text" name="Tipo_Mantenimiento" class="form-control" id="Tipo_Mantenimiento" required>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="Descripcion">Descripcion</label>
+                                            <textarea name="Descripcion" class="form-control" id="Descripcion" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-success" id="bt-registrarMantenimineto" onclick="Registar_Mantenimiento();">Guardar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
 
                     <div class="col-xs-6 col-sm-6 col-lg-12">
@@ -77,188 +114,8 @@
                                 <strong>Registros </strong>
                             </div>
                             <div class="card-body">
-                                <div class="custom-tab">
-
-                                    <nav>
-                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                            <a class="nav-item nav-link active" id="custom-nav-home-tab" data-toggle="tab" href="#custom-nav-natural" role="tab" aria-controls="custom-nav-home" aria-selected="true">Registrar Mentenimiento</a>
-                                            <a class="nav-item nav-link" id="custom-nav-profile-tab" data-toggle="tab" href="#custom-nav-profile" role="tab" aria-controls="custom-nav-profile" aria-selected="false">Historial</a>
-
-                                        </div>
-                                    </nav>
-                                    <div class="tab-content pl-3 pt-2" id="nav-tabContent">
-                                        <div class="tab-pane fade show active" id="custom-nav-natural" role="tabpanel" aria-labelledby="custom-nav-home-tab">
-
-                                            <!-- ============= | FORMULARIO MANTENIMIENTO | ================-->
-
-                                            <form id="F_Mantenimiento" autocomplete="off">
-                                                <br>
-                                                <div class="form-row">
-
-                                                    <div class="form-group col-md-6">
-                                                        <label for="Tipo Documento">Sensor</label>
-                                                        <select id="TipoDocumento" name="Tipo_Documento" class="form-control">
-                                                            <option></option>
-                                                            <option selected value="">--</option>
-                                                            <option value="TI">TARJETA DE IDENTIDAD</option>
-                                                            <option value="RC">REGISTRO CIVIL</option>
-                                                            <option value="CE">CEDULA EXTRANJERA</option>
-                                                            <option value="LM">LIBRETA MILITAR</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="Numero Documento">Fecha Mantenimiento</label>
-                                                        <input type="date" name="Fecha_Mantenimiento" class="form-control" id="Fecha_Mantenimiento"  required>
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-4">
-                                                        <label for="Primer Nombre">Tipo Mentenimiento</label>
-                                                        <input type="text" name="Primer_Nombre" class="form-control" id="Primer Nombre" required>
-                                                    </div>
-                                                    <div class="form-group col-md-4">
-                                                        <label for="Segundo Nombre">Valor de Calibracion</label>
-                                                        <input type="text" name="Segundo_Nombre" class="form-control" id="Segundo_Nombre" placeholder="">
-                                                    </div>
-                                                    <div class="form-group col-md-4">
-                                                        <label for="Tipo Documento">Usuario Mantenimiento</label>
-                                                        <select id="TipoDocumento" name="Tipo_Documento" class="form-control">
-                                                            <option></option>
-                                                            <option selected value="">--</option>
-                                                            <option value="TI">TARJETA DE IDENTIDAD</option>
-                                                            <option value="RC">REGISTRO CIVIL</option>
-                                                            <option value="CE">CEDULA EXTRANJERA</option>
-                                                            <option value="LM">LIBRETA MILITAR</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">Descripcion</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                    </div>
-                                                
-                                                <button type="button" class="btn btn-success" id="bt-registrarCliente" onclick="RegistarPersonaNatural();">Guardar</button>
-                                            </form>
-                                        </div>
-
-
-
-                                        <!-- ============= | FORMULARIO PERSONA JURIDICA | ================-->
-
-                                        <div class="tab-pane fade" id="custom-nav-profile" role="tabpanel" aria-labelledby="custom-nav-profile-tab">
-                                        <div class="col-xl-12">
-                                        <br>
-                    <div class="card">
-                        <div class="card-body--">
-                            <div class="table-stats order-table ">
-                                <table class="table  table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Nombre</th>
-                                            <th id="lugarmapa">Lugar</th>
-                                            <th>Fecha</th>
-                                            <th>Estado</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="serial">1.</td>
-
-                                            
-                                            <td>  <span class="name">Louis Stanley</span> </td>
-                                            <td> <span class="product">iMax</span> </td>
-                                            <td><span class="count">231</span></td>
-                                            <td>
-                                                <span class="badge badge-complete">Complete</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">4.</td>
-
-                                            
-                                            <td>  <span class="name">Mary Silva</span> </td>
-                                            <td> <span class="product">Magic Mouse</span> </td>
-                                            <td><span class="count">250</span></td>
-                                            <td>
-                                                <span class="badge badge-pending">Pending</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">1.</td>
-
-                                            
-                                            <td>  <span class="name">Louis Stanley</span> </td>
-                                            <td> <span class="product">iMax</span> </td>
-                                            <td><span class="count">231</span></td>
-                                            <td>
-                                                <span class="badge badge-complete">Complete</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">4.</td>
-
-                                            
-                                            <td>  <span class="name">Mary Silva</span> </td>
-                                            <td> <span class="product">Magic Mouse</span> </td>
-                                            <td><span class="count">250</span></td>
-                                            <td>
-                                                <span class="badge badge-pending">Pending</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">1.</td>
-
-                                            
-                                            <td>  <span class="name">Louis Stanley</span> </td>
-                                            <td> <span class="product">iMax</span> </td>
-                                            <td><span class="count">231</span></td>
-                                            <td>
-                                                <span class="badge badge-complete">Complete</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">4.</td>
-
-                                            
-                                            <td>  <span class="name">Mary Silva</span> </td>
-                                            <td> <span class="product">Magic Mouse</span> </td>
-                                            <td><span class="count">250</span></td>
-                                            <td>
-                                                <span class="badge badge-pending">Pending</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">1.</td>
-
-                                           
-                                            <td>  <span class="name">Louis Stanley</span> </td>
-                                            <td> <span class="product">iMax</span> </td>
-                                            <td><span class="count">231</span></td>
-                                            <td>
-                                                <span class="badge badge-complete">Complete</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">4.</td>
-
-                                           
-                                            <td>  <span class="name">Mary Silva</span> </td>
-                                            <td> <span class="product">Magic Mouse</span> </td>
-                                            <td><span class="count">250</span></td>
-                                            <td>
-                                                <span class="badge badge-pending">Pending</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div> <!-- /.table-stats -->
-                        </div>
-                    </div> <!-- /.card -->
-                </div>  <!-- /.col-lg-8 -->
-                                        </div>
-                                    </div>
-                                </div>
+                                <!-- ============= | TABLA MANTENIMIENTO | ================-->
+                                <div id="Tabla_Mantenimiento"></div>
                             </div>
                         </div>
                     </div>
@@ -266,6 +123,59 @@
             </div><!-- .animated -->
         </div><!-- .content -->
         <div class="clearfix"></div>
+
+        <!--MODAL ACTUALIZAR MANTENIMIENTO-->
+        <div class="modal fade" id="Mantenimiento_Modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog " role="document">
+                            <div class="modal-content">
+                                <div class="modal-header modal-header-warning">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Modificar mantenimiento</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="Actualizar_Mantenimiento">
+                                        <input type="text" id="IDu" name="ID" hidden="" >
+                                        <div class="form-group">
+                                            <label for="Sensor asociado">Sensor asociado</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-flask" style="color: #03a9f3" aria-hidden="true"></i>
+                                                </div>
+                                                <select id="Sensor_nombreU" name="Sensor_asociado" class="form-control"></select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Fecha mantenimiento">Fecha mantenimiento</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-pencil-square-o" style="color: #03a9f3" aria-hidden="true"></i>
+                                                </div>
+                                                <input type="text" name="Fecha_mantenimientoU" class="form-control" id="Fecha_U"  required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label" for="Tipo Mantenimiento">Tipo Mantenimiento</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-tachometer" style="color: #03a9f3" aria-hidden="true"></i>
+                                                </div>
+                                                <input type="text" name="Tipo" class="form-control" id="TipoU"  required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Descripcion">Descripcion</label>
+                                            <textarea name="DescripcionU" class="form-control" id="DES" rows="3"></textarea>
+                                        </div>
+                                        
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-warning" id="btn-updatePN" onclick="Actualizar_Mantenimiento();" data-dismiss="modal">Actualizar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
         <footer class="site-footer">
             <div class="footer-inner bg-white">
@@ -295,17 +205,20 @@
     <script src="../assets/sweetalert.js"></script>
     <script src="../assets/js/lib/chosen/chosen.jquery.min.js"></script>
     <script src="../assets/funciones/funciones.js"></script>
-    
+    <script src="../ajax/Mantenimiento.js"></script>
+    <script>
+    init();
+    </script>
 
 
     <script>
-                                                    jQuery(document).ready(function() {
-                                                        jQuery(".standardSelect").chosen({
-                                                            disable_search_threshold: 10,
-                                                            no_results_text: "Oops, nothing found!",
-                                                            width: "100%"
-                                                        });
-                                                    });
+                                        jQuery(document).ready(function() {
+                                            jQuery(".standardSelect").chosen({
+                                                disable_search_threshold: 10,
+                                                no_results_text: "Oops, nothing found!",
+                                                width: "100%"
+                                            });
+                                        });
     </script>
 
 </body>

@@ -173,7 +173,7 @@ function ActualizarPersonaNatural() {
                     title: 'Problema',
                     text: 'Fallo al actualizar el cliente'
                 });
-                
+
             }
         }
     });

@@ -48,7 +48,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Gestion Parametros</h1>
+                                <h1>Lectura Sensores</h1>
                             </div>
                         </div>
                     </div>
@@ -56,8 +56,10 @@
                         <div class="page-header float-right">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="inicio.php">Home</a></li>
-                                    <li class="active">Gestion Parametro</li>
+                                    <li><a href="sensor.php"><span class="badge badge-primary">Registrar</span></a></li>
+                                    <li><a href="mantenimiento.php"><span class="badge badge-danger">Mantenimiento</span></a></li>
+                                    <li><a href="lectura.php"><span class="badge badge-success">Lectura sensor</span></a></li>
+                                    <!--                                    <li class="active">Advanced</li>-->
                                 </ol>
                             </div>
                         </div>

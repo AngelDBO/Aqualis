@@ -56,9 +56,9 @@
                         <div class="page-header float-right">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="sensor.php">Registrar</a></li>
-                                    <li><a href="mantenimiento.php">Mantenimiento</a></li>
-                                    <li><a href="lectura.php">Lecturas</a></li>
+                                    <li><a href="sensor.php"><span class="badge badge-primary">Registrar</span></a></li>
+                                    <li><a href="mantenimiento.php"><span class="badge badge-danger">Mantenimiento</span></a></li>
+                                    <li><a href="lectura.php"><span class="badge badge-success">Lectura sensor</span></a></li>
                                     <!--                                    <li class="active">Advanced</li>-->
                                 </ol>
                             </div>
@@ -79,7 +79,7 @@
                                 <strong>Registro de Sensores</strong>
                             </div>
                             <div class="card-body">
-                                <!-- ============= | FORMULARIO PERSONA NATURAL | ================-->
+                                <!-- ============= | FORMULARIO SENSOR | ================-->
 
                                 <form id="F_Sensor" autocomplete="off">
                                     <br>
@@ -94,9 +94,18 @@
                                                 <select id="Parametro_perteneciente" name="Parametro_perteneciente" class="form-control"></select>
                                             </div>
                                         </div>
-
-
                                         <div class="form-group col-md-6">
+                                            <label for="Usuario">Nombre sensor</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-pencil-square-o" style="color: #03a9f3" aria-hidden="true"></i>
+                                                </div>
+                                                <input type="text" name="Nombre_sensor" class="form-control" id="Nombre_sensor"  required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
                                             <label class="control-label" for="Nombre Mision">Rango Medicion</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon">
@@ -105,9 +114,17 @@
                                                 <input type="text" name="Rango" class="form-control" id="Nombre_Mision"  required>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
+
+                                        <div class="form-group col-md-4 ">
+                                            <label class="control-label" for="Precision sensor">Precision sensor</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-tachometer" style="color: #03a9f3" aria-hidden="true"></i>
+                                                </div>
+                                                <input class="form-control" id="Precision" name="Precision" type="text"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-4">
                                             <label class="control-label" for="Correo">Estado sensor</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon">
@@ -121,18 +138,9 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="form-group col-md-6 ">
-                                            <label class="control-label" for="Precision sensor">Precision sensor</label>
-                                            <div class="input-group">
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-tachometer" style="color: #03a9f3" aria-hidden="true"></i>
-                                                </div>
-                                                <input class="form-control" id="Precision" name="Precision" type="text"/>
-                                            </div>
-                                        </div>
                                     </div>
                                 </form>
-                                <button type="button" class="btn btn-success" id="bt-registrarSensor" onclick="Registrar_Sensor();">Guardar</button>
+                                <button type="button" class="btn btn-primary" id="bt-registrarSensor" onclick="Registrar_Sensor();">Guardar</button>
                             </div>
                         </div>
 
@@ -149,20 +157,35 @@
                     </div>
 
 
-                    <!-- Modal Persona Natural-->
+                    <!-- Modal actualizar sensor-->
 
                     <div class="modal fade" id="Sensor_Modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog modal-sm" role="document">
                             <div class="modal-content">
-                                <div class="modal-header">
+                                <div class="modal-header modal-header-warning">
                                     <h5 class="modal-title" id="staticBackdropLabel">Modificar Sensor</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
                                 </div>
                                 <div class="modal-body">
                                     <form id="Actualizar_Sensor">
-                                        <input type="text" id="IDu" name="ID">
+                                        <input type="text" id="IDu" name="ID" hidden="">
+                                        <div class="form-group">
+                                            <label for="Usuario">Parametro asociado</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-flask" style="color: #03a9f3" aria-hidden="true"></i>
+                                                </div>
+                                                <select id="Parametro" name="Parametro_perteneciente" class="form-control"></select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Usuario">Nombre sensor</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-pencil-square-o" style="color: #03a9f3" aria-hidden="true"></i>
+                                                </div>
+                                                <input type="text" name="Nombre_sensorU" class="form-control" id="Nombre_s_U"  required>
+                                            </div>
+                                        </div>
 
                                         <div class="form-group">
                                             <label class="control-label" for="Nombre Mision">Rango Medicion</label>
@@ -188,7 +211,7 @@
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-heartbeat" style="color: #03a9f3" aria-hidden="true"></i>
                                                 </div>
-                                                <select id="Tipo_MedicionU" name="Estado" class="form-control">
+                                                <select id="EstadoU" name="Estado" class="form-control">
                                                     <option></option>
                                                     <option selected value=""></option>
                                                     <option value="Activo">Activo</option>
@@ -200,7 +223,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="btn btn-primary" id="btn-updatePN" onclick="Actualizar_Sensor();" data-dismiss="modal">Actualizar</button>
+                                    <button type="button" class="btn btn-warning" id="btn-updatePN" onclick="Actualizar_Sensor();" data-dismiss="modal">Actualizar</button>
                                 </div>
                             </div>
                         </div>

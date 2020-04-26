@@ -45,9 +45,9 @@
                 <!-- ============= | GESTION SENSORES | ================-->
 
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-file-archive-o"></i>Sensores</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sitemap"></i>Sensores</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-users"></i><a href="./sensor.php">Gestion Sensores</a></li>
+                        <li><i class="menu-icon fa fa-sitemap"></i><a href="./sensor.php">Gestion Sensores</a></li>
                         <!--<li><i class="menu-icon fa fa-users"></i><a href="./cliente2.php">Gestionar Clientes</a></li> -->
                     </ul>
                 </li>
