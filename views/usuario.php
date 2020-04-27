@@ -1,4 +1,7 @@
-<?php include './content/head.php'; ?>
+<?php include './content/head.php'; 
+session_start();
+if (isset($_SESSION["user"])) {
+?>
 <body>
     <!-- Left Panel -->
 
@@ -216,3 +219,9 @@
 
 </body>
 </html>
+<?php
+
+}else{
+    header("location:../");
+}
+?>

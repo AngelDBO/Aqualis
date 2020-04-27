@@ -5,8 +5,11 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
 <script src="../assets/js/main.js"></script>
 <script src="../assets/plotly-latest.min.js"></script>
-
-<script src="../../assets/jquery-3.2.1.js" type="text/javascript"></script>
+<script src="../assets/jquery-3.2.1.js" type="text/javascript"></script>
+<script src="../ajax/Misiones.js"></script>
+    <script>
+        init();
+    </script>
 <!--Grafica de entrada-->
 <script>
 var trace1 = {
@@ -35,4 +38,16 @@ var layout = {title: 'Gafica Misiones vs Meses'};
 
 Plotly.newPlot('grafica1', data, layout, {editable: true});
 
+</script>
+
+<script>
+var data = [
+  {
+    x: ['giraffes', 'orangutans', 'monkeys'],
+    y: [20, 14, 23],
+    type: 'bar'
+  }
+];
+
+Plotly.newPlot('myDiv', data);
 </script>

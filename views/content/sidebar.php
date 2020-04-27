@@ -17,8 +17,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-eject"></i>Mision</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-puzzle-piece"></i><a href="./mision.php">Registrar Mision</a></li>
-                        <li><i class="fa fa-sitemap"></i><a href="./sensor.php">Registrar mediciones</a></li>
-                        <li><i class="fa fa-bars"></i><a href="./inc/ui-tabs.html">Historial Misiones</a></li>
+                        <!--<li><i class="fa fa-sitemap"></i><a href="./sensor.php">Registrar mediciones</a></li>
+                        <li><i class="fa fa-bars"></i><a href="./inc/ui-tabs.html">Historial Misiones</a></li>-->
                     </ul>
                 </li>
 

@@ -84,9 +84,10 @@
                             <div>
                             <img src="./../images/iconos/temp.png" alt="" class="img-responsibe">
                             <br>
+                            <br>
                             </div>
                            
-                            <button type="button" class="align-self-end btn btn-lg btn-block btn-success">Obtener valor TEMP</button>
+                            <button type="button" class="align-self-end btn btn-lg btn-block btn-info">Obtener valor TEMP</button>
                             
                         </div>
                     </div>
@@ -99,8 +100,9 @@
                             <div>
                             <img src="./../images/iconos/ppm.png" alt="" class="img-responsibe">
                             <br>
+                            <br>
                             </div>                  
-                            <button type="button" class="align-self-end btn btn-lg btn-block btn-success" style="margin-top: auto;">Obtener valor pH</button>
+                            <button type="button" class="align-self-end btn btn-lg btn-block btn-info" style="margin-top: auto;">Obtener valor pH</button>
                         </div>
                     </div>
                     <div class="card mb-4 box-shadow">
@@ -112,8 +114,9 @@
                             <div>
                             <img src="./../images/iconos/ppm.png" alt="" class="img-responsibe">
                             <br>
+                            <br>
                             </div> 
-                            <button type="button" class="align-self-end btn btn-lg btn-block btn-success">Obtener valor TDS</button>
+                            <button type="button" class="align-self-end btn btn-lg btn-block btn-info">Obtener valor TDS</button>
                         </div>
                     </div>
                 </div>
@@ -129,7 +132,7 @@
                            
                             </div> 
                             <br>
-                            <button type="button" class="align-self-end btn btn-lg btn-block btn-success">Obtener valor EC</button>
+                            <button type="button" class="align-self-end btn btn-lg btn-block btn-info">Obtener valor EC</button>
                         </div>
                     </div>
                     <div class="card mb-4 box-shadow">
@@ -142,7 +145,7 @@
                             <img src="./../images/iconos/meter.png" alt="" class="img-responsibe">
                             <br>
                             </div> 
-                            <button type="button" class="align-self-end btn btn-lg btn-block btn-success" style="margin-top: auto;">Obtener valor ORP</button>
+                            <button type="button" class="align-self-end btn btn-lg btn-block btn-info" style="margin-top: auto;">Obtener valor ORP</button>
                         </div>
                     </div>
                     <div class="card mb-4 box-shadow">
@@ -155,11 +158,48 @@
                             <img src="./../images/iconos/tds.png" alt="" class="img-responsibe">
                             </div>
                             <br>
-                            <button type="button" class="btn btn-lg btn-block btn-success">Obtener valor NTF</button>
+                            <button type="button" class="btn btn-lg btn-block btn-info">Obtener valor NTF</button>
                         </div>
                     </div>
                 </div>
 
+
+            </div>
+            <div class="container">
+                <div class="card-deck mb-12 text-center">
+                    <div class="card mb-6 box-shadow">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">Longitud GPS</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="val_temp">00.00</h1>
+                            <div>
+                            <img src="./../images/iconos/gps.png" alt="" class="img-responsibe">
+                            <br>
+                            <br>
+                            </div>
+                           
+                            <button type="button" class="align-self-end btn btn-lg btn-block btn-info">Obtener valor TEMP</button>
+                            
+                        </div>
+                    </div>
+                    <div class="card mb-6 box-shadow">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">Latitud GPS</h4>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h1 class="card-title pricing-card-title">00.00 <small class="text-muted"></small></h1>
+                            <div>
+                            <img src="./../images/iconos/gps2.png" alt="" class="img-responsibe">
+                            <br>
+                            <br>
+                            </div>                  
+                            <button type="button" class="align-self-end btn btn-lg btn-block btn-info" style="margin-top: auto;">Obtener valor pH</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                
 
             </div>
         </div><!-- .content -->

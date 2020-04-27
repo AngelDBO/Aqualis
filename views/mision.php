@@ -1,4 +1,8 @@
-<?php include './content/head.php'; ?>
+<?php include './content/head.php'; 
+session_start();
+if (isset($_SESSION["user"])) {
+
+?>
 <body>
     <!-- Left Panel -->
 
@@ -56,8 +60,10 @@
                         <div class="page-header float-right">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="inicio.php">Home</a></li>
-                                    <li class="active">Advanced</li>
+                                    <li><a href="mision.php"><span class="badge badge-primary">Registrar mision</span></a></li>
+                                    <li><a href="mediciones.php"><span class="badge badge-danger">Registrar mediciones</span></a></li>
+                                    <li><a href="historial.php"><span class="badge badge-success">Historial de mediciones</span></a></li>
+                                    <!--                                    <li class="active">Advanced</li>-->
                                 </ol>
                             </div>
                         </div>
@@ -85,12 +91,7 @@
 
                                         <div class="form-group col-md-6">
                                             <label for="Usuario">Usuario</label>
-                                            <select id="UsuarioMision" name="UsuarioMision" class="form-control">
-                                                <option></option>
-                                                <option selected value="CC">--</option>
-                                                <option value="TI">Demo</option>
-
-                                            </select>
+                                            <input type="text" name="Nombre_Mision" value="  <?php echo $_SESSION["user"]["USUARIO"];?>" class="form-control" id="Nombre_Mision" readonly required> 
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="Nombre Mision">Nombre Mision</label>
@@ -199,3 +200,9 @@
 
 </body>
 </html>
+<?php
+
+}else{
+    header("location:../");
+}
+?>

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require ('../models/ModelUsuario.php');
 
 $Usuario = new ModelUsuario;
@@ -59,6 +59,9 @@ switch ($_REQUEST["opcion"]) {
         if (isset($_POST["Correo"], $_POST["Password"]) && !empty($_POST["Correo"]) && !empty($_POST["Password"])) {
 
             if ($user = $Usuario->ValidarUsuario($_POST["Correo"], $_POST["Password"])) {             
+                foreach ($user as $campos => $valor) {
+                  $_SESSION["user"][$campos] = $valor;  
+                }
                 $response = 1;               
             } else {
                 $response = 2;
@@ -86,6 +89,11 @@ switch ($_REQUEST["opcion"]) {
             $response = 2;
         }
         echo $response;
+    break;
+
+    case 'Cerrar_Sesion':
+        unset($_SESSION["user"]);
+        header("location:../");
     break;
 
         

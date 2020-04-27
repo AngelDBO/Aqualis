@@ -41,23 +41,21 @@ class ModelUsuario {
     }
 
     public function ValidarUsuario($correo, $clave) {
-        $query = ("SELECT CORREO, PASSWORD FROM USUARIO WHERE CORREO = :CORREO");
+        $query = ("SELECT * FROM USUARIO WHERE CORREO = :CORREO");
         $base = $this->cnx->prepare($query);
         $base->bindParam(":CORREO", $correo);
         $base->execute();
         $fila = $base->fetch();
 
         if (password_verify($clave, $fila['PASSWORD'])) {
-            return true;
+            return $fila;
         }
         return false;
         $fila=null;
         $base->close();
     }
 
-    public function DesactivarUsuario($datos) {
-
-    }
+    
 
 }
 

@@ -82,25 +82,43 @@
                                     <br>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="Sensor">Seleccione sensor</label>
+                                        <label for="Sensor">Seleccione sensor</label>
+                                        <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-sitemap" style="color: #03a9f3" aria-hidden="true"></i>
+                                                </div>
                                             <select id="Sensor_nombre" name="Nombre_sensor" class="form-control"></select>
+                                        </div>
+                                            
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="Fecha Mantenimiento">Fecha mantenimiento</label>
+                                            <div class="input-group">
+                                            <div class="input-group-addon">
+                                                    <i class="fa fa-calendar" style="color: #03a9f3" aria-hidden="true"></i>
+                                                </div>
                                             <input type="date" name="Fecha_Mantenimiento" class="form-control" id="Fecha_Mantenimiento"  required>
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="Tipo Mantenimiento">Tipo mantenimiento</label>
+                                            <div class="input-group">
+                                            <div class="input-group-addon">
+                                                    <i class="fa fa-cogs" style="color: #03a9f3" aria-hidden="true"></i>
+                                                </div>
                                             <input type="text" name="Tipo_Mantenimiento" class="form-control" id="Tipo_Mantenimiento" required>
+                                            </div>
+                                            
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="Descripcion">Descripcion</label>
                                             <textarea name="Descripcion" class="form-control" id="Descripcion" rows="3"></textarea>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-success" id="bt-registrarMantenimineto" onclick="Registar_Mantenimiento();">Guardar</button>
+                                    <button type="button" class="btn btn-primary" id="bt-registrarMantenimineto" onclick="Registar_Mantenimiento();">Guardar</button>
                                 </form>
                             </div>
                         </div>
@@ -138,7 +156,7 @@
                                             <label for="Sensor asociado">Sensor asociado</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon">
-                                                    <i class="fa fa-flask" style="color: #03a9f3" aria-hidden="true"></i>
+                                                    <i class="fa fa-sitemap" style="color: #03a9f3" aria-hidden="true"></i>
                                                 </div>
                                                 <select id="Sensor_nombreU" name="Sensor_asociado" class="form-control"></select>
                                             </div>
@@ -147,7 +165,7 @@
                                             <label for="Fecha mantenimiento">Fecha mantenimiento</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon">
-                                                    <i class="fa fa-pencil-square-o" style="color: #03a9f3" aria-hidden="true"></i>
+                                                    <i class="fa fa-calendar" style="color: #03a9f3" aria-hidden="true"></i>
                                                 </div>
                                                 <input type="text" name="Fecha_mantenimientoU" class="form-control" id="Fecha_U"  required>
                                             </div>
@@ -157,7 +175,7 @@
                                             <label class="control-label" for="Tipo Mantenimiento">Tipo Mantenimiento</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon">
-                                                    <i class="fa fa-tachometer" style="color: #03a9f3" aria-hidden="true"></i>
+                                                    <i class="fa fa-cogs" style="color: #03a9f3" aria-hidden="true"></i>
                                                 </div>
                                                 <input type="text" name="Tipo" class="form-control" id="TipoU"  required>
                                             </div>

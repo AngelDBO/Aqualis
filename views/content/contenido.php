@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content"  style="background-image: url('https://hdwallpaperim.com/wp-content/uploads/2017/08/24/115303-minimalism-blue-low_poly.jpg');">
     <!-- Animated -->
     <div class="animated fadeIn">
         <!-- Widgets  -->
@@ -78,13 +78,13 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-five">
-                            <div class="stat-icon dib flat-color-5">
-                                <i class="fa fa-sitemap"></i>
+                            <div class="stat-icon dib flat-color-3">
+                                <i class="fa fa-tachometer"></i>
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
                                     <div class="stat-text"><span class="count">2986</span></div>
-                                    <div class="stat-heading">ORP</div>
+                                    <div class="stat-heading">Total mediciones</div>
                                 </div>
                             </div>
                         </div>
@@ -95,13 +95,13 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-five">
-                            <div class="stat-icon dib flat-color-6">
+                            <div class="stat-icon dib flat-color-4">
                                 <i class="fa fa-sitemap"></i>
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
                                     <div class="stat-text"><span class="count">2986</span></div>
-                                    <div class="stat-heading">Turbidity</div>
+                                    <div class="stat-heading">Lugares registrados</div>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +118,7 @@
                             <div class="stat-content">
                                 <div class="text-left dib">
                                     <div class="stat-text"><span class="count">29</span></div>
-                                    <div class="stat-heading">Misiones</div>
+                                    <div class="stat-heading">Misiones registradas</div>
                                 </div>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
                             <div class="stat-content">
                                 <div class="text-left dib">
                                     <div class="stat-text" id="numeroP" ><span class="count">29</span></div>
-                                    <div class="stat-heading">Clientes</div>
+                                    <div class="stat-heading">Clientes registrados</div>
                                 </div>
                             </div>
                         </div>
@@ -155,126 +155,40 @@
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-body--">
-                            <div class="table-stats order-table ">
-                                <table class="table  table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Nombre</th>
-                                            <th id="lugarmapa">Lugar</th>
-                                            <th>Fecha</th>
-                                            <th>Estado</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="serial">1.</td>
-
-                                            
-                                            <td>  <span class="name">Louis Stanley</span> </td>
-                                            <td> <span class="product">iMax</span> </td>
-                                            <td><span class="count">231</span></td>
-                                            <td>
-                                                <span class="badge badge-complete">Complete</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">4.</td>
-
-                                            
-                                            <td>  <span class="name">Mary Silva</span> </td>
-                                            <td> <span class="product">Magic Mouse</span> </td>
-                                            <td><span class="count">250</span></td>
-                                            <td>
-                                                <span class="badge badge-pending">Pending</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">1.</td>
-
-                                            
-                                            <td>  <span class="name">Louis Stanley</span> </td>
-                                            <td> <span class="product">iMax</span> </td>
-                                            <td><span class="count">231</span></td>
-                                            <td>
-                                                <span class="badge badge-complete">Complete</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">4.</td>
-
-                                            
-                                            <td>  <span class="name">Mary Silva</span> </td>
-                                            <td> <span class="product">Magic Mouse</span> </td>
-                                            <td><span class="count">250</span></td>
-                                            <td>
-                                                <span class="badge badge-pending">Pending</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">1.</td>
-
-                                            
-                                            <td>  <span class="name">Louis Stanley</span> </td>
-                                            <td> <span class="product">iMax</span> </td>
-                                            <td><span class="count">231</span></td>
-                                            <td>
-                                                <span class="badge badge-complete">Complete</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">4.</td>
-
-                                            
-                                            <td>  <span class="name">Mary Silva</span> </td>
-                                            <td> <span class="product">Magic Mouse</span> </td>
-                                            <td><span class="count">250</span></td>
-                                            <td>
-                                                <span class="badge badge-pending">Pending</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">1.</td>
-
-                                           
-                                            <td>  <span class="name">Louis Stanley</span> </td>
-                                            <td> <span class="product">iMax</span> </td>
-                                            <td><span class="count">231</span></td>
-                                            <td>
-                                                <span class="badge badge-complete">Complete</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">4.</td>
-
-                                           
-                                            <td>  <span class="name">Mary Silva</span> </td>
-                                            <td> <span class="product">Magic Mouse</span> </td>
-                                            <td><span class="count">250</span></td>
-                                            <td>
-                                                <span class="badge badge-pending">Pending</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div> <!-- /.table-stats -->
-                        </div>
+                            <div class="card-header text-center">
+                                    <strong>Historial de misiones</strong>
+                                </div>
+                                <div class="table-stats order-table ">
+                                    <div id="Tabla_Misiones"></div>
+                                </div> <!-- /.table-stats -->
+                            </div>
                     </div> <!-- /.card -->
                 </div>  <!-- /.col-lg-8 -->
 
                 <!--===============================-->
 
                 <div class="col-xl-12">
-                    <div class="card">
-                        <div class="card-body--">
-                        <div id="grafica1">
-                            
-                            </div>                          
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card-body--">
+                                <div class="card-header text-center bg-light">
+                                    <strong>Historial de misiones</strong>
+                                </div>
+                                <div id="grafica1"></div>                          
+                            </div>
                         </div>
-                    </div> 
+                        <div class="col-lg-6">
+                            <div class="card-body--">
+                                <div class="card-header text-center bg-light">
+                                    <strong>Historial de misiones</strong>
+                                </div>
+                                <div id="myDiv"></div>                          
+                            </div>
+                        </div>
+                    </div>
+                     
                 </div> 
-                
-                 
+ 
             </div>
         </div>
     </div>

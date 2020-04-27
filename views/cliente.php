@@ -1,4 +1,7 @@
-<?php include './content/head.php'; ?>
+<?php include './content/head.php'; 
+session_start();
+if (isset($_SESSION["user"])) {
+?>
 <body>
     <!-- Left Panel -->
 
@@ -56,8 +59,10 @@
                         <div class="page-header float-right">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="cliente2.php">Gestion Clientes</a></li>
-
+                                    <li><a href="cliente.php"><span class="badge badge-primary">Registrar clientes</span></a></li>
+                                    <li><a href="cliente2.php"><span class="badge badge-danger">Gestionar clientes</span></a></li>
+                                    
+                                    <!--                                    <li class="active">Advanced</li>-->
                                 </ol>
                             </div>
                         </div>
@@ -272,3 +277,8 @@
 
 </body>
 </html>
+<?php
+}else{
+    header("location:../");
+}
+?>
