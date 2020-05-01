@@ -23,8 +23,10 @@ if (isset($_SESSION["user"])) {
                     </div>
                 </div>
                 <div class="top-right">
+                
                     <div class="header-menu">
-                        <div class="header-left">
+                      <!--  <div class="header-left">
+                        
                             <div class="dropdown for-notification">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fa fa-bell"></i>
@@ -88,17 +90,20 @@ if (isset($_SESSION["user"])) {
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
     
                         <div class="user-area dropdown float-right">
                             <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img class="user-avatar rounded-circle" src="./../images/admin.jpg" alt="User Avatar">
                             </a>
-    
+                          
                             <div class="user-menu dropdown-menu">
+                            <div>
+                        </div>
+                        <small class="bg"><?php echo $_SESSION["user"]["USUARIO"];?></small>
                                 <a class="nav-link" href="./usuario.php"><i class="fa fa- user"></i>Mi perfil</a>
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>Notificaciones <span class="count">13</span></a>
-                                <a class="nav-link" href="#"><i class="fa fa -cog"></i>Ajustes</a>
+                               <!-- <a class="nav-link" href="#"><i class="fa fa- user"></i>Notificaciones <span class="count">13</span></a> -->
+                               <!-- <a class="nav-link" href="#"><i class="fa fa -cog"></i>Ajustes</a> -->
                                 <div>
                                 <form action="./../controllers/UsuarioController.php?opcion=Cerrar_Sesion" method="post">
                                 <button type="submit" class="btn btn-danger btn-sm">Cerrar Sesion</button>
@@ -106,7 +111,7 @@ if (isset($_SESSION["user"])) {
                                 </div>
                             </div>
                         </div>
-                <?php echo $_SESSION["user"]["USUARIO"];?>
+                
                     </div>
                 </div>
             </header>
@@ -119,7 +124,7 @@ if (isset($_SESSION["user"])) {
     
             <!-- ============= | footer | ================-->
     
-            <?php include './content/footer.php'; ?>
+            
     
         </div>
     

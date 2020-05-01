@@ -7,8 +7,8 @@ $parametro = new ModelParametro;
 switch ($_REQUEST['opcion']) {
     case 'Listar_Parametros':
         if ($Datos = $parametro->ListarParametros()) {
-            $tabla = '<table class = "table table-striped table-hover">
-            <thead>
+            $tabla = '<table class = "table table-striped table-hover table-bordered">
+            <thead class="thead-dark">
                 <tr>
                     <th>#</th>
                     <th>Parametro</th>

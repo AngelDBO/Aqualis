@@ -1,4 +1,4 @@
-<div class="content"  style="background-image: url('https://hdwallpaperim.com/wp-content/uploads/2017/08/24/115303-minimalism-blue-low_poly.jpg');">
+<div class="content">
     <!-- Animated -->
     <div class="animated fadeIn">
         <!-- Widgets  -->
@@ -109,8 +109,8 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="card">
-                    <div class="card-body">
+                <div class="card ">
+                    <div class="card-body ">
                         <div class="stat-widget-five">
                             <div class="stat-icon dib flat-color-1">
                                 <i class="fa fa-database"></i>
@@ -155,7 +155,7 @@
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-body--">
-                            <div class="card-header text-center">
+                            <div class="card-header text-center bg-blue">
                                     <strong>Historial de misiones</strong>
                                 </div>
                                 <div class="table-stats order-table ">

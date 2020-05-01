@@ -10,8 +10,8 @@ switch ($_REQUEST["opcion"]) {
        
         if ($Datos = $Usuario->ListarUsuarios()) {
 
-            $tabla = '<table class = "table table-bordered table-hover">
-                        <thead>
+            $tabla = '<table class = "table table-bordered table-hover table-bordered">
+                        <thead class="thead-dark">
                             <tr>
                                 <th>ID</th>
                                 <th>Rol</th>
@@ -20,7 +20,7 @@ switch ($_REQUEST["opcion"]) {
                                 <th>Usuario</th>
                                 <th>Correo</th>
                                 <th>Estado</th>
-                                <th>Fecha Registro</th>
+                               <!-- <th>Fecha Registro</th> -->
                                 <th>Opcion</th>
                             </tr>
                         </thead>
@@ -37,11 +37,11 @@ switch ($_REQUEST["opcion"]) {
                                                 <td class="serial">' . $value['USUARIO'] . '</td>
                                                 <td class="serial">' . $value['CORREO'] . '</td>
                                                 <td><span class="badge badge-complete">' . $value['ESTADO'] . '</span></td>
-                                                <td class="serial">' . $value['TIMESTAMP'] . '</td>
+                                               <!-- <td class="serial">' . $value['TIMESTAMP'] . '</td> -->
                                                 
                                                 <td>
                                                     <span class="btn btn-warning btn-sm" onclick="ObtenerID(' . $value['ID'] . ');"
-                                                       data-toggle="modal" data-target="#MAPN2" >
+                                                       data-toggle="modal" data-target="#modal_usuario" >
                                                     <i class="fa fa-edit"></i>
                                                     </span>
                                                 </td>
@@ -92,7 +92,7 @@ switch ($_REQUEST["opcion"]) {
     break;
 
     case 'Cerrar_Sesion':
-        unset($_SESSION["user"]);
+        session_destroy();
         header("location:../");
     break;
 

@@ -49,10 +49,10 @@ if (isset($_SESSION["user"])) {
         <div class="breadcrumbs">
             <div class="breadcrumbs-inner">
                 <div class="row m-0">
-                    <div class="col-sm-4">
+                <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Gestion Mision</h1>
+                                <h1>Gestion misiones</h1>
                             </div>
                         </div>
                     </div>
@@ -82,30 +82,49 @@ if (isset($_SESSION["user"])) {
                             <div class="card-header">
                                 <strong>Formulario de Mision</strong>
                             </div>
-                            <div class="card-body bg-light">
-                                <!-- ============= | FORMULARIO PERSONA NATURAL | ================-->
+                            <div class="card-body">
+                                <!-- ============= | FORMULARIO MISION | ================-->
 
-                                <form id="FP_Natural" autocomplete="off">
-                                    <br>
+                                <form id="F_mision" autocomplete="off">
+                                    
                                     <div class="form-row">
-
                                         <div class="form-group col-md-6">
-                                            <label for="Usuario">Usuario</label>
-                                            <input type="text" name="Nombre_Mision" value="  <?php echo $_SESSION["user"]["USUARIO"];?>" class="form-control" id="Nombre_Mision" readonly required> 
+                                            <label for="Usuario">Usuario [<?php echo $_SESSION["user"]["USUARIO"];?>]</label>
+                                            <div class="input-group">
+                                            <div class="input-group-addon">
+                                                    <i class="fa fa-user" style="color: #03a9f3" aria-hidden="true"></i>
+                                            </div>
+                                            <input type="text" name="usuario_mision" value="<?php echo $_SESSION["user"]["ID"];?>" class="form-control"  readonly required> 
+                                            </div>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="Nombre Mision">Nombre Mision</label>
+                                            <div class="input-group">
+                                            <div class="input-group-addon">
+                                                    <i class="fa fa-wpforms" style="color: #03a9f3" aria-hidden="true"></i>
+                                            </div>
                                             <input type="text" name="Nombre_Mision" class="form-control" id="Nombre_Mision" autofocus="" required>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                        <div class="form-group col-md-6">
                                        <label for="Correo">Lugar Mision</label>
+                                       <div class="input-group">
+                                       <div class="input-group-addon">
+                                                    <i class="fa fa-map-o" style="color: #03a9f3" aria-hidden="true"></i>
+                                            </div>
                                         <input type="text" name="Lugar_Mision" class="form-control" id="Lugar_Mision" required>
+                                        </div>
                                        </div>
                                        <div class="form-group col-md-6">
-                                       <label for="Correo">Fecha Inicio</label>
-                                        <input type="date" name="Lugar_Mision" class="form-control" id="Lugar_Mision" required>
+                                       <label for="Fecha inicio">Fecha mision</label>
+                                       <div class="input-group">
+                                       <div class="input-group-addon">
+                                                    <i class="fa fa-calendar-plus-o" style="color: #03a9f3" aria-hidden="true"></i>
+                                            </div>
+                                        <input type="date" name="Fecha_inicio" class="form-control" id="Lugar_Mision" required>
+                                        </div>
                                        </div>
                                     </div>
                                     <div class="form-row">
@@ -114,10 +133,12 @@ if (isset($_SESSION["user"])) {
                                     </div>
                                     </div>
                                     <div class="input-group  col-mb-3">
-                                    
-                                        <input type="text" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <div class="input-group-addon">
+                                                    <i class="fa fa-map-marker" style="color: #03a9f3" aria-hidden="true"></i>
+                                            </div>
+                                        <input type="text" class="form-control" name="Longitud" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button">Obtener</button>
+                                            <button class="btn btn-info" type="button">Obtener</button>
                                         </div>
                                     </div>
                                     <div>
@@ -125,29 +146,36 @@ if (isset($_SESSION["user"])) {
                                     <label for="Correo">Latitud Lugar</label>
                                     </div>
                                     <div class="input-group  col-mb-3">
-                                    
-                                        <input type="text" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <div class="input-group-addon">
+                                                    <i class="fa fa-map-marker" style="color: #03a9f3" aria-hidden="true"></i>
+                                            </div>
+                                        <input type="text" class="form-control" name="Latitud" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button">Obtener</button>
+                                       
+                                            <button class="btn btn-info" type="button">Obtener</button>
                                         </div>
                                     </div>
                                     <br>
                                     <div class="form-group">
                                         <label for="Correo">Tipo Medicion</label>
+                                        <div class="input-group">
+                                        <div class="input-group-addon">
+                                                    <i class="fa fa-random" style="color: #03a9f3" aria-hidden="true"></i>
+                                        </div>
                                         <select id="Tipo_Medicion" name="Tipo_Medicion" class="form-control">
                                                 <option></option>
                                                 <option selected value="CC">--</option>
                                                 <option value="Acueducto">Acueducto</option>
                                                 <option value="In Situ">In Situ</option>
                                                 <option value="Zona de Extraccion">Zona de Extraccion</option>
-
                                             </select>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlTextarea1">Descripcion</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        <textarea class="form-control" name="Descripcion_mision" id="exampleFormControlTextarea1" rows="3"></textarea>
                                     </div>
-                                    <button type="button" class="btn btn-success" id="bt-registrarMision">Guardar</button>
+                                    <button type="button" class="btn btn-success" id="bt-registrarMision" onclick="Registrar_Mision();">Guardar</button>
                                 </form>
                             </div>
                         </div>
@@ -185,9 +213,7 @@ if (isset($_SESSION["user"])) {
     <script src="../assets/sweetalert.js"></script>
     <script src="../assets/js/lib/chosen/chosen.jquery.min.js"></script>
     <script src="../assets/funciones/funciones.js"></script>
-
-
-
+    <script src="../ajax/Mision.js"></script>
     <script>
         jQuery(document).ready(function() {
             jQuery(".standardSelect").chosen({
