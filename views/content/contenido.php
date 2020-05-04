@@ -156,7 +156,7 @@
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-body--">
-                            <div class="card-header text-center bg-blue">
+                            <div class="card-header text-white" style="background-color: turquoise;" >
                                 <strong>Historial de misiones</strong>
                             </div>
                             <div class="table-stats order-table ">
@@ -172,7 +172,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="card-body--">
-                                <div class="card-header text-center bg-light">
+                                <div class="card-header text-white" style="background-color: turquoise;" >
                                     <strong>Historial de misiones</strong>
                                 </div>
                                 <div id="grafica1"></div>
@@ -180,7 +180,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="card-body--">
-                                <div class="card-header text-center bg-light">
+                                <div class="card-header text-white" style="background-color: turquoise;" >
                                     <strong>Historial de misiones</strong>
                                 </div>
                                 <div id="myDiv"></div>

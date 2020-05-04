@@ -27,8 +27,8 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-file-archive-o"></i>Solicitudes</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-file-archive-o"></i><a href="./cliente.php">Exportacion Data</a></li>
-                        <li><i class="menu-icon fa fa-file-archive-o"></i><a href="./cliente2.php">Gestion Data</a></li>
+                        <li><i class="menu-icon fa fa-file-archive-o"></i><a href="./exportacion.php">Exportacion Data</a></li>
+
                     </ul>
                 </li>
 
@@ -71,11 +71,11 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sliders"></i>Configuracion</a>
                     <ul class="sub-menu children dropdown-menu">
-                        
+
                         <li><i class="menu-icon fa fa-sliders"></i><a href="./usuario.php">Usuarios</a></li>
-                        
+
                         <li><i class="menu-icon fa fa-toggle-on"></i><a href="./parametro.php">Parametros</a></li>
-                        
+
                     </ul>
                 </li>
                 <!--<br>
@@ -83,7 +83,7 @@
                 <br>
                 <br>
                 <br>
-                
+
                 <br>
                 <br>
                 <br>

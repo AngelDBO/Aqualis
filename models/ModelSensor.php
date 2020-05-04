@@ -59,7 +59,7 @@ class ModelSensor {
     }
 
     public function SelectParametro() {
-        $query = ("SELECT ID, NOMBRE_PARAMETRO FROM PARAMETRO");
+        $query = ("SELECT DISTINCT ID, NOMBRE_PARAMETRO FROM PARAMETRO");
         $base = $this->cnx->prepare($query);
 
         if ($base->execute()) {

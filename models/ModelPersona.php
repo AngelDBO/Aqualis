@@ -17,6 +17,7 @@ class ModelPersona {
         if ($base->execute()) {
             return $base->fetchALL(PDO::FETCH_ASSOC);
         }
+
         return false;
 
         $base->close();

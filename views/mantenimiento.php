@@ -56,9 +56,9 @@
                         <div class="page-header float-right">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="sensor.php"><span class="badge badge-primary">Registrar</span></a></li>
-                                    <li><a href="mantenimiento.php"><span class="badge badge-danger">Mantenimiento</span></a></li>
-                                    <li><a href="lectura.php"><span class="badge badge-success">Lectura sensor</span></a></li>
+                                    <li><a href="sensor.php"><span class="badge badge-pill badge-primary">Registrar</span></a></li>
+                                    <li><a href="mantenimiento.php"><span class="badge badge-pill badge-danger">Mantenimiento</span></a></li>
+
                                     <!--                                    <li class="active">Advanced</li>-->
                                 </ol>
                             </div>
@@ -73,7 +73,7 @@
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 col-lg-12">
                         <div class="card ">
-                            <div class="card-header">
+                            <div class="card-header" style="background-color: turquoise;">
                                 <strong>Registros </strong>
                             </div>
                             <div class="card-body">
@@ -82,36 +82,36 @@
                                     <br>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                        <label for="Sensor">Seleccione sensor</label>
-                                        <div class="input-group">
+                                            <label for="Sensor">Seleccione sensor</label>
+                                            <div class="input-group">
                                                 <div class="input-group-addon">
-                                                    <i class="fa fa-sitemap" style="color: #03a9f3" aria-hidden="true"></i>
+                                                    <i class="fa fa-sitemap" style="color: #40e0d0" aria-hidden="true"></i>
                                                 </div>
-                                            <select id="Sensor_nombre" name="Nombre_sensor" class="form-control"></select>
-                                        </div>
-                                            
+                                                <select id="Sensor_nombre" name="Nombre_sensor" class="form-control"></select>
+                                            </div>
+
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="Fecha Mantenimiento">Fecha mantenimiento</label>
                                             <div class="input-group">
-                                            <div class="input-group-addon">
-                                                    <i class="fa fa-calendar" style="color: #03a9f3" aria-hidden="true"></i>
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-calendar" style="color: #40e0d0" aria-hidden="true"></i>
                                                 </div>
-                                            <input type="date" name="Fecha_Mantenimiento" class="form-control" id="Fecha_Mantenimiento"  required>
+                                                <input type="date" name="Fecha_Mantenimiento" class="form-control" id="Fecha_Mantenimiento"  required>
                                             </div>
-                                            
+
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="Tipo Mantenimiento">Tipo mantenimiento</label>
                                             <div class="input-group">
-                                            <div class="input-group-addon">
-                                                    <i class="fa fa-cogs" style="color: #03a9f3" aria-hidden="true"></i>
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-cogs" style="color: #40e0d0" aria-hidden="true"></i>
                                                 </div>
-                                            <input type="text" name="Tipo_Mantenimiento" class="form-control" id="Tipo_Mantenimiento" required>
+                                                <input type="text" name="Tipo_Mantenimiento" class="form-control" id="Tipo_Mantenimiento" required>
                                             </div>
-                                            
+
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="Descripcion">Descripcion</label>
@@ -128,7 +128,7 @@
 
                     <div class="col-xs-6 col-sm-6 col-lg-12">
                         <div class="card ">
-                            <div class="card-header">
+                            <div class="card-header" style="background-color: turquoise;">
                                 <strong>Registros </strong>
                             </div>
                             <div class="card-body">
@@ -144,56 +144,56 @@
 
         <!--MODAL ACTUALIZAR MANTENIMIENTO-->
         <div class="modal fade" id="Mantenimiento_Modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog " role="document">
-                            <div class="modal-content">
-                                <div class="modal-header modal-header-warning">
-                                    <h5 class="modal-title" id="staticBackdropLabel">Modificar mantenimiento</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <form id="Actualizar_Mantenimiento">
-                                        <input type="text" id="IDu" name="ID" hidden="" >
-                                        <div class="form-group">
-                                            <label for="Sensor asociado">Sensor asociado</label>
-                                            <div class="input-group">
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-sitemap" style="color: #03a9f3" aria-hidden="true"></i>
-                                                </div>
-                                                <select id="Sensor_nombreU" name="Sensor_asociado" class="form-control"></select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="Fecha mantenimiento">Fecha mantenimiento</label>
-                                            <div class="input-group">
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-calendar" style="color: #03a9f3" aria-hidden="true"></i>
-                                                </div>
-                                                <input type="text" name="Fecha_mantenimientoU" class="form-control" id="Fecha_U"  required>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label" for="Tipo Mantenimiento">Tipo Mantenimiento</label>
-                                            <div class="input-group">
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-cogs" style="color: #03a9f3" aria-hidden="true"></i>
-                                                </div>
-                                                <input type="text" name="Tipo" class="form-control" id="TipoU"  required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="Descripcion">Descripcion</label>
-                                            <textarea name="DescripcionU" class="form-control" id="DES" rows="3"></textarea>
-                                        </div>
-                                        
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="btn btn-warning" id="btn-updatePN" onclick="Actualizar_Mantenimiento();" data-dismiss="modal">Actualizar</button>
+            <div class="modal-dialog " role="document">
+                <div class="modal-content">
+                    <div class="modal-header modal-header-warning">
+                        <h5 class="modal-title" id="staticBackdropLabel">Modificar mantenimiento</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form id="Actualizar_Mantenimiento">
+                            <input type="text" id="IDu" name="ID" hidden="" >
+                            <div class="form-group">
+                                <label for="Sensor asociado">Sensor asociado</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-sitemap" style="color: #03a9f3" aria-hidden="true"></i>
+                                    </div>
+                                    <select id="Sensor_nombreU" name="Sensor_asociado" class="form-control"></select>
                                 </div>
                             </div>
-                        </div>
+                            <div class="form-group">
+                                <label for="Fecha mantenimiento">Fecha mantenimiento</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar" style="color: #03a9f3" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="text" name="Fecha_mantenimientoU" class="form-control" id="Fecha_U"  required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="Tipo Mantenimiento">Tipo Mantenimiento</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-cogs" style="color: #03a9f3" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="text" name="Tipo" class="form-control" id="TipoU"  required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Descripcion">Descripcion</label>
+                                <textarea name="DescripcionU" class="form-control" id="DES" rows="3"></textarea>
+                            </div>
+
+                        </form>
                     </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-warning" id="btn-updatePN" onclick="Actualizar_Mantenimiento();" data-dismiss="modal">Actualizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <footer class="site-footer">
             <div class="footer-inner bg-white">
@@ -225,18 +225,18 @@
     <script src="../assets/funciones/funciones.js"></script>
     <script src="../ajax/Mantenimiento.js"></script>
     <script>
-    init();
+                            init();
     </script>
 
 
     <script>
-                                        jQuery(document).ready(function() {
-                                            jQuery(".standardSelect").chosen({
-                                                disable_search_threshold: 10,
-                                                no_results_text: "Oops, nothing found!",
-                                                width: "100%"
-                                            });
-                                        });
+        jQuery(document).ready(function() {
+            jQuery(".standardSelect").chosen({
+                disable_search_threshold: 10,
+                no_results_text: "Oops, nothing found!",
+                width: "100%"
+            });
+        });
     </script>
 
 </body>

@@ -60,9 +60,10 @@ if (isset($_SESSION["user"])) {
                             <div class="page-header float-right">
                                 <div class="page-title">
                                     <ol class="breadcrumb text-right">
-                                        <li><a href="mision.php"><span class="badge badge-primary">Registrar mision</span></a></li>
-                                        <li><a href="mediciones.php"><span class="badge badge-danger">Registrar mediciones</span></a></li>
-                                        <li><a href="historial.php"><span class="badge badge-success">Historial de mediciones</span></a></li>
+                                        <li><a href="mision.php"><span class="badge badge-pill badge-primary">Registrar mision</span></a></li>
+                                        <li><a href="mediciones.php"><span class="badge badge-pill badge-danger">Registrar mediciones</span></a></li>
+                                        <li><a href="historial.php"><span class="badge badge-pill badge-success">Historial de mediciones</span></a></li>
+                                        <li><a href="lectura.php"><span class="badge badge-pill badge-warning">Lectura sensor</span></a></li>
                                         <!--                                    <li class="active">Advanced</li>-->
                                     </ol>
                                 </div>
@@ -78,13 +79,13 @@ if (isset($_SESSION["user"])) {
                         <div class="col-xs-4 col-sm-4">
                             <!--LISTA DE SENSORES-->
                             <div class="card">
-                                <div class="card-header">
+                                <div class="card-header text-white" style="background-color: turquoise;" >
                                     <strong>Registrar mediciones</strong>
                                 </div>
                                 <div class="card-body">
                                     <form id="F_mediciones" autocomplete="off">
                                         <div class="form-group">
-                                        <input type="text" id="codigoM" readonly>
+    <!--                                            <input type="text" id="codigoM" readonly>-->
                                             <label for="Usuario">Codigo mision</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon">
@@ -125,7 +126,7 @@ if (isset($_SESSION["user"])) {
                                                 </select>
                                             </div>
                                         </div>
-                                    <hr>
+                                        <hr>
                                     </form>
                                     <button type="button" class="btn btn-primary" id="bt-registrarSensor" onclick="Registrar_Sensor();">Iniciar</button>
 
@@ -139,7 +140,7 @@ if (isset($_SESSION["user"])) {
 
                             <!--LISTA DE SENSORES-->
                             <div class="card">
-                                <div class="card-header">
+                                <div class="card-header text-white" style="background-color: turquoise;" >
                                     <strong>Lista de mediciones</strong>
                                 </div>
                                 <div class="card-body">
@@ -184,11 +185,11 @@ if (isset($_SESSION["user"])) {
         <script src="../ajax/Sensor.js"></script>
         <script>
                                         init();
-                                        
+
         </script>
         <script>
-                                        initID();
-                                        
+            initID();
+
         </script>
         <script>
             function fetch()

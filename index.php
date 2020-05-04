@@ -20,7 +20,7 @@
                 <div class="login-content">
                     <div class="login-form">
                         <form id="fomr_1">
-                        <h4 class="text-center"><spam class="badge badge-pill badge-success" >Iniciar Sesion</spam></h4>
+
                             <div class="card card-img-top">
                                 <div style="padding-left: 160px;">
                                     <img src="images/logo2.png" class="img-responsive" alt="logo principal" width="150px;" >

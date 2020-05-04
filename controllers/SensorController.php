@@ -40,15 +40,15 @@ switch ($_REQUEST["opcion"]) {
     case 'Listar_Sensores':
         $datos = $Sensor->Listar_Sensores();
         if ($datos) {
-            $tabla = '<table class = "table table-striped table-hover">
-            <thead>
+            $tabla = '<table class = "table table-striped table-hover table-bordered">
+            <thead class="thead-dark">
                 <tr>
                     <th>#</th>
-                    <th>Parametro asociado</th>
+                    <th>Parametro</th>
                     <th>Nombre sensor</th>
                     <th>Rango medición</th>
                     <th>Precisión medición</th>
-                    <th>Estado sensor</th>
+                    <th>Estado</th>
                     <th>Actualizar</th>
                 </tr>
             </thead>
@@ -62,7 +62,7 @@ switch ($_REQUEST["opcion"]) {
                 <td class="serial">' . $value['NOMBRE_SENSOR'] . '</td>
                 <td class="serial">' . $value['RANGO_MEDICION'] . '</td>
                 <td class="serial">' . $value['PRECISION_MEDICION'] . '</td>
-                <td><span class="badge badge-complete">' . $value['ESTADO_SENSOR'] . '</span></td>
+                <td><span class="badge badge-pill ">' . $value['ESTADO_SENSOR'] . '</span></td>
                 <td>
                     <span class="btn btn-warning btn-sm"  onclick="ObtenerIDSensor(' . $value['ID'] . ');"
                     data-toggle="modal" data-target="#Sensor_Modal">

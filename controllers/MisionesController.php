@@ -20,23 +20,19 @@ switch ($_REQUEST['opcion']) {
             </thead>
             <tbody>';
             $datosTabla = "";
-            
+
             foreach ($datos as $key => $value) {
                 $datosTabla = $datosTabla . '<tr>
-                
+
                 <td class="serial">' . $value['ID'] . '</td>
                 <td class="serial">' . $value['LUGAR_MISION'] . '</td>
                 <td class="serial">' . $value['TIPO_MEDICION'] . '</td>
                 <td class="serial">' . $value['FECHA_INICIO'] . '</td>
                 <td class="serial">' . $value['CODIGO_MISION'] . '</td>
-                <td><span class="badge badge-complete">' . $value['ESTADO'] . '</span></td>
+                <td><span class="badge badge-pill badge-complete">' . $value['ESTADO'] . '</span></td>
                 </tr>';
             }
             echo $tabla . $datosTabla . '</tbody></table>';
         }
-    
-   
 }
-
-
 ?>

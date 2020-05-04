@@ -48,7 +48,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Gestion Sensor</h1>
+                                <h1><spam >Gestion sensor</spam></h1>
                             </div>
                         </div>
                     </div>
@@ -56,9 +56,9 @@
                         <div class="page-header float-right">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="sensor.php"><span class="badge badge-primary">Registrar</span></a></li>
-                                    <li><a href="mantenimiento.php"><span class="badge badge-danger">Mantenimiento</span></a></li>
-                                    <li><a href="lectura.php"><span class="badge badge-success">Lectura sensor</span></a></li>
+                                    <li><a href="sensor.php"><span class="badge badge-pill badge-primary">Registrar</span></a></li>
+                                    <li><a href="mantenimiento.php"><span class="badge badge-pill badge-danger">Mantenimiento</span></a></li>
+
                                     <!--                                    <li class="active">Advanced</li>-->
                                 </ol>
                             </div>
@@ -75,7 +75,7 @@
 
                     <div class="col-xs-6 col-sm-6 col-lg-12">
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-header" style="background-color: turquoise;">
                                 <strong>Registro de Sensores</strong>
                             </div>
                             <div class="card-body">
@@ -89,7 +89,7 @@
                                             <label for="Usuario">Parametro asociado</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon">
-                                                    <i class="fa fa-flask" style="color: #03a9f3" aria-hidden="true"></i>
+                                                    <i class="fa fa-flask" style="color: #40e0d0" aria-hidden="true"></i>
                                                 </div>
                                                 <select id="Parametro_perteneciente" name="Parametro_perteneciente" class="form-control"></select>
                                             </div>
@@ -98,7 +98,7 @@
                                             <label for="Usuario">Nombre sensor</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon">
-                                                    <i class="fa fa-pencil-square-o" style="color: #03a9f3" aria-hidden="true"></i>
+                                                    <i class="fa fa-pencil-square-o" style="color: #40e0d0" aria-hidden="true"></i>
                                                 </div>
                                                 <input type="text" name="Nombre_sensor" class="form-control" id="Nombre_sensor"  required>
                                             </div>
@@ -109,7 +109,7 @@
                                             <label class="control-label" for="Nombre Mision">Rango Medicion</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon">
-                                                    <i class="fa fa-tachometer" style="color: #03a9f3" aria-hidden="true"></i>
+                                                    <i class="fa fa-tachometer" style="color: #40e0d0" aria-hidden="true"></i>
                                                 </div>
                                                 <input type="text" name="Rango" class="form-control" id="Nombre_Mision"  required>
                                             </div>
@@ -119,7 +119,7 @@
                                             <label class="control-label" for="Precision sensor">Precision sensor</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon">
-                                                    <i class="fa fa-tachometer" style="color: #03a9f3" aria-hidden="true"></i>
+                                                    <i class="fa fa-tachometer" style="color: #40e0d0" aria-hidden="true"></i>
                                                 </div>
                                                 <input class="form-control" id="Precision" name="Precision" type="text"/>
                                             </div>
@@ -128,7 +128,7 @@
                                             <label class="control-label" for="Correo">Estado sensor</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon">
-                                                    <i class="fa fa-heartbeat" style="color: #03a9f3" aria-hidden="true"></i>
+                                                    <i class="fa fa-heartbeat" style="color: #40e0d0" aria-hidden="true"></i>
                                                 </div>
                                                 <select id="Tipo_Medicion" name="Estado" class="form-control">
                                                     <option></option>
@@ -140,13 +140,13 @@
                                         </div>
                                     </div>
                                 </form>
-                                <button type="button" class="btn btn-primary" id="bt-registrarSensor" onclick="Registrar_Sensor();">Guardar</button>
+                                <button type="button" class="btn btn-info float-right" id="bt-registrarSensor" onclick="Registrar_Sensor();">Guardar</button>
                             </div>
                         </div>
 
                         <!--LISTA DE SENSORES-->
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-header" >
                                 <strong>Lista de Sensores</strong>
                             </div>
                             <div class="card-body">

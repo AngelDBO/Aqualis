@@ -19,16 +19,16 @@ class ModelMantenimiento {
         $base->bindParam(":FECHA_MANTENIMIENTO", $datos['FECHA_MANTENIMIENTO'], PDO::PARAM_STR);
         $base->bindParam(":TIPO_MANTENIMIENTO", $datos['TIPO_MANTENIMIENTO'], PDO::PARAM_STR);
         $base->bindParam(":DESCRIPCION", $datos['DESCRIPCION'], PDO::PARAM_STR);
-        if($base->execute()){
+        if ($base->execute()) {
             return true;
-        }else{
+        } else {
             return false;
         }
         $base->close();
     }
 
     public function Select_sensor() {
-        $query = ("SELECT ID, NOMBRE_SENSOR FROM SENSOR");
+        $query = ("SELECT DISTINCT ID, NOMBRE_SENSOR FROM SENSOR");
         $base = $this->cnx->prepare($query);
         if ($base->execute()) {
 
@@ -43,32 +43,31 @@ class ModelMantenimiento {
         $base->close();
     }
 
-    public function Listar_Mantenimiento(){
+    public function Listar_Mantenimiento() {
         $query = ("SELECT MS.ID, S.NOMBRE_SENSOR, MS.FECHA_MANTENIMIENTO, MS.TIPO_MANTENIMIENTO, MS.DESCRIPCION, MS.TIMESTAMP FROM MANTENIMIENTO_SENSOR MS INNER JOIN SENSOR S ON MS.SENSOR_ID = S.ID");
         $base = $this->cnx->prepare($query);
-        if($base->execute()){
+        if ($base->execute()) {
             return $base->fetchALL(PDO::FETCH_ASSOC);
-        }else{
+        } else {
             return false;
         }
         $base->close();
     }
 
-    public function Obtener_ID($id){
+    public function Obtener_ID($id) {
         $query = ("SELECT * FROM MANTENIMIENTO_SENSOR WHERE ID = :ID");
         $base = $this->cnx->prepare($query);
         $base->bindParam(":ID", $id, PDO::PARAM_INT);
-        
+
         if ($base->execute()) {
             return $base->fetch(PDO::FETCH_ASSOC);
         }
         return false;
         $base->close();
-
     }
 
-    public function Actualizar_Mantenimiento($datos){
-        $query = ("UPDATE MANTENIMIENTO_SENSOR SET SENSOR_ID = :SENSOR_ID, 
+    public function Actualizar_Mantenimiento($datos) {
+        $query = ("UPDATE MANTENIMIENTO_SENSOR SET SENSOR_ID = :SENSOR_ID,
                                                    FECHA_MANTENIMIENTO = :FECHA_MANTENIMIENTO,
                                                    TIPO_MANTENIMIENTO = :TIPO_MANTENIMIENTO,
                                                    DESCRIPCION = :DESCRIPCION WHERE
@@ -79,13 +78,12 @@ class ModelMantenimiento {
         $base->bindParam(":TIPO_MANTENIMIENTO", $datos['TIPO_MANTENIMIENTO'], PDO::PARAM_STR);
         $base->bindParam(":DESCRIPCION", $datos['DESCRIPCION'], PDO::PARAM_STR);
         $base->bindParam(":ID", $datos['ID'], PDO::PARAM_INT);
-        if($base->execute()){
+        if ($base->execute()) {
             return true;
-        }else{
+        } else {
             return false;
         }
         $base->close();
-        
     }
 
 }

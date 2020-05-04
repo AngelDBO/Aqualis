@@ -56,9 +56,10 @@
                         <div class="page-header float-right">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="sensor.php"><span class="badge badge-primary">Registrar</span></a></li>
-                                    <li><a href="mantenimiento.php"><span class="badge badge-danger">Mantenimiento</span></a></li>
-                                    <li><a href="lectura.php"><span class="badge badge-success">Lectura sensor</span></a></li>
+                                    <li><a href="mision.php"><span class="badge badge-pill badge-primary">Registrar mision</span></a></li>
+                                    <li><a href="mediciones.php"><span class="badge badge-pill badge-danger">Registrar mediciones</span></a></li>
+                                    <li><a href="historial.php"><span class="badge badge-pill badge-success">Historial de mediciones</span></a></li>
+                                    <li><a href="lectura.php"><span class="badge badge-pill badge-warning">Lectura sensor</span></a></li>
                                     <!--                                    <li class="active">Advanced</li>-->
                                 </ol>
                             </div>
@@ -76,89 +77,101 @@
             <div class="container">
                 <div class="card-deck mb-3 text-center">
                     <div class="card mb-4 box-shadow">
-                        <div class="card-header">
+                        <div class="card-header text-white" style="background-color: turquoise;" >
                             <h4 class="my-0 font-weight-normal">Temperatura</h4>
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title" id="val_temp">00.00 <small class="text-muted" > °c</small></h1>
                             <div>
-                            <img src="./../images/iconos/temp.png" alt="" class="img-responsibe">
-                            <br>
-                            <br>
+                                <img src="./../images/iconos/temp.png" alt="" class="img-responsibe">
+                                <br>
+                                <br>
                             </div>
-                           
-                            <button type="button" class="align-self-end btn btn-lg btn-block btn-info">Obtener valor TEMP</button>
-                            
+
+                            <button type="button" class="btn btn-sm  btn-danger">Obtener valor</button>
+
                         </div>
                     </div>
                     <div class="card mb-4 box-shadow">
-                        <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">pH</h4>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h1 class="card-title pricing-card-title">00.00 <small class="text-muted"></small></h1>
-                            <div>
-                            <img src="./../images/iconos/ppm.png" alt="" class="img-responsibe">
-                            <br>
-                            <br>
-                            </div>                  
-                            <button type="button" class="align-self-end btn btn-lg btn-block btn-info" style="margin-top: auto;">Obtener valor pH</button>
-                        </div>
-                    </div>
-                    <div class="card mb-4 box-shadow">
-                        <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">Total Solidos Disueltos</h4>
+                        <div class="card-header text-white" style="background-color: turquoise;" >
+                            <h4 class="my-0 font-weight-normal">ph</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title">00.00 <small class="text-muted"> ppm</small></h1>
+                            <h1 class="card-title pricing-card-title" id="val_temp">00.00 <small class="text-muted" > °c</small></h1>
                             <div>
-                            <img src="./../images/iconos/ppm.png" alt="" class="img-responsibe">
-                            <br>
-                            <br>
-                            </div> 
-                            <button type="button" class="align-self-end btn btn-lg btn-block btn-info">Obtener valor TDS</button>
+                                <img src="./../images/iconos/ppm.png" alt="" class="img-responsibe">
+                                <br>
+                                <br>
+                            </div>
+
+                            <button type="button" class="btn btn-sm  btn-danger">Obtener valor</button>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-header text-white" style="background-color: turquoise;" >
+                            <h4 class="my-0 font-weight-normal">Total solidos disueltos</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="val_temp">00.00 <small class="text-muted" > ms/cs</small></h1>
+                            <div>
+                                <img src="./../images/iconos/ppm.png" alt="" class="img-responsibe">
+                                <br>
+                                <br>
+                            </div>
+
+                            <button type="button" class="btn btn-sm  btn-danger">Obtener valor</button>
+
                         </div>
                     </div>
                 </div>
                 <div class="card-deck mb-3 text-center">
                     <div class="card mb-4 box-shadow">
-                        <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">Conductividad Electrica</h4>
+                        <div class="card-header text-white" style="background-color: turquoise;" >
+                            <h4 class="my-0 font-weight-normal">Conductividad electrica</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title">00.00 <small class="text-muted">ms/cm</small></h1>
+                            <h1 class="card-title pricing-card-title" id="val_temp">00.00 <small class="text-muted" > °c</small></h1>
                             <div>
-                            <img src="./../images/iconos/meter.png" alt="" class="img-responsibe">
-                           
-                            </div> 
-                            <br>
-                            <button type="button" class="align-self-end btn btn-lg btn-block btn-info">Obtener valor EC</button>
+                                <img src="./../images/iconos/meter.png" alt="" class="img-responsibe">
+                                <br>
+                                <br>
+                            </div>
+
+                            <button type="button" class="btn btn-sm  btn-danger">Obtener valor</button>
+
                         </div>
                     </div>
                     <div class="card mb-4 box-shadow">
-                        <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">Potencial REDOX</h4>
+                        <div class="card-header text-white" style="background-color: turquoise;" >
+                            <h4 class="my-0 font-weight-normal">Potencial redox</h4>
                         </div>
-                        <div class="card-body d-flex flex-column">
-                            <h1 class="card-title pricing-card-title">00.00 <small class="text-muted"> mV </small></h1>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="val_temp">00.00 <small class="text-muted" > mv</small></h1>
                             <div>
-                            <img src="./../images/iconos/meter.png" alt="" class="img-responsibe">
-                            <br>
-                            </div> 
-                            <button type="button" class="align-self-end btn btn-lg btn-block btn-info" style="margin-top: auto;">Obtener valor ORP</button>
+                                <img src="./../images/iconos/meter.png" alt="" class="img-responsibe">
+                                <br>
+                                <br>
+                            </div>
+
+                            <button type="button" class="btn btn-sm  btn-danger">Obtener valor</button>
+
                         </div>
                     </div>
                     <div class="card mb-4 box-shadow">
-                        <div class="card-header">
+                        <div class="card-header text-white" style="background-color: turquoise;" >
                             <h4 class="my-0 font-weight-normal">Turbidez</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title">00.00<small class="text-muted"> UNT </small></h1>
+                            <h1 class="card-title pricing-card-title" id="val_temp">00.00 <small class="text-muted" > °c</small></h1>
                             <div>
-                            <img src="./../images/iconos/tds.png" alt="" class="img-responsibe">
+                                <img src="./../images/iconos/tds.png" alt="" class="img-responsibe">
+                                <br>
+                                <br>
                             </div>
-                            <br>
-                            <button type="button" class="btn btn-lg btn-block btn-info">Obtener valor NTF</button>
+
+                            <button type="button" class="btn btn-sm  btn-danger">Obtener valor</button>
+
                         </div>
                     </div>
                 </div>
@@ -168,38 +181,38 @@
             <div class="container">
                 <div class="card-deck mb-12 text-center">
                     <div class="card mb-6 box-shadow">
-                        <div class="card-header">
+                        <div class="card-header text-white" style="background-color: turquoise;">
                             <h4 class="my-0 font-weight-normal">Longitud GPS</h4>
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title" id="val_temp">00.00</h1>
                             <div>
-                            <img src="./../images/iconos/gps.png" alt="" class="img-responsibe">
-                            <br>
-                            <br>
+                                <img src="./../images/iconos/gps.png" alt="" class="img-responsibe">
+                                <br>
+                                <br>
                             </div>
-                           
-                            <button type="button" class="align-self-end btn btn-lg btn-block btn-info">Obtener valor TEMP</button>
-                            
+
+                            <button type="button" class="btn btn-sm  btn-danger">Obtener valor</button>
                         </div>
                     </div>
                     <div class="card mb-6 box-shadow">
-                        <div class="card-header">
+                        <div class="card-header text-white" style="background-color: turquoise;">
                             <h4 class="my-0 font-weight-normal">Latitud GPS</h4>
                         </div>
-                        <div class="card-body d-flex flex-column">
-                            <h1 class="card-title pricing-card-title">00.00 <small class="text-muted"></small></h1>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="val_temp">00.00</h1>
                             <div>
-                            <img src="./../images/iconos/gps2.png" alt="" class="img-responsibe">
-                            <br>
-                            <br>
-                            </div>                  
-                            <button type="button" class="align-self-end btn btn-lg btn-block btn-info" style="margin-top: auto;">Obtener valor pH</button>
+                                <img src="./../images/iconos/gps2.png" alt="" class="img-responsibe">
+                                <br>
+                                <br>
+                            </div>
+
+                            <button type="button" class="btn btn-sm  btn-danger">Obtener valor</button>
                         </div>
                     </div>
-                    
+
                 </div>
-                
+
 
             </div>
         </div><!-- .content -->
