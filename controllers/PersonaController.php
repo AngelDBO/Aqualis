@@ -7,12 +7,12 @@ $Persona = new ModelPersona;
 
 
 switch ($_REQUEST["opcion"]) {
-    
-    
+
+
     case 'Listar_Persona_Natural':
-        
+
         if ($Datos = $Persona->ListarPersonasNaturales()) {
-            
+
             $tabla = '<table id="myTable" class = "table table-bordered table-hover dt-responsive nowrap">
             <thead>
             <tr>
@@ -33,10 +33,10 @@ switch ($_REQUEST["opcion"]) {
             </thead>
             <tbody>';
             $datosTabla = "";
-            
+
             foreach ($Datos as $key => $value) {
                 $datosTabla = $datosTabla . '<tr>
-                
+
                 <td class="serial">' . $value['TIPO_DOCUMENTO'] . '</td>
                 <td class="serial">' . $value['NUMERO_DOCUMENTO'] . '</td>
                 <td class="serial">' . $value['NOMBRE_1'] . '</td>
@@ -59,12 +59,12 @@ switch ($_REQUEST["opcion"]) {
             }
             echo $tabla . $datosTabla . '</tbody></table>';
         }
-    break;
-    
+        break;
+
     case 'Listar_Persona_Juridica':
-        
+
         if ($Datos = $Persona->ListarPersonasJuridicas()) {
-            
+
             $tabla = '<table class = "table table-bordered table-hover">
             <thead>
             <tr>
@@ -87,10 +87,10 @@ switch ($_REQUEST["opcion"]) {
             </thead>
             <tbody>';
             $datosTabla = "";
-            
+
             foreach ($Datos as $key => $value) {
                 $datosTabla = $datosTabla . '<tr>
-                
+
                 <td class="serial">' . $value['TIPO_DOCUMENTO'] . '</td>
                 <td class="serial">' . $value['NIT'] . '</td>
                 <td class="serial">' . $value['NOMBRE_EMPRESA'] . '</td>
@@ -111,14 +111,14 @@ switch ($_REQUEST["opcion"]) {
                 <i class="fa fa-edit"></i>
                 </span>
                 </td>
-                
+
                 </tr>';
             }
             echo $tabla . $datosTabla . '</tbody></table>';
         }
-    break;
-    
-    
+        break;
+
+
     case 'Registrar_Persona_Natural':
         $val = htmlspecialchars($_POST['Numero_Documento']);
         $correo = htmlspecialchars($_POST['Correo']);
@@ -126,8 +126,8 @@ switch ($_REQUEST["opcion"]) {
         $nombre1 = htmlspecialchars($_POST['Primer_Nombre']);
         $telefono1 = htmlspecialchars($_POST['Telefono_1']);
         $apellido1 = htmlspecialchars($_POST['Primer_Apellido']);
-        
-        
+
+
         if (empty($correo) or empty($numero) or empty($nombre1) or empty($apellido1) or empty($telefono1)) {
             $response = 2;
         } else if ($Persona->Validar_Cliente_Natural($val)) {
@@ -149,9 +149,9 @@ switch ($_REQUEST["opcion"]) {
             $Persona->RegistrarPersonaNatural($datos);
             $response = 1;
         }
-        echo $response;       
-    break;
-    
+        echo $response;
+        break;
+
     case 'Registrar_Persona_Juridica':
         $validador = htmlspecialchars($_POST['Nit']);
         $nit = htmlspecialchars($_POST['Nit']);
@@ -160,12 +160,12 @@ switch ($_REQUEST["opcion"]) {
         $regimen = htmlspecialchars($_POST['Regimen']);
         $telefono = htmlentities($_POST['Telefono_1']);
         $correo_empresa = htmlspecialchars($_POST['Correo']);
-        
-        if(empty($nit) or empty($nombre_empresa) or empty($representante) or empty($regimen) or empty($telefono) or empty($correo_empresa)){
+
+        if (empty($nit) or empty($nombre_empresa) or empty($representante) or empty($regimen) or empty($telefono) or empty($correo_empresa)) {
             $response = 2;
-        }else if ($Persona->Validar_Cliente_Juridico($validador)){
+        } else if ($Persona->Validar_Cliente_Juridico($validador)) {
             $response = 3;
-        }else{
+        } else {
             $datos = array(
                 'TIPO_DOCUMENTO' => 'NIT',
                 'TIPO_PERSONA' => 'JURIDICA',
@@ -180,13 +180,13 @@ switch ($_REQUEST["opcion"]) {
                 'TELEFONO_1' => $_POST['Telefono_1'],
                 'TELEFONO_2' => $_POST['Telefono_2'],
                 'DIRECCION' => $_POST['Direccion']
-            ); 
+            );
             $Persona->RegistrarPersonaJuridica($datos);
             $response = 1;
         }
-        echo $response;      
-    break;
-    
+        echo $response;
+        break;
+
     case 'ObtenerDatoNaturalID':
         if (isset($_POST['ID']) && !empty($_POST['ID'])) {
             $data = $Persona->ObtenerDatoNaturalID($_POST['ID']);
@@ -208,9 +208,9 @@ switch ($_REQUEST["opcion"]) {
                 echo json_encode($list);
             }
         }
-        
-    break;
-    
+
+        break;
+
     case 'ObtenerDatoJuridicoID':
         if (isset($_POST['ID']) && !empty($_POST['ID'])) {
             $data = $Persona->ObtenerDatoJuridicoID($_POST['ID']);
@@ -234,9 +234,9 @@ switch ($_REQUEST["opcion"]) {
                 echo json_encode($list);
             }
         }
-        
-    break;
-    
+
+        break;
+
     case 'Actualizar_Persona_Natural':
         $datos = array(
             'CORREO' => $_POST['CorreoU'],
@@ -252,17 +252,17 @@ switch ($_REQUEST["opcion"]) {
             'ESTADO' => $_POST['EstadoU'],
             'ID' => $_POST['ID']
         );
-        
-        
+
+
         if ($Persona->EditarPersonaNatural($datos)) {
             $response = 1;
         } else {
             $response = 2;
         }
-        
+
         echo $response;
-    break;
-    
+        break;
+
     case 'Actualizar_Persona_Juridica':
         $datos = array(
             'TIPO_DOCUMENTO' => $_POST['Tipo_IdentificacionU'],
@@ -280,32 +280,26 @@ switch ($_REQUEST["opcion"]) {
             'ESTADO' => $_POST['EstadoU'],
             'ID' => $_POST['IDu']
         );
-        
+
         if ($Persona->EditarPersonaJuridica($datos)) {
             $response = 1;
         } else {
             $response = 2;
         }
-        
+
         echo $response;
-        
-    break;
-    
+
+        break;
+
     case 'Contar_Personas':
         if ($data = $Persona->contarCLientes()) {
-            if ($data) {
-                $list[] = array(
-                    "Numero" => $data['numero'],
-                );
-                echo json_encode($list);
-            }
-        } else {
-            
+
+            echo json_encode($data);
         }
-        
-    break;
-    
-    
+
+        break;
+
+
     case 'Validar_CLiente':
         $numero = 2019;
         if ($Persona->Validar_Cliente_Juridico($numero)) {
@@ -313,6 +307,6 @@ switch ($_REQUEST["opcion"]) {
         } else {
             echo "No existe";
         }
-        
-    break;
+
+        break;
 }

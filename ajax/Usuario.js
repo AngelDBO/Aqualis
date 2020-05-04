@@ -1,22 +1,18 @@
-function init(){
+function init() {
     ListarUsuarios();
 }
 
-
-function ListarUsuarios(){
+function ListarUsuarios() {
     $.ajax({
         type: 'POST',
         url: './../controllers/UsuarioController.php?opcion=Listar_Usuario',
-        success: function (response) {
+        success: function(response) {
             $('#TablaUsuario').html(response);
         }
     });
 }
 
-
-
 function ValidarUsuario() {
-
     $.ajax({
         data: $('#fomr_1').serialize(),
         type: "POST",
@@ -43,20 +39,20 @@ function ValidarUsuario() {
     });
 }
 
-function RegistrarUsuario(){
-   $.ajax({
+function RegistrarUsuario() {
+    $.ajax({
         type: 'POST',
         url: './../controllers/UsuarioController.php?opcion=Registrar_Usuario',
         data: $('#F_Usuario').serialize(),
-        success: function(response){
+        success: function(response) {
             if (response == 1) {
                 $('#F_Usuario')[0].reset();
                 Swal.fire(
-                    'Exito!',
-                    'Usuario registrado exitosamente',
-                    'success'
-                    );
-            } else if (response == 2){
+                        'Exito!',
+                        'Usuario registrado exitosamente',
+                        'success'
+                        );
+            } else if (response == 2) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
@@ -64,9 +60,28 @@ function RegistrarUsuario(){
                 });
             }
         }
-    }); 
+    });
+}
 
-  
+function ObtenerID(id) {
+    $.ajax({
+        type: "POST",
+        data: "ID=" + id,
+        url: "./../controllers/UsuarioController.php?opcion=ObtenerID",
+        success: function(r) {
+            console.log(r);
+            data = $.parseJSON(r);
+            if (data.length > 0) {
+                $('#IDupdate').val(data[0]['ID']);
+                $('#User_UpdateU').val(data[0]['ROL']);
+                $('#UsuarioU').val(data[0]['USUARIO']);
+                $('#NombresU').val(data[0]['NOMBRE']);
+                $('#ApellidosU').val(data[0]['APELLIDO']);
+                $('#CorreoU').val(data[0]['CORREO']);
+                $('#PassU').val('aqualis');
+            }
+        }
+    });
 }
 
 function LimpiarCampos() {

@@ -215,7 +215,14 @@ function Contar_Persona() {
             console.log(r);
             data = $.parseJSON(r);
             if (data.length > 0) {
-                $('#numeroP').val(data[0]['numero']);
+                $.each(data, function(key, value) {
+                    var a = value[1];
+                    console.log(data.numero);
+                    select = ' <div class="stat-text"><span class="count">' + value[0] + '</span></div>';
+                });
+                console.log(select);
+                $('#Paarametro').html(select);
+
             }
         }
     });

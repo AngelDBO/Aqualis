@@ -11,13 +11,13 @@ class ModelUsuario {
         $this->cnx = conexion::conectar();
     }
 
-    public function ListarUsuarios(){
+    public function ListarUsuarios() {
         $query = ("SELECT ID, NOMBRE, APELLIDO, ROL, USUARIO, CORREO, ESTADO, TIMESTAMP FROM USUARIO");
         $base = $this->cnx->prepare($query);
-        
+
         if ($base->execute()) {
             return $base->fetchALL(PDO::FETCH_ASSOC);
-        } 
+        }
         return false;
         $base->close();
     }
@@ -51,11 +51,45 @@ class ModelUsuario {
             return $fila;
         }
         return false;
-        $fila=null;
+        $fila = null;
         $base->close();
     }
 
-    
+    public function ObtenerID($id) {
+        $query = ("SELECT ID, NOMBRE, APELLIDO, ROL, USUARIO, CORREO, ESTADO FROM USUARIO WHERE ID = :ID");
+        $base = $this->cnx->prepare($query);
+        $base->bindParam(":ID", $id, PDO::PARAM_INT);
+
+        if ($base->execute()) {
+            return $base->fetch(PDO::FETCH_ASSOC);
+        }
+        return false;
+        $base->close();
+    }
+
+    public function ActualizarUsuario($datos) {
+        $query = ("UPDATE USUARIO SET NOMBRE = :NOMBRE,
+                                                                       APELLIDO = :APELLIDO,
+                                                                       ROL = :ROL,
+                                                                       USUARIO = :USUARIO,
+                                                                       PASSWORD = :PASSWORD,
+                                                                       CORREO = :CORREO,
+                                                                       ESTADO = :ESTADO WHERE
+                                                                       ID = :ID");
+        $base = $this->cnx->prepare($query);
+        $base->bindParam(":NOMBRE", $datos['NOMBRE'], PDO::PARAM_STR);
+        $base->bindParam(":APELLIDO", $datos['APELLIDO'], PDO::PARAM_STR);
+        $base->bindParam(":ROL", $datos['ROL'], PDO::PARAM_STR);
+        $base->bindParam(":USUARIOS", $datos['USUARIO'], PDO::PARAM_STR);
+        $pass = password_hash($datos['PASSWORD'], PASSWORD_DEFAULT);
+        $base->bindParam(":PASSWORD", $pass, PDO::PARAM_STR);
+        if ($base->execute()) {
+            return true;
+        }
+        return false;
+
+        $base->close();
+    }
 
 }
 

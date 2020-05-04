@@ -30,14 +30,8 @@ if (isset($_SESSION["user"])) {
                             <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img class="user-avatar rounded-circle" src="./../images/admin.jpg" alt="User Avatar">
                             </a>
-
                             <div class="user-menu dropdown-menu">
                                 <a class="nav-link" href="./usuario.php"><i class="fa fa-user"></i>Perfil</a>
-
-                                   <!-- <a class="nav-link" href="#"><i class="fa fa-bell-o"></i>Notificaciones <span class="count">13</span></a>
-
-                                   <a class="nav-link" href="#"><i class="fa fa-cog"></i>Settings</a> -->
-
                                 <a class="nav-link" href="../index.php"><i class="fa fa-power-off"></i>Cerrar Sesion</a>
                             </div>
                         </div>
@@ -72,93 +66,93 @@ if (isset($_SESSION["user"])) {
                                     <!-- ============= | FORMULARIO REGISTRO USUARIO | ================-->
 
                                     <form id="F_Usuario" autocomplete="off">
-                                                    
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <label for="TipoUsuario">Rol</label>
-                                                            <div class="input-group">
-                                                            <div class="input-group-addon">
-                                                                <i class="fa fa-address-book-o" style="color: #03a9f3" aria-hidden="true"></i>
-                                                            </div>
-                                                            <select id="Rol" name="Rol" class="form-control">
-                                                                <option></option>
-                                                                <option selected value="">--</option>
-                                                                <option value="Administrador">Administrador</option>
-                                                                <option value="Operario">Operario</option>
-                                                            </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label for="Usuario">Usuario</label>
-                                                            <div class="input-group">
-                                                            <div class="input-group-addon">
-                                                                <i class="fa fa-user-circle" style="color: #03a9f3" aria-hidden="true"></i>
-                                                            </div>
-                                                            <input type="text" name="Usuario" class="form-control" id="Usuario"  required>
-                                                            </div>
-                                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="TipoUsuario">Rol</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-address-book-o" style="color: #03a9f3" aria-hidden="true"></i>
                                                     </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <label for="Nombre">Nombre</label>
-                                                            <div class="input-group">
-                                                            <div class="input-group-addon">
-                                                                <i class="fa fa-id-badge" style="color: #03a9f3" aria-hidden="true"></i>
-                                                            </div>
-                                                            <input type="text" name="Nombre" class="form-control" id="Nombre" required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label for="Apellido">Apellido</label>
-                                                            <div class="input-group">
-                                                            <div class="input-group-addon">
-                                                                <i class="fa fa-id-badge" style="color: #03a9f3" aria-hidden="true"></i>
-                                                            </div>
-                                                            <input type="text" name="Apellido" class="form-control" id="Apellido">
-                                                            </div>
-                                                        </div>
-                                                        
+                                                    <select id="Rol" name="Rol" class="form-control">
+                                                        <option></option>
+                                                        <option selected value="">--</option>
+                                                        <option value="Administrador">Administrador</option>
+                                                        <option value="Operario">Operario</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="Usuario">Usuario</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-user-circle" style="color: #03a9f3" aria-hidden="true"></i>
                                                     </div>
-                                                    <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                            <label for="Correo">Correo *</label>
-                                                            <div class="input-group">
-                                                            <div class="input-group-addon">
-                                                                <i class="fa fa-envelope" style="color: #03a9f3" aria-hidden="true"></i>
-                                                            </div>
-                                                            <input type="email" name="Correo" class="form-control" id="Correo" required>
-                                                            </div>
-                                                        </div>
-                                                    <div class="form-group col-md-3">
-                                                            <label for="Contraseña">Contraseña</label>
-                                                            <div class="input-group">
-                                                            <div class="input-group-addon">
-                                                                <i class="fa fa-key" style="color: #03a9f3" aria-hidden="true"></i>
-                                                            </div>
-                                                            <input type="password" name="password" class="form-control" id="password">
-                                                            </div>
-                                                        </div>
-                                                       
-                                                        <div class="form-group col-md-3">
-                                                            <label for="Estado">Estado</label>
-                                                            <div class="input-group">
-                                                            <div class="input-group-addon">
-                                                                <i class="fa fa-info-circle" style="color: #03a9f3" aria-hidden="true"></i>
-                                                            </div>
-                                                            <select id="Estado" name="Estado" class="form-control">
-                                                                <option></option>
-                                                                <option selected value="">--</option>
-                                                                <option value="Activo">Activo</option>
-                                                                <option value="Inactivo">Inactivo</option>
-                                                            </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <button type="button" class="btn btn-success float-right" id="bt-registrarUsuario" onclick="RegistrarUsuario();">Guardar</button>
-                                                </form>
+                                                    <input type="text" name="Usuario" class="form-control" id="Usuario"  required>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="Nombre">Nombre</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-id-badge" style="color: #03a9f3" aria-hidden="true"></i>
+                                                    </div>
+                                                    <input type="text" name="Nombre" class="form-control" id="Nombre" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="Apellido">Apellido</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-id-badge" style="color: #03a9f3" aria-hidden="true"></i>
+                                                    </div>
+                                                    <input type="text" name="Apellido" class="form-control" id="Apellido">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="Correo">Correo *</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-envelope" style="color: #03a9f3" aria-hidden="true"></i>
+                                                    </div>
+                                                    <input type="email" name="Correo" class="form-control" id="Correo" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="Contraseña">Contraseña</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-key" style="color: #03a9f3" aria-hidden="true"></i>
+                                                    </div>
+                                                    <input type="password" name="password" class="form-control" id="password">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group col-md-3">
+                                                <label for="Estado">Estado</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-info-circle" style="color: #03a9f3" aria-hidden="true"></i>
+                                                    </div>
+                                                    <select id="Estado" name="Estado" class="form-control">
+                                                        <option></option>
+                                                        <option selected value="">--</option>
+                                                        <option value="Activo">Activo</option>
+                                                        <option value="Inactivo">Inactivo</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-success float-right" id="bt-registrarUsuario" onclick="RegistrarUsuario();">Guardar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
 
 
                         <!--Tabla de usuarios-->
@@ -169,90 +163,108 @@ if (isset($_SESSION["user"])) {
                                     <strong>Mantenimiento</strong>
                                 </div>
                                 <div class="card-body">
-                                <div class="table-stats order-table ov-h">
-                                                            <div id="TablaUsuario"></div>
-                                                        </div> <!-- /.table-stats -->
+                                    <div class="table-stats order-table ov-h">
+                                        <div id="TablaUsuario"></div>
+                                    </div> <!-- /.table-stats -->
                                 </div>
                             </div>
                         </div>
 
-                    <!--MODAL ACTUALIZAR USUARIO-->
-                    <div class="modal fade" id="modal_usuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header-warning">
-        <h5 class="modal-title" id="exampleModalLabel">Actualizar usuario</h5>
-
-      </div>
-      <div class="modal-body">
-      <form id="FP_Juridica">
-                                                <p class="spam">* Campos obligatorios</p>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                        <label for="Tipo Identificacion">Rol usuario</label>
-                                                        <select id="inputState" class="form-control">
-                                                            <option selected>NIT</option>
+                        <!--MODAL ACTUALIZAR USUARIO-->
+                        <div class="modal fade" id="modal_usuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header-warning">
+                                        <h5 class="modal-title" id="exampleModalLabel">Actualizar usuario</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="form-usuarioU">
+                                            <input id="IDupdate">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="Tipo Identificacion">Rol usuario</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-address-book-o" style="color: #03a9f3" aria-hidden="true"></i>
+                                                        </div>
+                                                        <select name="Rol_usuario" class="form-control" id="User_UpdateU" >
+                                                            <option value="Adminitrador">Administrador</option>
+                                                            <option value="Operario">Operario</option>
                                                         </select>
                                                     </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputPassword4"> Usuario</label>
-                                                        <input type="text" name="Nit" class="form-control" id="inputPassword4">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="Usuario"> Usuario</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-user-circle" style="color: #03a9f3" aria-hidden="true"></i>
+                                                        </div>
+                                                        <input type="text" name="usuario_U" class="form-control" id="UsuarioU">
                                                     </div>
                                                 </div>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputAddress">Nombres</label>
-                                                        <input type="text" name="Nombre_Empresa" class="form-control" id="inputAddress" placeholder="">
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputAddress2">Apellidos</label>
-                                                        <input type="text" name="Representante_Legal" class="form-control" id="inputAddress2" placeholder="">
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-3">
-                                                        <label for="inputCity">Correo</label>
-                                                        <input type="text" name="Razon_Social" class="form-control" id="inputCity">
-                                                    </div>
-                                                    <div class="form-group col-md-3">
-                                                        <label for="inputState">Tipo Actividad</label>
-                                                        <input type="text" name="Tipo_Actividad" class="form-control" id="inputCity">
-                                                    </div>
-                                                    <div class="form-group col-md-3">
-                                                        <label for="inputZip">* Regimen</label>
-                                                        <input type="text" name="Regimen" class="form-control" id="inputZip">
-                                                    </div>
-                                                    <div class="form-group col-md-3">
-                                                        <label for="inputZip">Naturaleza</label>
-                                                        <input type="text" name="Naturaleza" class="form-control" id="inputZip">
-                                                    </div>
-                                                    <div class="form-group col-lg-6">
-                                                        <label for="inputAddress2">* Telefono 1</label>
-                                                        <input type="text" name="Telefono_1" class="form-control" id="inputAddress2" placeholder="">
-                                                    </div>
-                                                    <div class="form-group col-lg-6">
-                                                        <label for="inputAddress2">Telfono 2</label>
-                                                        <input type="text" name="Telefono_2" class="form-control" id="inputAddress2" placeholder="">
-                                                    </div>
-                                                    <div class="form-group col-lg-6">
-                                                        <label for="inputAddress2">Direccion</label>
-                                                        <input type="text" name="Direccion" class="form-control" id="inputAddress2" placeholder="">
-                                                    </div>
-                                                    <div class="form-group col-lg-6">
-                                                        <label for="inputAddress2">* Correo</label>
-                                                        <input type="email" name="Correo" class="form-control" id="inputAddress2" placeholder="">
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="Nombres">Nombres</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-id-badge" style="color: #03a9f3" aria-hidden="true"></i>
+                                                        </div>
+                                                        <input type="text" name="Nombres_U" class="form-control" id="NombresU" >
                                                     </div>
                                                 </div>
-                                                <button type="button" class="btn btn-success" id="bt-registrarCliente"  onclick="RegistarPersonaJuridica()">Guardar</button>
-                                            </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-warning">Actualizar</button>
-      </div>
-    </div>
-  </div>
-</div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="Apellidos">Apellidos</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-id-badge" style="color: #03a9f3" aria-hidden="true"></i>
+                                                        </div>
+                                                        <input type="text" name="Apellidos_U" class="form-control" id="ApellidosU" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="Correo">Correo</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-envelope" style="color: #03a9f3" aria-hidden="true"></i>
+                                                        </div>
+                                                        <input type="email" name="Correo_U" class="form-control" id="CorreoU">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="Contraseña">Contraseña</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-key" style="color: #03a9f3" aria-hidden="true"></i>
+                                                        </div>
+                                                        <input type="password" name="Pass_U" class="form-control" id="PassU">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <label for="Estado usuario">Estado</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-info-circle" style="color: #03a9f3" aria-hidden="true"></i>
+                                                    </div>
+                                                    <select name="Estado_U" id="EstadoU" class="form-control">
+                                                        <option value="Activo">Activo</option>
+                                                        <option value="Inactivo">Inactivo</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-warning">Actualizar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
                     </div>
@@ -291,7 +303,7 @@ if (isset($_SESSION["user"])) {
         <script src="../assets/funciones/funciones.js"></script>
 
         <script type="text/javascript">
-                                                        init();
+                                            init();
         </script>
 
 

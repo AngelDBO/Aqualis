@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 require ('../models/ModelUsuario.php');
 
@@ -7,10 +8,10 @@ $Usuario = new ModelUsuario;
 switch ($_REQUEST["opcion"]) {
 
     case 'Listar_Usuario':
-       
+
         if ($Datos = $Usuario->ListarUsuarios()) {
 
-            $tabla = '<table class = "table table-bordered table-hover table-bordered">
+            $tabla = '<table class = "table table-bordered table-hover">
                         <thead class="thead-dark">
                             <tr>
                                 <th>ID</th>
@@ -38,7 +39,7 @@ switch ($_REQUEST["opcion"]) {
                                                 <td class="serial">' . $value['CORREO'] . '</td>
                                                 <td><span class="badge badge-complete">' . $value['ESTADO'] . '</span></td>
                                                <!-- <td class="serial">' . $value['TIMESTAMP'] . '</td> -->
-                                                
+
                                                 <td>
                                                     <span class="btn btn-warning btn-sm" onclick="ObtenerID(' . $value['ID'] . ');"
                                                        data-toggle="modal" data-target="#modal_usuario" >
@@ -50,19 +51,19 @@ switch ($_REQUEST["opcion"]) {
             }
             echo $tabla . $datosTabla . '</tbody></table>';
         }
-        
-    break;
+
+        break;
 
 
 
     case 'validar_usuario':
         if (isset($_POST["Correo"], $_POST["Password"]) && !empty($_POST["Correo"]) && !empty($_POST["Password"])) {
 
-            if ($user = $Usuario->ValidarUsuario($_POST["Correo"], $_POST["Password"])) {             
+            if ($user = $Usuario->ValidarUsuario($_POST["Correo"], $_POST["Password"])) {
                 foreach ($user as $campos => $valor) {
-                  $_SESSION["user"][$campos] = $valor;  
+                    $_SESSION["user"][$campos] = $valor;
                 }
-                $response = 1;               
+                $response = 1;
             } else {
                 $response = 2;
             }
@@ -70,7 +71,7 @@ switch ($_REQUEST["opcion"]) {
             $response = 3;
         }
         echo $response;
-    break;
+        break;
 
     case 'Registrar_Usuario':
         $datos = array(
@@ -83,19 +84,35 @@ switch ($_REQUEST["opcion"]) {
             'ESTADO' => $_POST['Estado']
         );
 
-        if($Usuario->RegistrarUsuario($datos)){
+        if ($Usuario->RegistrarUsuario($datos)) {
             $response = 1;
-        }else {
+        } else {
             $response = 2;
         }
         echo $response;
-    break;
+        break;
+
+    case 'ObtenerID':
+        if (isset($_POST['ID']) && !empty($_POST['ID'])) {
+            $data = $Usuario->ObtenerID($_POST['ID']);
+            if ($data) {
+                $list[] = array(
+                    "ID" => $data['ID'],
+                    "NOMBRE" => $data['NOMBRE'],
+                    "APELLIDO" => $data['APELLIDO'],
+                    "ROL" => $data['ROL'],
+                    "USUARIO" => $data['USUARIO'],
+                    "CORREO" => $data['CORREO'],
+                    "ESTADO" => $data['ESTADO']
+                );
+                echo json_encode($list);
+            }
+        }
+        break;
 
     case 'Cerrar_Sesion':
         session_destroy();
         header("location:../");
-    break;
-
-        
+        break;
 }
 ?>
