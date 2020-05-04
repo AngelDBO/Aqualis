@@ -77,7 +77,7 @@
             <div class="container">
                 <div class="card-deck mb-3 text-center">
                     <div class="card mb-4 box-shadow">
-                        <div class="card-header text-white" style="background-color: turquoise;" >
+                        <div class="card-header text-white" style="background-color: #18A8B4" >
                             <h4 class="my-0 font-weight-normal">Temperatura</h4>
                         </div>
                         <div class="card-body">
@@ -93,7 +93,7 @@
                         </div>
                     </div>
                     <div class="card mb-4 box-shadow">
-                        <div class="card-header text-white" style="background-color: turquoise;" >
+                        <div class="card-header text-white" style="background-color: #18A8B4;" >
                             <h4 class="my-0 font-weight-normal">ph</h4>
                         </div>
                         <div class="card-body">
@@ -109,7 +109,7 @@
                         </div>
                     </div>
                     <div class="card mb-4 box-shadow">
-                        <div class="card-header text-white" style="background-color: turquoise;" >
+                        <div class="card-header text-white" style="background-color: #18A8B4;" >
                             <h4 class="my-0 font-weight-normal">Total solidos disueltos</h4>
                         </div>
                         <div class="card-body">
@@ -127,7 +127,7 @@
                 </div>
                 <div class="card-deck mb-3 text-center">
                     <div class="card mb-4 box-shadow">
-                        <div class="card-header text-white" style="background-color: turquoise;" >
+                        <div class="card-header text-white" style="background-color: #18A8B4;" >
                             <h4 class="my-0 font-weight-normal">Conductividad electrica</h4>
                         </div>
                         <div class="card-body">
@@ -143,7 +143,7 @@
                         </div>
                     </div>
                     <div class="card mb-4 box-shadow">
-                        <div class="card-header text-white" style="background-color: turquoise;" >
+                        <div class="card-header text-white" style="background-color: #18A8B4;" >
                             <h4 class="my-0 font-weight-normal">Potencial redox</h4>
                         </div>
                         <div class="card-body">
@@ -159,7 +159,7 @@
                         </div>
                     </div>
                     <div class="card mb-4 box-shadow">
-                        <div class="card-header text-white" style="background-color: turquoise;" >
+                        <div class="card-header text-white" style="background-color: #18A8B4;" >
                             <h4 class="my-0 font-weight-normal">Turbidez</h4>
                         </div>
                         <div class="card-body">
@@ -181,7 +181,7 @@
             <div class="container">
                 <div class="card-deck mb-12 text-center">
                     <div class="card mb-6 box-shadow">
-                        <div class="card-header text-white" style="background-color: turquoise;">
+                        <div class="card-header text-white" style="background-color: #18A8B4;">
                             <h4 class="my-0 font-weight-normal">Longitud GPS</h4>
                         </div>
                         <div class="card-body">
@@ -196,7 +196,7 @@
                         </div>
                     </div>
                     <div class="card mb-6 box-shadow">
-                        <div class="card-header text-white" style="background-color: turquoise;">
+                        <div class="card-header text-white" style="background-color: #18A8B4;">
                             <h4 class="my-0 font-weight-normal">Latitud GPS</h4>
                         </div>
                         <div class="card-body">

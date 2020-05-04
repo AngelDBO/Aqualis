@@ -80,7 +80,7 @@ if (isset($_SESSION["user"])) {
 
                         <div class="col-xs-6 col-sm-6 col-lg-12">
                             <div class="card ">
-                                <div class="card-header text-white" style="background-color: turquoise;" >
+                                <div class="card-header text-white" style="background-color: #18A8B4;" >
                                     <strong>Formulario de Mision</strong>
                                 </div>
                                 <div class="card-body ">

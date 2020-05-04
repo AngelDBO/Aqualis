@@ -59,8 +59,8 @@ if (isset($_SESSION["user"])) {
                         <div class="page-header float-right">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="cliente.php"><span class="badge badge-primary">Registrar clientes</span></a></li>
-                                    <li><a href="cliente2.php"><span class="badge badge-danger">Gestionar clientes</span></a></li>
+                                    <li><a href="cliente.php"><span class="badge badge-pill badge-success">Registrar clientes</span></a></li>
+                                    <li><a href="cliente2.php"><span class="badge badge-pill badge-danger">Gestionar clientes</span></a></li>
                                     
                                     <!--                                    <li class="active">Advanced</li>-->
                                 </ol>
@@ -78,7 +78,7 @@ if (isset($_SESSION["user"])) {
 
                     <div class="col-xs-6 col-sm-6 col-lg-12">
                         <div class="card ">
-                            <div class="card-header text-center">
+                        <div class="card-header text-white text-center" style="background-color: #18A8B4;" >
                                 <strong>Formulario de Registro</strong>
                             </div>
                             <div class="card-body">
@@ -154,7 +154,7 @@ if (isset($_SESSION["user"])) {
                                                     <label for="Correo">* Correo</label>
                                                     <input type="email" name="Correo" class="form-control" id="Correo" required>
                                                 </div>
-                                                <button type="button" class="btn btn-success" id="bt-registrarCliente" onclick="RegistarPersonaNatural();">Guardar</button>
+                                                <button type="button" class="btn btn-info float-right" id="bt-registrarCliente" onclick="RegistarPersonaNatural();">Guardar</button>
                                             </form>
                                         </div>
 

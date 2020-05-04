@@ -48,7 +48,7 @@ switch ($_REQUEST["opcion"]) {
                 <!-- <td class="serial">' . $value['DIRECCION'] . '</td> -->
                 <td class="serial">' . $value['CORREO'] . '</td>
                 <!-- <td class="serial">' . $value['TIMESTAMP'] . '</td> -->
-                <td><span class="badge badge-complete">' . $value['ESTADO'] . '</span></td>
+                <td><span class="badge badge-pill badge-complete">' . $value['ESTADO'] . '</span></td>
                 <td>
                 <span class="btn btn-warning btn-sm"  onclick="ObtenerDatoNaturalID(' . $value['ID'] . ');"
                 data-toggle="modal" data-target="#MAPN1">
@@ -104,7 +104,7 @@ switch ($_REQUEST["opcion"]) {
                 <!-- <td class="serial">' . $value['DIRECCION'] . '</td> -->
                 <td class="serial">' . $value['CORREO'] . '</td>
                 <!-- <td class="serial">' . $value['TIMESTAMP'] . '</td> -->
-                <td><span class="badge badge-complete">' . $value['ESTADO'] . '</span></td>
+                <td><span class="badge badge-pill badge-complete">' . $value['ESTADO'] . '</span></td>
                 <td>
                 <span class="btn btn-warning btn-sm" onclick="ObtenerDatoJuridicoID(' . $value['ID'] . ');"
                 data-toggle="modal" data-target="#MAPN2" >

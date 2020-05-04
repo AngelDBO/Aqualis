@@ -83,7 +83,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text"><span class="count">2986</span></div>
+                                    <div class="stat-text"><span class="count">29</span></div>
                                     <div class="stat-heading">Total mediciones</div>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text"><span class="count">2986</span></div>
+                                    <div class="stat-text"><span class="count">29</span></div>
                                     <div class="stat-heading">Lugares registrados</div>
                                 </div>
                             </div>

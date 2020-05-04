@@ -79,19 +79,19 @@ if (isset($_SESSION["user"])) {
                         <div class="col-xs-4 col-sm-4">
                             <!--LISTA DE SENSORES-->
                             <div class="card">
-                                <div class="card-header text-white" style="background-color: turquoise;" >
+                                <div class="card-header text-white" style="background-color: #18A8B4;" >
                                     <strong>Registrar mediciones</strong>
                                 </div>
                                 <div class="card-body">
                                     <form id="F_mediciones" autocomplete="off">
                                         <div class="form-group">
-    <!--                                            <input type="text" id="codigoM" readonly>-->
+                                                <input type="text" name="IDu" id="id_mision" readonly hidden="">
                                             <label for="Usuario">Codigo mision</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-hashtag" style="color: #03a9f3" aria-hidden="true"></i>
                                                 </div>
-                                                <input type="text" name="Codigo mision" class="form-control" id="id_mision"  readonly>
+                                                <input type="text"  class="form-control" id="codigoM"  readonly>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -128,9 +128,9 @@ if (isset($_SESSION["user"])) {
                                         </div>
                                         <hr>
                                     </form>
-                                    <button type="button" class="btn btn-primary" id="bt-registrarSensor" onclick="Registrar_Sensor();">Iniciar</button>
+                                    <button type="button" class="btn btn-info" id="bt-registrarSensor" onclick="Registrar_Sensor();">Iniciar</button>
 
-                                    <button type="button" class="btn btn-success float-right" id="bt-registrarSensor" onclick="Registrar_Sensor();">Finalizar</button>
+                                    <button type="button" class="btn btn-danger float-right" id="bt-registrarSensor" onclick="Registrar_Sensor();">Finalizar</button>
                                 </div>
                             </div>
 
@@ -140,7 +140,7 @@ if (isset($_SESSION["user"])) {
 
                             <!--LISTA DE SENSORES-->
                             <div class="card">
-                                <div class="card-header text-white" style="background-color: turquoise;" >
+                                <div class="card-header text-white" style="background-color: #18A8B4;" >
                                     <strong>Lista de mediciones</strong>
                                 </div>
                                 <div class="card-body">

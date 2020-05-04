@@ -37,7 +37,7 @@ switch ($_REQUEST["opcion"]) {
                                                 <td class="serial">' . $value['APELLIDO'] . '</td>
                                                 <td class="serial">' . $value['USUARIO'] . '</td>
                                                 <td class="serial">' . $value['CORREO'] . '</td>
-                                                <td><span class="badge badge-complete">' . $value['ESTADO'] . '</span></td>
+                                                <td><span class="badge badge-pill badge-complete">' . $value['ESTADO'] . '</span></td>
                                                <!-- <td class="serial">' . $value['TIMESTAMP'] . '</td> -->
 
                                                 <td>

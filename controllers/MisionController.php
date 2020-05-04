@@ -8,9 +8,9 @@ switch ($_REQUEST['opcion']) {
 
     case 'Registrar_Mision':
         //Generar codigo de la mision
-        $codigo = date('Y:m:d:s:');
+        $codigo = date('Y:m:d:h:s:');
         $date = explode(":", $codigo);
-        $codigo_mision = "MS".$date[0]."".$c2 = $date[1]."".$c3 = $date[2]."".$c4 = $date[3];
+        $codigo_mision = "MS".$date[0]."".$c2 = $date[1]."".$c3 = $date[2]."".$c4 = $date[3]."".$c5 = $date[4];
        
         $datos = array(
          'USUARIO_ID' => $_POST['usuario_mision'],

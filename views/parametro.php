@@ -60,15 +60,21 @@
         <div class="content ">
             <div class="animated fadeIn">
                 <div class="row">
+                    
                     <div class="col-xs-6 col-sm-6 col-lg-12">
-                        <div class="card ">
-                            <div class="card-header text-white" style="background-color: turquoise;" >
-                                <div>
+                    <div>
                                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#staticBackdrop">
                                         Nuevo
                                     </button>
                                 </div>
-                            </div>
+                                <br/>
+                        <div class="card ">
+                            
+                                
+                            
+                            <div class="card-header text-white" style="background-color: turquoise;" >
+                                    <strong>Formulario de Mision</strong>
+                                </div>
                             <div class="card-body">
                                 <div class="table-stats order-table ov-h">
                                     <div id="TablaParametro"></div>
