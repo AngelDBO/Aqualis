@@ -11,7 +11,7 @@ switch ($_REQUEST["opcion"]) {
 
         if ($Datos = $Usuario->ListarUsuarios()) {
 
-            $tabla = '<table class = "table table-bordered table-hover">
+            $tabla = '<table id="bootstrap-data-table" class="table table-bordered table-hover">
                         <thead class="thead-dark">
                             <tr>
                                 <th>ID</th>
@@ -79,7 +79,7 @@ switch ($_REQUEST["opcion"]) {
             'APELLIDO' => $_POST['Apellido'],
             'ROL' => $_POST['Rol'],
             'USUARIO' => $_POST['Usuario'],
-            'PASSWORD' => $_POST['password'],
+            'PASSWORD' => $_POST['pass'],
             'CORREO' => $_POST['Correo'],
             'ESTADO' => $_POST['Estado']
         );
@@ -105,10 +105,30 @@ switch ($_REQUEST["opcion"]) {
                     "CORREO" => $data['CORREO'],
                     "ESTADO" => $data['ESTADO']
                 );
-                echo json_encode($list);
+                
             }
+            echo json_encode($list);
         }
         break;
+
+    case 'Actualizar_Usuario':
+        $datos = array(
+            'ROL' => $_POST['Rol_usuarioU'],
+            'USUARIO' => $_POST['usuario_U'],
+            'NOMBRE' => $_POST['Nombres_U'],
+            'APELLIDO' => $_POST['Apellidos_U'],
+            'CORREO' => $_POST['Correo_U'],
+            'PASSWORD' => $_POST['Pass_U'],
+            'ESTADO' => $_POST['Estado_U'],
+            'ID' => $_POST['UD_usu']
+        );
+        if ($Usuario->ActualizarUsuario($datos)) {
+            $response = 1;
+        }else{
+            $response = 2;
+        }
+        echo $response;
+    break;
 
     case 'Cerrar_Sesion':
         session_destroy();

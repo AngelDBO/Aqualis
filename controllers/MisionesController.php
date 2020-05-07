@@ -7,7 +7,7 @@ $Misiones = new ModelMisiones();
 switch ($_REQUEST['opcion']) {
     case 'Listar_Misiones':
         if ($datos = $Misiones->Listar_Misiones()) {
-            $tabla = '<table class ="table  table-hover table-bordered">
+            $tabla = '<table id="bootstrap-data-table" class ="table  table-hover table-bordered table-striped">
             <thead class="thead-dark">
                 <tr>
                     <th>Codigo</th>

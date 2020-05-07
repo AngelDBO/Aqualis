@@ -22,26 +22,8 @@ if (isset($_SESSION["user"])) {
                 </div>
             </div>
             <div class="top-right">
-                <div class="header-menu">
-
-
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="./../images/admin.jpg" alt="User Avatar">
-                        </a>
-
-                        <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i>My Profile</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-bell-o"></i>Notifications <span class="count">13</span></a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i>Settings</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i>Logout</a>
-                        </div>
-                    </div>
+                <?php require_once './content/menu.php'?>
                 </div>
-            </div>
         </header><!-- /header -->
         <!-- Header-->
 
@@ -263,17 +245,7 @@ if (isset($_SESSION["user"])) {
     <script src="../assets/js/lib/chosen/chosen.jquery.min.js"></script>
     <script src="../assets/funciones/funciones.js"></script>
     <script src="../ajax/Persona.js"></script>
-
-
-    <script>
-                                                    jQuery(document).ready(function() {
-                                                        jQuery(".standardSelect").chosen({
-                                                            disable_search_threshold: 10,
-                                                            no_results_text: "Oops, nothing found!",
-                                                            width: "100%"
-                                                        });
-                                                    });
-    </script>
+    
 
 </body>
 </html>

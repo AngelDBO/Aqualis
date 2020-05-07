@@ -52,6 +52,7 @@ function RegistrarUsuario() {
                         'Usuario registrado exitosamente',
                         'success'
                         );
+                        ListarUsuarios();
             } else if (response == 2) {
                 Swal.fire({
                     icon: 'error',
@@ -73,7 +74,7 @@ function ObtenerID(id) {
             data = $.parseJSON(r);
             if (data.length > 0) {
                 $('#IDupdate').val(data[0]['ID']);
-                $('#User_UpdateU').val(data[0]['ROL']);
+                $('#User_U').val(data[0]['ROL']);
                 $('#UsuarioU').val(data[0]['USUARIO']);
                 $('#NombresU').val(data[0]['NOMBRE']);
                 $('#ApellidosU').val(data[0]['APELLIDO']);
@@ -82,6 +83,34 @@ function ObtenerID(id) {
             }
         }
     });
+}
+
+function Actualizar_Usuario(){
+    $.ajax({
+        type: 'POST',
+        url: './../controllers/UsuarioController.php?opcion=Actualizar_Usuario',
+        data: $('#form_usuarioU').serialize(),
+        success: function(response) {
+            if (response == 1) {
+                $('#form_usuarioU')[0].reset();
+                Swal.fire(
+                        'Exito!',
+                        'Usuario actualizado exitosamente',
+                        'success'
+                        );
+                        ListarUsuarios();
+            } else if (response == 2) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Usuario no encontrado',
+                });
+            }
+        }
+    });
+
+
+
 }
 
 function LimpiarCampos() {

@@ -1,353 +1,369 @@
-<?php include './content/head.php'; 
+<?php
+include './content/head.php';
 session_start();
 if (isset($_SESSION["user"])) {
+    ?>
+    <body>
+        <!-- Left Panel -->
 
-?>
-<body>
-    <!-- Left Panel -->
-
-    <?php include './content/sidebar.php'; ?>
-    <!-- Left Panel -->
-
-
-    <!-- Right Panel -->
-    <div id="right-panel" class="right-panel">
-
-        <!-- Header-->
-        <header id="header" class="header">
-            <div class="top-left">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><img src="./../images/logo.png" alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="./"><img src="./../images/logo2.png" alt="Logo"></a>
-                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
-                </div>
-            </div>
-            <div class="top-right">
-                <div class="header-menu">
+        <?php include './content/sidebar.php'; ?>
+        <!-- Left Panel -->
 
 
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="./../images/admin.jpg" alt="User Avatar">
-                        </a>
+        <!-- Right Panel -->
+        <div id="right-panel" class="right-panel">
 
-                        <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i>My Profile</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-bell-o"></i>Notifications <span class="count">13</span></a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i>Settings</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i>Logout</a>
-                        </div>
+            <!-- Header-->
+            <header id="header" class="header">
+                <div class="top-left">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="./"><img src="./../images/logo.png" alt="Logo"></a>
+                        <a class="navbar-brand hidden" href="./"><img src="./../images/logo2.png" alt="Logo"></a>
+                        <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                     </div>
                 </div>
-            </div>
-        </header><!-- /header -->
-        <!-- Header-->
+                <div class="top-right">
+                    <?php require_once './content/menu.php' ?>
+                </div>
+            </header><!-- /header -->
+            <!-- Header-->
 
-        <div class="breadcrumbs">
-            <div class="breadcrumbs-inner">
-                <div class="row m-0">
-                    <div class="col-sm-4">
-                        <div class="page-header float-left">
-                            <div class="page-title">
-                                <h1>Gestion Clientes</h1>
+            <div class="breadcrumbs">
+                <div class="breadcrumbs-inner">
+                    <div class="row m-0">
+                        <div class="col-sm-4">
+                            <div class="page-header float-left">
+                                <div class="page-title">
+                                    <h1>Gestion Clientes</h1>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="page-header float-right">
-                            <div class="page-title">
-                                <ol class="breadcrumb text-right">
-                                    <li><a href="cliente.php"><span class="badge badge-pill badge-success">Registrar clientes</span></a></li>
-                                    <li><a href="cliente2.php"><span class="badge badge-pill badge-danger">Gestionar clientes</span></a></li>
-                                    
-                                    <!--                                    <li class="active">Advanced</li>-->
-                                </ol>
+                        <div class="col-sm-8">
+                            <div class="page-header float-right">
+                                <div class="page-title">
+                                    <ol class="breadcrumb text-right">
+                                        <li><a href="cliente.php"><span class="badge badge-pill badge-success">Registrar clientes</span></a></li>
+                                        <li><a href="cliente2.php"><span class="badge badge-pill badge-danger">Gestionar clientes</span></a></li>
+
+                                        <!--                                    <li class="active">Advanced</li>-->
+                                    </ol>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="content ">
-            <div class="animated fadeIn">
+            <div class="content ">
+                <div class="animated fadeIn">
 
-                <div class="row">
+                    <div class="row">
 
-                    <div class="col-xs-6 col-sm-6 col-lg-12">
-                        <div class="card ">
-                        <div class="card-header text-white text-center" style="background-color: #18A8B4;" >
-                                <strong>Listado Clientes</strong>
-                            </div>
-                            <div class="card-body">
-                                <div class="custom-tab">
+                        <div class="col-xs-6 col-sm-6 col-lg-12">
+                            <div class="card ">
+                                <div class="card-header text-white text-center" style="background-color: #18A8B4;" >
+                                    <strong>Listado Clientes</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="custom-tab">
 
-                                    <nav>
-                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                            <a class="nav-item nav-link active" id="custom-nav-home-tab" data-toggle="tab" href="#custom-nav-natural" role="tab" aria-controls="custom-nav-home" aria-selected="true">Cliente Natural</a>
-                                            <a class="nav-item nav-link" id="custom-nav-profile-tab" data-toggle="tab" href="#custom-nav-profile" role="tab" aria-controls="custom-nav-profile" aria-selected="false">Cliente Juridico</a>
+                                        <nav>
+                                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                <a class="nav-item nav-link active" id="custom-nav-home-tab" data-toggle="tab" href="#custom-nav-natural" role="tab" aria-controls="custom-nav-home" aria-selected="true">Cliente Natural</a>
+                                                <a class="nav-item nav-link" id="custom-nav-profile-tab" data-toggle="tab" href="#custom-nav-profile" role="tab" aria-controls="custom-nav-profile" aria-selected="false">Cliente Juridico</a>
 
-                                        </div>
-                                    </nav>
-                                    <div class="tab-content pl-3 pt-2" id="nav-tabContent">
-                                        <div class="tab-pane fade show active" id="custom-nav-natural" role="tabpanel" aria-labelledby="custom-nav-home-tab">
-                                            <br>
+                                            </div>
+                                        </nav>
+                                        <div class="tab-content pl-3 pt-2" id="nav-tabContent">
+                                            <div class="tab-pane fade show active" id="custom-nav-natural" role="tabpanel" aria-labelledby="custom-nav-home-tab">
+                                                <br>
 
-                                            <!-- ============= | TABLA PERSONA NATURAL | ================-->
+                                                <!-- ============= | TABLA PERSONA NATURAL | ================-->
 
-                                            <div class="table-stats order-table ov-h">
+                                                <div class="table-stats order-table">
 
-                                                <div id="TablaPersonaNatural"></div>
+                                                    <div id="TablaPersonaNatural"></div>
 
-                                            </div> <!-- /.table-stats -->
-                                        </div>
+                                                </div> <!-- /.table-stats -->
+                                            </div>
 
-                                        <!-- ============= | FORMULARIO PERSONA JURIDICA | ================-->
+                                            <!-- ============= | FORMULARIO PERSONA JURIDICA | ================-->
 
-                                        <div class="tab-pane fade" id="custom-nav-profile" role="tabpanel" aria-labelledby="custom-nav-profile-tab">
-                                            <br>
-                                            <div class="table-stats order-table ov-h">
+                                            <div class="tab-pane fade" id="custom-nav-profile" role="tabpanel" aria-labelledby="custom-nav-profile-tab">
+                                                <br>
+                                                <div class="table-stats order-table" >
 
-                                                <div id="TablaPersonaJuridica"></div>
+                                                    <div id="TablaPersonaJuridica"></div>
 
-                                            </div> <!-- /.table-stats -->
+                                                </div> <!-- /.table-stats -->
+                                            </div>
+
                                         </div>
 
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div><!-- .animated -->
-        </div><!-- .content -->
-        <div class="clearfix"></div>
+                </div><!-- .animated -->
+            </div><!-- .content -->
+            <div class="clearfix"></div>
 
-        <!-- Modal Persona Natural-->
+            <!-- Modal Persona Natural-->
 
-        <div class="modal fade" id="MAPN1" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header modal-header-warning">
-                        <h5 class="modal-title" id="staticBackdropLabel">Actualizar Cliente Natural</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
+            <div class="modal fade" id="MAPN1" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header modal-header-warning">
+                            <h5 class="modal-title" id="staticBackdropLabel">Actualizar Cliente Natural</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
 
-                        <form id="FP_Ac_Natural">
+                            <form id="FP_Ac_Natural">
 
-                            <input type="text" id="ID" name="ID" hidden="">
-                            <div class="form-row">
+                                <input type="text" id="ID" name="ID" hidden="">
+                                <div class="form-row">
 
-                                <div class="form-group col-md-6">
-                                    <label hidden="" for="Tipo Documento">Tipo Documento</label>
-                                    <select hidden="" id="TipoDocumentoU" name="Tipo_DocumentoU" class="form-control" >
-                                        <option></option>
-                                        <option selected value="CC">CEDULA CIUDADANIA</option>
-                                        <option value="TI">TARJETA DE IDENTIDAD</option>
-                                        <option value="RC">REGISTRO CIVIL</option>
-                                        <option value="CE">CEDULA EXTRANJERA</option>
-                                        <option value="LM">LIBRETA MILITAR</option>
-                                    </select>
+                                    <div class="form-group col-md-6">
+                                        <label hidden="" for="Tipo Documento">Tipo Documento</label>
+                                        <select hidden="" id="TipoDocumentoU" name="Tipo_DocumentoU" class="form-control" >
+                                            <option></option>
+                                            <option selected value="CC">CEDULA CIUDADANIA</option>
+                                            <option value="TI">TARJETA DE IDENTIDAD</option>
+                                            <option value="RC">REGISTRO CIVIL</option>
+                                            <option value="CE">CEDULA EXTRANJERA</option>
+                                            <option value="LM">LIBRETA MILITAR</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label hidden="" for="Numero Documento">Numero Documento</label>
+                                        <input hidden="" type="text" name="Numero_DocumentoU"  class="form-control" id="Numero_DocumentoU" >
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <label hidden="" for="Numero Documento">Numero Documento</label>
-                                    <input hidden="" type="text" name="Numero_DocumentoU"  class="form-control" id="Numero_DocumentoU" >
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="Primer Nombre">Primer Nombre</label>
+                                        <input type="text" name="Primer_NombreU" class="form-control" id="Primer_NombreU" placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputAddress2">Segundo Nombre</label>
+                                        <input type="text" name="Segundo_NombreU" class="form-control" id="Segundo_NombreU" placeholder="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="Primer Nombre">Primer Nombre</label>
-                                    <input type="text" name="Primer_NombreU" class="form-control" id="Primer_NombreU" placeholder="">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputAddress">Primer Apellido</label>
+                                        <input type="text" name="Primer_ApellidoU" class="form-control" id="Primer_ApellidoU" placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputAddress2">Segundo Apellido</label>
+                                        <input type="text" name="Segundo_ApellidoU" class="form-control" id="Segundo_ApellidoU" placeholder="">
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputAddress2">Segundo Nombre</label>
-                                    <input type="text" name="Segundo_NombreU" class="form-control" id="Segundo_NombreU" placeholder="">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputZip">Direccion</label>
+                                        <input type="text" name="DireccionU" class="form-control" id="DireccionU">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="inputState">Telefono 1</label>
+                                        <input type="text" name="Telefono_1U" class="form-control" id="Telefono_1U">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="inputState">Telefono 2</label>
+                                        <input type="text" name="Telefono_2U" class="form-control" id="Telefono_2U">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputAddress">Primer Apellido</label>
-                                    <input type="text" name="Primer_ApellidoU" class="form-control" id="Primer_ApellidoU" placeholder="">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputAddress2">Segundo Apellido</label>
-                                    <input type="text" name="Segundo_ApellidoU" class="form-control" id="Segundo_ApellidoU" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputZip">Direccion</label>
-                                    <input type="text" name="DireccionU" class="form-control" id="DireccionU">
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label for="inputState">Telefono 1</label>
-                                    <input type="text" name="Telefono_1U" class="form-control" id="Telefono_1U">
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label for="inputState">Telefono 2</label>
-                                    <input type="text" name="Telefono_2U" class="form-control" id="Telefono_2U">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputAddress2">Correo</label>
-                                <input type="email" name="CorreoU" class="form-control" id="CorreoU" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputAddress2">Estado</label>
-                                <select id="EstadoU" name="EstadoU" class="form-control">
-                                    <option value="Activo" selected>Activo</option>
-                                    <option value="Inactivo">Inactivo</option>
-                                </select>
-                            </div>
-                        </form>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" id="btn-updatePN" onclick="ActualizarPersonaNatural();" data-dismiss="modal">Actualizar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--MODAL PERSONA JURIDICA-->
-
-
-        <div class="modal fade" id="MAPN2" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header modal-header-warning">
-                        <h5 class="modal-title" id="staticBackdropLabel">Actualizar Cliente Juridico</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="FP_Ac_Juridica">
-                            <input type="text" id="IDu" name="IDu" hidden="">
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label hidden="" for="inputEmail4">Tipo Identificacion</label>
-                                    <select hidden="" id="Tipo_IdentificacionU" class="form-control" name="Tipo_IdentificacionU">
-                                        <option selected>NIT</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label hidden="" for="inputPassword4">NIT(*)</label>
-                                    <input hidden="" type="text" name="NitU" class="form-control" id="NitU">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputAddress">Nombre Empresa</label>
-                                    <input type="text" name="Nombre_EmpresaU" class="form-control" id="Nombre_EmpresaU" placeholder="">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputAddress2">Representante Legal</label>
-                                    <input type="text" name="Representante_LegalU" class="form-control" id="Representante_LegalU" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-row" autocomplete="off" >
-                                <div class="form-group col-md-3">
-                                    <label for="inputCity">Razon Social</label>
-                                    <input type="text" name="Razon_SocialU" class="form-control" id="Razon_SocialU">
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label for="inputState">Tipo Actividad</label>
-                                    <input type="text" name="Tipo_ActividadU" class="form-control" id="Tipo_ActividadU">
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label for="inputZip">Regimen</label>
-                                    <input type="text" name="RegimenU" class="form-control" id="RegimenU">
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label for="inputZip">Naturaleza</label>
-                                    <input type="text" name="NaturalezaU" class="form-control" id="NaturalezaU">
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label for="inputAddress2">Telefono 1</label>
-                                    <input type="text" name="Telefono_1" class="form-control" id="Telefono_11" placeholder="">
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label for="inputAddress2">Telfono 2</label>
-                                    <input type="text" name="Telefono_2U" class="form-control" id="Telefono_22" placeholder="">
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label for="inputAddress2">Direccion</label>
-                                    <input type="text" name="DireccionU" class="form-control" id="DireccionU2" placeholder="">
-                                </div>
-                                <div class="form-group col-lg-6">
+                                <div class="form-group">
                                     <label for="inputAddress2">Correo</label>
-                                    <input type="email" name="CorreoU2" class="form-control" id="CorreoU2" placeholder="">
+                                    <input type="email" name="CorreoU" class="form-control" id="CorreoU" placeholder="">
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputAddress2">Estado</label>
-                                <select id="Est_U" name="EstadoU" class="form-control">
-                                    <option value="Activo" selected>Activo</option>
-                                    <option value="Inactivo">Inactivo</option>
-                                </select>
-                            </div>
-                        </form>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Estado</label>
+                                    <select id="EstadoU" name="EstadoU" class="form-control">
+                                        <option value="Activo" selected>Activo</option>
+                                        <option value="Inactivo">Inactivo</option>
+                                    </select>
+                                </div>
+                            </form>
 
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" id="btn-updatePJ" data-dismiss="modal" onclick="ActualizarPersonaJuridica();">Actualizar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <footer class="site-footer">
-            <div class="footer-inner bg-white">
-                <div class="row">
-                    <div class="col-sm-6">
-                        Copyright &copy; <?php echo date('Y'); ?> Aqualis
-                    </div>
-                    <div class="col-sm-6 text-right">
-                        Designed by <a href="https://colorlib.com">Colorlib</a>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary" id="btn-updatePN" onclick="ActualizarPersonaNatural();" data-dismiss="modal">Actualizar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer>
+
+            <!--MODAL PERSONA JURIDICA-->
 
 
-    </div><!-- /#right-panel -->
+            <div class="modal fade" id="MAPN2" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header modal-header-warning">
+                            <h5 class="modal-title" id="staticBackdropLabel">Actualizar Cliente Juridico</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="FP_Ac_Juridica">
+                                <input type="text" id="IDu" name="IDu" hidden="">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label hidden="" for="inputEmail4">Tipo Identificacion</label>
+                                        <select hidden="" id="Tipo_IdentificacionU" class="form-control" name="Tipo_IdentificacionU">
+                                            <option selected>NIT</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label hidden="" for="inputPassword4">NIT(*)</label>
+                                        <input hidden="" type="text" name="NitU" class="form-control" id="NitU">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputAddress">Nombre Empresa</label>
+                                        <input type="text" name="Nombre_EmpresaU" class="form-control" id="Nombre_EmpresaU" placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputAddress2">Representante Legal</label>
+                                        <input type="text" name="Representante_LegalU" class="form-control" id="Representante_LegalU" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-row" autocomplete="off" >
+                                    <div class="form-group col-md-3">
+                                        <label for="inputCity">Razon Social</label>
+                                        <input type="text" name="Razon_SocialU" class="form-control" id="Razon_SocialU">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="inputState">Tipo Actividad</label>
+                                        <input type="text" name="Tipo_ActividadU" class="form-control" id="Tipo_ActividadU">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="inputZip">Regimen</label>
+                                        <input type="text" name="RegimenU" class="form-control" id="RegimenU">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="inputZip">Naturaleza</label>
+                                        <input type="text" name="NaturalezaU" class="form-control" id="NaturalezaU">
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <label for="inputAddress2">Telefono 1</label>
+                                        <input type="text" name="Telefono_1" class="form-control" id="Telefono_11" placeholder="">
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <label for="inputAddress2">Telfono 2</label>
+                                        <input type="text" name="Telefono_2U" class="form-control" id="Telefono_22" placeholder="">
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <label for="inputAddress2">Direccion</label>
+                                        <input type="text" name="DireccionU" class="form-control" id="DireccionU2" placeholder="">
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <label for="inputAddress2">Correo</label>
+                                        <input type="email" name="CorreoU2" class="form-control" id="CorreoU2" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Estado</label>
+                                    <select id="Est_U" name="EstadoU" class="form-control">
+                                        <option value="Activo" selected>Activo</option>
+                                        <option value="Inactivo">Inactivo</option>
+                                    </select>
+                                </div>
+                            </form>
 
-    <!-- Right Panel -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary" id="btn-updatePJ" data-dismiss="modal" onclick="ActualizarPersonaJuridica();">Actualizar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/lib/chosen/chosen.jquery.min.js"></script>
-    <script src="../ajax/Persona.js"></script>
-    <script src="../assets/sweetalert.js"></script>
-    <script src="../assets/jquery-3.2.1.js" type="text/javascript"></script>
-    <script type="text/javascript">
-                            init();
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('#myTable').DataTable();
-        });
-    </script>
+            <footer class="site-footer">
+                <div class="footer-inner bg-white">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            Copyright &copy; <?php echo date('Y'); ?> Aqualis
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            Designed by <a href="https://colorlib.com">Colorlib</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
 
 
-</body>
-</html>
-<?php
-}else{
+        </div><!-- /#right-panel -->
+
+        <!-- Right Panel -->
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+        <script src="../assets/js/main.js"></script>
+        <script src="../assets/js/lib/chosen/chosen.jquery.min.js"></script>
+        <script src="../ajax/Persona.js"></script>
+        <script src="../assets/sweetalert.js"></script>
+        <script src="../assets/jquery-3.2.1.js" type="text/javascript"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+        <script type="text/javascript">
+                                init();
+        </script>
+
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#bootstrap-data-table1, #bootstrap-data-table2').DataTable(
+                        {
+                            "language": {
+                                "sProcessing": "Procesando...",
+                                "sLengthMenu": "Mostrar _MENU_ registros",
+                                "sZeroRecords": "No se encontraron resultados",
+                                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                                "sInfoPostFix": "",
+                                "sSearch": "Buscar:",
+                                "sUrl": "",
+                                "sInfoThousands": ",",
+                                "sLoadingRecords": "Cargando...",
+                                "oPaginate": {
+                                    "sFirst": "Primero",
+                                    "sLast": "Último",
+                                    "sNext": "Siguiente",
+                                    "sPrevious": "Anterior"
+                                },
+                                "oAria": {
+                                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                                },
+                                "buttons": {
+                                    "copy": "Copiar",
+                                    "colvis": "Visibilidad"
+                                }
+                            }
+                        }
+                );
+            });
+        </script>
+
+
+    </body>
+    </html>
+    <?php
+} else {
     header("location:../");
 }
 ?>

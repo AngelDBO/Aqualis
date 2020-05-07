@@ -13,8 +13,8 @@ switch ($_REQUEST["opcion"]) {
 
         if ($Datos = $Persona->ListarPersonasNaturales()) {
 
-            $tabla = '<table id="myTable" class = "table table-bordered table-hover dt-responsive nowrap">
-            <thead>
+            $tabla = '<table id="bootstrap-data-table1" class ="table  table-hover table-bordered">
+            <thead class="thead-dark">
             <tr>
             <th>Documento</th>
             <th>Numero</th>
@@ -65,7 +65,7 @@ switch ($_REQUEST["opcion"]) {
 
         if ($Datos = $Persona->ListarPersonasJuridicas()) {
 
-            $tabla = '<table class = "table table-bordered table-hover">
+            $tabla = '<table id="bootstrap-data-table2" class = "table table-bordered table-hover">
             <thead>
             <tr>
             <th>Documento</th>

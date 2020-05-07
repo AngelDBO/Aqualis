@@ -8,7 +8,7 @@ if (isset($_SESSION["user"])) {
     <body>
 
         <!-- Left Panel -->
-    <?php include './content/sidebar.php'; ?>
+        <?php include './content/sidebar.php'; ?>
         <!-- /#left-panel -->
 
 
@@ -93,25 +93,7 @@ if (isset($_SESSION["user"])) {
                               </div>
                           </div> -->
 
-                        <div class="user-area dropdown float-right">
-                            <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="user-avatar rounded-circle" src="./../images/admin.jpg" alt="User Avatar">
-                            </a>
-
-                            <div class="user-menu dropdown-menu">
-                                <div>
-                                </div>
-                                <small class="bg"><?php echo $_SESSION["user"]["USUARIO"]; ?></small>
-                                <a class="nav-link" href="./usuario.php"><i class="fa fa- user"></i>Mi perfil</a>
-                               <!-- <a class="nav-link" href="#"><i class="fa fa- user"></i>Notificaciones <span class="count">13</span></a> -->
-                               <!-- <a class="nav-link" href="#"><i class="fa fa -cog"></i>Ajustes</a> -->
-                                <div>
-                                    <form action="./../controllers/UsuarioController.php?opcion=Cerrar_Sesion" method="post">
-                                        <button type="submit" class="btn btn-danger btn-sm">Cerrar Sesion</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                        <?php require_once './content/menu.php' ?>
 
                     </div>
                 </div>
@@ -119,7 +101,7 @@ if (isset($_SESSION["user"])) {
 
             <!-- ============= | footer | ================-->
 
-    <?php include './content/contenido.php'; ?>
+            <?php include './content/contenido.php'; ?>
 
             <div class="clearfix"></div>
 
@@ -131,12 +113,49 @@ if (isset($_SESSION["user"])) {
 
         <!-- ============= | footer | ================-->
 
-    <?php include './content/scripts.php'; ?>
+        <?php include './content/scripts.php'; ?>
 
 
         <script src="../ajax/Persona.js"></script>
         <script>
             Contar_Persona();
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#bootstrap-data-table').DataTable(
+                        {
+                            "language": {
+                                "sProcessing": "Procesando...",
+                                "sLengthMenu": "Mostrar _MENU_ registros",
+                                "sZeroRecords": "No se encontraron resultados",
+                                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                                "sInfoPostFix": "",
+                                "sSearch": "Buscar:",
+                                "sUrl": "",
+                                "sInfoThousands": ",",
+                                "sLoadingRecords": "Cargando...",
+                                "oPaginate": {
+                                    "sFirst": "Primero",
+                                    "sLast": "Último",
+                                    "sNext": "Siguiente",
+                                    "sPrevious": "Anterior"
+                                },
+                                "oAria": {
+                                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                                },
+                                "buttons": {
+                                    "copy": "Copiar",
+                                    "colvis": "Visibilidad"
+                                }
+                            }
+                        }
+                );
+            });
         </script>
 
     </body>

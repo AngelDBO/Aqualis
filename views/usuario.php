@@ -59,7 +59,7 @@ if (isset($_SESSION["user"])) {
                     <div class="row">
                         <div class="col-xs-6 col-sm-6 col-lg-12">
                             <div class="card ">
-                                <div class="card-header text-center ">
+                                <div class="card-header text-white" style="background-color: #18A8B4;" >
                                     <strong>Registros </strong>
                                 </div>
                                 <div class="card-body">
@@ -129,7 +129,7 @@ if (isset($_SESSION["user"])) {
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-key" style="color: #03a9f3" aria-hidden="true"></i>
                                                     </div>
-                                                    <input type="password" name="password" class="form-control" id="password">
+                                                    <input type="password" name="pass" class="form-control" id="password">
                                                 </div>
                                             </div>
 
@@ -148,7 +148,10 @@ if (isset($_SESSION["user"])) {
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="button" class="btn btn-success float-right" id="bt-registrarUsuario" onclick="RegistrarUsuario();">Guardar</button>
+                                        <button type="button" class="btn btn-info float-right" id="bt-registrarUsuario"  onclick="RegistrarUsuario();">
+                                            <span class="btn-label"><i class="fa fa-save"></i></span> Guardar
+                                        </button>
+
                                     </form>
                                 </div>
                             </div>
@@ -159,7 +162,7 @@ if (isset($_SESSION["user"])) {
 
                         <div class="col-xs-6 col-sm-6 col-lg-12">
                             <div class="card ">
-                                <div class="card-header text-center">
+                                <div class="card-header text-white" style="background-color: #18A8B4;" >
                                     <strong>Mantenimiento</strong>
                                 </div>
                                 <div class="card-body">
@@ -178,16 +181,17 @@ if (isset($_SESSION["user"])) {
                                         <h5 class="modal-title" id="exampleModalLabel">Actualizar usuario</h5>
                                     </div>
                                     <div class="modal-body">
-                                        <form id="form-usuarioU">
-                                            <input id="IDupdate">
+                                        <form id="form_usuarioU">
+                                            <input id="IDupdate" name="UD_usu"hidden>
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
-                                                    <label for="Tipo Identificacion">Rol usuario</label>
+                                                    <label for="Rol Usuario">Rol usuario</label>
                                                     <div class="input-group">
                                                         <div class="input-group-addon">
                                                             <i class="fa fa-address-book-o" style="color: #03a9f3" aria-hidden="true"></i>
                                                         </div>
-                                                        <select name="Rol_usuario" class="form-control" id="User_UpdateU" >
+                                                        <select name="Rol_usuarioU" class="form-control" id="User_U" >
+                                                            <option value="NA">--</option>
                                                             <option value="Adminitrador">Administrador</option>
                                                             <option value="Operario">Operario</option>
                                                         </select>
@@ -260,7 +264,9 @@ if (isset($_SESSION["user"])) {
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                        <button type="button" class="btn btn-warning">Actualizar</button>
+                                        <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="Actualizar_Usuario();">
+                                            <span class="btn-label"><i class="fa fa-edit"></i></span> Actualizar
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -299,26 +305,52 @@ if (isset($_SESSION["user"])) {
         <script src="../ajax/Usuario.js"></script>
         <script src="../assets/jquery-3.2.1.js"></script>
         <script src="../assets/sweetalert.js"></script>
-        <script src="../assets/js/lib/chosen/chosen.jquery.min.js"></script>
         <script src="../assets/funciones/funciones.js"></script>
+
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+
 
         <script type="text/javascript">
                                             init();
         </script>
 
-
-
-
-        <script>
-            jQuery(document).ready(function() {
-                jQuery(".standardSelect").chosen({
-                    disable_search_threshold: 10,
-                    no_results_text: "Oops, nothing found!",
-                    width: "100%"
-                });
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#bootstrap-data').DataTable(
+                        {
+                            "language": {
+                                "sProcessing": "Procesando...",
+                                "sLengthMenu": "Mostrar _MENU_ registros",
+                                "sZeroRecords": "No se encontraron resultados",
+                                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                                "sInfoPostFix": "",
+                                "sSearch": "Buscar:",
+                                "sUrl": "",
+                                "sInfoThousands": ",",
+                                "sLoadingRecords": "Cargando...",
+                                "oPaginate": {
+                                    "sFirst": "Primero",
+                                    "sLast": "Último",
+                                    "sNext": "Siguiente",
+                                    "sPrevious": "Anterior"
+                                },
+                                "oAria": {
+                                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                                },
+                                "buttons": {
+                                    "copy": "Copiar",
+                                    "colvis": "Visibilidad"
+                                }
+                            }
+                        }
+                );
             });
         </script>
-
     </body>
     </html>
     <?php

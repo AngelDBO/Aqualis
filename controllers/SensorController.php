@@ -40,7 +40,7 @@ switch ($_REQUEST["opcion"]) {
     case 'Listar_Sensores':
         $datos = $Sensor->Listar_Sensores();
         if ($datos) {
-            $tabla = '<table class = "table table-striped table-hover table-bordered">
+            $tabla = '<table  id="bootstrap-data" class = "table table-striped table-hover table-bordered">
             <thead class="thead-dark">
                 <tr>
                     <th>#</th>

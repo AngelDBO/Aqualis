@@ -19,26 +19,8 @@
                 </div>
             </div>
             <div class="top-right">
-                <div class="header-menu">
-
-
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="./../images/admin.jpg" alt="User Avatar">
-                        </a>
-
-                        <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i>My Profile</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-bell-o"></i>Notifications <span class="count">13</span></a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i>Settings</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i>Logout</a>
-                        </div>
-                    </div>
+                <?php require_once './content/menu.php'?>
                 </div>
-            </div>
         </header><!-- /header -->
         <!-- Header-->
 
@@ -70,10 +52,6 @@
         </div>
 
         <div class="content ">
-
-
-
-
             <div class="container">
                 <div class="card-deck mb-3 text-center">
                     <div class="card mb-4 box-shadow">
@@ -88,7 +66,7 @@
                                 <br>
                             </div>
 
-                            <button type="button" class="btn btn-sm  btn-danger">Obtener valor</button>
+                            <button type="button" class="btn btn-sm  btn-danger" >Obtener valor</button>
 
                         </div>
                     </div>
@@ -97,14 +75,15 @@
                             <h4 class="my-0 font-weight-normal">ph</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title" id="val_temp">00.00 <small class="text-muted" > °c</small></h1>
+                            <h1 class="card-title pricing-card-title" id="ph">00.00 <small class="text-muted" > °c</small></h1>
                             <div>
                                 <img src="./../images/iconos/ppm.png" alt="" class="img-responsibe">
                                 <br>
                                 <br>
+                                <div class="loader" id="phLoader"></div>
                             </div>
 
-                            <button type="button" class="btn btn-sm  btn-danger">Obtener valor</button>
+                            <button type="button" class="btn btn-sm  btn-danger" onclick="getData('ph')">Obtener valor</button>
 
                         </div>
                     </div>
@@ -113,14 +92,15 @@
                             <h4 class="my-0 font-weight-normal">Total solidos disueltos</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title" id="val_temp">00.00 <small class="text-muted" > ms/cs</small></h1>
+                            <h1 class="card-title pricing-card-title" id="tds">00.00 <small class="text-muted" > ms/cs</small></h1>
                             <div>
                                 <img src="./../images/iconos/ppm.png" alt="" class="img-responsibe">
                                 <br>
                                 <br>
+                                <div class="loader" id="tdsLoader"></div>
                             </div>
 
-                            <button type="button" class="btn btn-sm  btn-danger">Obtener valor</button>
+                            <button type="button" class="btn btn-sm  btn-danger" onclick="getData('tds')">Obtener valor</button>
 
                         </div>
                     </div>
@@ -163,14 +143,15 @@
                             <h4 class="my-0 font-weight-normal">Turbidez</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title" id="val_temp">00.00 <small class="text-muted" > °c</small></h1>
+                            <h1 class="card-title pricing-card-title" id="turbidez">00.00 <small class="text-muted" > °c</small></h1>
                             <div>
                                 <img src="./../images/iconos/tds.png" alt="" class="img-responsibe">
                                 <br>
                                 <br>
+                                <div class="loader" id="turbidezLoader"></div>
                             </div>
 
-                            <button type="button" class="btn btn-sm  btn-danger">Obtener valor</button>
+                            <button type="button" class="btn btn-sm  btn-danger" onclick="getData('turbidez')">Obtener valor</button>
 
                         </div>
                     </div>
@@ -185,14 +166,15 @@
                             <h4 class="my-0 font-weight-normal">Longitud GPS</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title" id="val_temp">00.00</h1>
+                            <h1 class="card-title pricing-card-title" id="longitud">00.00</h1>
                             <div>
                                 <img src="./../images/iconos/gps.png" alt="" class="img-responsibe">
                                 <br>
                                 <br>
+                                <div class="loader" id="lonLoader"></div>
                             </div>
 
-                            <button type="button" class="btn btn-sm  btn-danger">Obtener valor</button>
+                            <button type="button" class="btn btn-sm  btn-danger" onclick="getData('longitud')">Obtener valor</button>
                         </div>
                     </div>
                     <div class="card mb-6 box-shadow">
@@ -200,14 +182,15 @@
                             <h4 class="my-0 font-weight-normal">Latitud GPS</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title" id="val_temp">00.00</h1>
+                            <h1 class="card-title pricing-card-title" id="latitud">00.00</h1>
                             <div>
                                 <img src="./../images/iconos/gps2.png" alt="" class="img-responsibe">
                                 <br>
                                 <br>
+                                <div class="loader" id="latLoader"></div>
                             </div>
 
-                            <button type="button" class="btn btn-sm  btn-danger">Obtener valor</button>
+                            <button type="button" class="btn btn-sm  btn-danger" onclick="getData('latitud')">Obtener valor</button>
                         </div>
                     </div>
 
@@ -250,6 +233,25 @@
     <script type="text/javascript">
         init();
     </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+        var access_token = '9123cb666006da51e97339195aa16b2224c43278';
+        var device_id = '1b003b000747363335343832';
+        $('#phLoader ,#turbidezLoader, #tdsLoader, #latLoader, #lonLoader').hide();
+        function getData(variable){
+            $('#'+variable+'Loader').show();
+            $.ajax({
+                url: 'https://api.particle.io/v1/devices/'+device_id+'/'+variable+'?access_token='+access_token,
+                method: 'GET',
+                success: function(response){
+                    console.log(response);
+                    $('#'+variable).html(response.result.toFixed(2));
+                    $('#'+variable+'Loader').hide();
+                }
+            });
+        }
+        </script>
 
 
 </body>

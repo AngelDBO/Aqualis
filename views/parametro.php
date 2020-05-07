@@ -63,8 +63,8 @@
                     
                     <div class="col-xs-6 col-sm-6 col-lg-12">
                     <div>
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#staticBackdrop">
-                                        Nuevo
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#staticBackdrop">
+                                    <span class="btn-label"><i class="fa fa-plus-square"></i></span> Nuevo
                                     </button>
                                 </div>
                                 <br/>
@@ -72,7 +72,7 @@
                             
                                 
                             
-                            <div class="card-header text-white" style="background-color: turquoise;" >
+                        <div class="card-header text-white" style="background-color: #18A8B4;" >
                                     <strong>Formulario de Mision</strong>
                                 </div>
                             <div class="card-body">
@@ -138,7 +138,8 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-warning" id="btn-updatePN" onclick="Actualizar_Parametro();" data-dismiss="modal">Actualizar</button>
+                        <button type="button" class="btn btn-warning" id="btn-updatePN" onclick="Actualizar_Parametro();" data-dismiss="modal">
+                        <span class="btn-label"><i class="fa fa-save"></i></span> Actualizar
                     </div>
                 </div>
             </div>
@@ -200,7 +201,9 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success" data-dismiss="modal" onclick="RegistrarParametro();">Guardar</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal" onclick="RegistrarParametro();">
+                        <span class="btn-label"><i class="fa fa-save"></i></span> Guardar
+                        </button>
                     </div>
                 </div>
             </div>

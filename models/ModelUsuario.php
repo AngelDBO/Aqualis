@@ -56,7 +56,7 @@ class ModelUsuario {
     }
 
     public function ObtenerID($id) {
-        $query = ("SELECT ID, NOMBRE, APELLIDO, ROL, USUARIO, CORREO, ESTADO FROM USUARIO WHERE ID = :ID");
+        $query = ("SELECT * FROM USUARIO WHERE ID = :ID");
         $base = $this->cnx->prepare($query);
         $base->bindParam(":ID", $id, PDO::PARAM_INT);
 
@@ -69,20 +69,23 @@ class ModelUsuario {
 
     public function ActualizarUsuario($datos) {
         $query = ("UPDATE USUARIO SET NOMBRE = :NOMBRE,
-                                                                       APELLIDO = :APELLIDO,
-                                                                       ROL = :ROL,
-                                                                       USUARIO = :USUARIO,
-                                                                       PASSWORD = :PASSWORD,
-                                                                       CORREO = :CORREO,
-                                                                       ESTADO = :ESTADO WHERE
-                                                                       ID = :ID");
+                                    APELLIDO = :APELLIDO,
+                                    ROL = :ROL,
+                                    USUARIO = :USUARIO,
+                                    PASSWORD = :PASSWORD,
+                                    CORREO = :CORREO,
+                                    ESTADO = :ESTADO WHERE
+                                    ID = :ID");
         $base = $this->cnx->prepare($query);
         $base->bindParam(":NOMBRE", $datos['NOMBRE'], PDO::PARAM_STR);
         $base->bindParam(":APELLIDO", $datos['APELLIDO'], PDO::PARAM_STR);
         $base->bindParam(":ROL", $datos['ROL'], PDO::PARAM_STR);
-        $base->bindParam(":USUARIOS", $datos['USUARIO'], PDO::PARAM_STR);
+        $base->bindParam(":USUARIO", $datos['USUARIO'], PDO::PARAM_STR);
         $pass = password_hash($datos['PASSWORD'], PASSWORD_DEFAULT);
         $base->bindParam(":PASSWORD", $pass, PDO::PARAM_STR);
+        $base->bindParam(":CORREO", $datos['CORREO'], PDO::PARAM_STR);
+        $base->bindParam(":ESTADO", $datos['ESTADO'], PDO::PARAM_STR);
+        $base->bindParam(":ID", $datos['ID'], PDO::PARAM_INT);
         if ($base->execute()) {
             return true;
         }

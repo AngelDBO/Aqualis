@@ -19,26 +19,8 @@
                 </div>
             </div>
             <div class="top-right">
-                <div class="header-menu">
-
-
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="./../images/admin.jpg" alt="User Avatar">
-                        </a>
-
-                        <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i>My Profile</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-bell-o"></i>Notifications <span class="count">13</span></a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i>Settings</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i>Logout</a>
-                        </div>
-                    </div>
+                <?php require_once './content/menu.php'?>
                 </div>
-            </div>
         </header><!-- /header -->
         <!-- Header-->
 
@@ -73,7 +55,7 @@
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 col-lg-12">
                         <div class="card ">
-                            <div class="card-header" style="background-color: turquoise;">
+                        <div class="card-header text-white" style="background-color: #18A8B4;" >
                                 <strong>Registros </strong>
                             </div>
                             <div class="card-body">
@@ -128,7 +110,7 @@
 
                     <div class="col-xs-6 col-sm-6 col-lg-12">
                         <div class="card ">
-                            <div class="card-header" style="background-color: turquoise;">
+                        <div class="card-header text-white" style="background-color: #18A8B4;" >
                                 <strong>Registros </strong>
                             </div>
                             <div class="card-body">

@@ -7,6 +7,8 @@
 <script src="../assets/plotly-latest.min.js"></script>
 <script src="../assets/jquery-3.2.1.js" type="text/javascript"></script>
 <script src="../ajax/Misiones.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
     <script>
         init();
     </script>
