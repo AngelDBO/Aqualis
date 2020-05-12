@@ -127,7 +127,6 @@ switch ($_REQUEST["opcion"]) {
         $telefono1 = htmlspecialchars($_POST['Telefono_1']);
         $apellido1 = htmlspecialchars($_POST['Primer_Apellido']);
 
-
         if (empty($correo) or empty($numero) or empty($nombre1) or empty($apellido1) or empty($telefono1)) {
             $response = 2;
         } else if ($Persona->Validar_Cliente_Natural($val)) {

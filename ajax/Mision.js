@@ -14,14 +14,16 @@ function Registrar_Mision() {
                         'success'
                         );
                 //location.href = 'mediciones.php';
-                setTimeout("location.href = 'mediciones.php'", 3000);
+                setTimeout("location.href = 'mediciones.php'", 2500);
             } else if (response == 2) {
                 console.log(response);
                 Swal.fire({
-                    icon: 'error',
-                    title: 'Error!',
-                    text: 'Ha fallado el registro'
+                    icon: 'warning',
+                    title: '¡Advertencia!',
+                    text: 'Campos obligatorios vacios'
                 });
+                setTimeout(function(){location.reload();}, 2000);
+
             }
         }
     });

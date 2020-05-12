@@ -13,8 +13,8 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><img src="./../images/logo.png" alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="./"><img src="./../images/logo2.png" alt="Logo"></a>
+                    <a class="navbar-brand" href="./"></a>
+                    <a class="navbar-brand hidden" href="./"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                                     <strong>Formulario de Mision</strong>
                                 </div>
                             <div class="card-body">
-                                <div class="table-stats order-table ov-h">
+                                <div>
                                     <div id="TablaParametro"></div>
                                 </div> <!-- /.table-stats -->
                             </div>

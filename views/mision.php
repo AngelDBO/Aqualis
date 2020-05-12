@@ -17,8 +17,8 @@ if (isset($_SESSION["user"])) {
             <header id="header" class="header">
                 <div class="top-left">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="./"><img src="./../images/logo.png" alt="Logo"></a>
-                        <a class="navbar-brand hidden" href="./"><img src="./../images/logo2.png" alt="Logo"></a>
+                        <a class="navbar-brand" href="./"></a>
+                        <a class="navbar-brand hidden" href="./"></a>
                         <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                     </div>
                 </div>
@@ -62,23 +62,24 @@ if (isset($_SESSION["user"])) {
 
                         <div class="col-xs-6 col-sm-6 col-lg-12">
                             <div class="card ">
-                                <div class="card-header text-white" style="background-color: #18A8B4;" >
+                                <div class="card-header text-white text-center" style="background-color: #18A8B4;" >
                                     <strong>Formulario de Mision</strong>
                                 </div>
                                 <div class="card-body ">
                                     <!-- ============= | FORMULARIO MISION | ================-->
 
                                     <form id="F_mision" autocomplete="off">
-
+                                    <input type="input" value="<?php echo $_SESSION["user"]["ID"]; ?>" name="usuario_mision" readonly hidden>
+                                    <p class="spam text-left">* Campos obligatorios</p>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="Usuario">Usuario : </label>
-                                                <span class="badge badge-pill badge-info"><?php echo $_SESSION["user"]["USUARIO"]; ?></span>
+                                                <span class="badge badge-pill badge-info"></span>
                                                 <div class="input-group">
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-user" style="color: #03a9f3" aria-hidden="true"></i>
                                                     </div>
-                                                    <input type="text" name="usuario_mision" value="<?php echo $_SESSION["user"]["ID"]; ?>" class="form-control"  readonly required>
+                                                    <input type="text" value="<?php echo $_SESSION["user"]["USUARIO"]; ?>" class="form-control"  readonly required>
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-6">
@@ -93,7 +94,7 @@ if (isset($_SESSION["user"])) {
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="Correo">Lugar Mision</label>
+                                                <label for="Correo">* Lugar Mision</label>
                                                 <div class="input-group">
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-map-o" style="color: #03a9f3" aria-hidden="true"></i>
@@ -102,7 +103,7 @@ if (isset($_SESSION["user"])) {
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="Fecha inicio">Fecha mision</label>
+                                                <label for="Fecha inicio">* Fecha mision</label>
                                                 <div class="input-group">
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-calendar-plus-o" style="color: #03a9f3" aria-hidden="true"></i>
@@ -143,7 +144,7 @@ if (isset($_SESSION["user"])) {
                                         </div>
                                         <br>
                                         <div class="form-group">
-                                            <label for="Correo">Punto de toma</label>
+                                            <label for="Correo">* Punto de toma</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-random" style="color: #03a9f3" aria-hidden="true"></i>
@@ -174,7 +175,9 @@ if (isset($_SESSION["user"])) {
                                             <label for="exampleFormControlTextarea1">Descripcion</label>
                                             <textarea class="form-control" name="Descripcion_mision" id="exampleFormControlTextarea1" rows="3"></textarea>
                                         </div>
-                                        <button type="button" class="btn btn-info float-right" id="bt-registrarMision" onclick="Registrar_Mision();">Guardar</button>
+                                        <button type="button" class="btn btn-info float-right" id="bt-registrarMision" onclick="Registrar_Mision();">
+                                        <span class="btn-label"><i class="fa fa-save"></i></span> Guardar
+                                        </button>
                                     </form>
                                 </div>
                             </div>

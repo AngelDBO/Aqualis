@@ -1,7 +1,12 @@
 <aside id="left-panel" class="left-panel">
     <nav class="navbar navbar-expand-sm navbar-default">
+    <ol class="menu-item-has-children dropdown">
+                    <img src="./../images/logo.png" width="250px;" alt="">
+                    
+                </ol>
         <div id="main-menu" class="main-menu collapse navbar-collapse">
-            <br>
+        
+            
             <ul class="nav navbar-nav">
 
                 <!-- ============= | INICIO | ================-->

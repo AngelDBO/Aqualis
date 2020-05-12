@@ -7,6 +7,14 @@ $mision = new ModeloMision;
 switch ($_REQUEST['opcion']) {
 
     case 'Registrar_Mision':
+        $id_usuario = htmlspecialchars($_POST['usuario_mision']);
+        $lugar_mision = htmlspecialchars($_POST['Lugar_Mision']);
+        $fecha_m = htmlspecialchars($_POST['Fecha_inicio']);
+        $toma = htmlspecialchars($_POST['Tipo_Medicion']);
+
+        if(empty($id_usuario) or empty($lugar_mision) or empty($fecha_m) or empty($toma)){
+            $response = 2;
+        }else{
         //Generar codigo de la mision
         $codigo = date('Y:m:d:h:s:');
         $date = explode(":", $codigo);
@@ -24,10 +32,8 @@ switch ($_REQUEST['opcion']) {
          'FECHA_INICIO' => $_POST['Fecha_inicio']
         );
 
-        if($mision->RegistrarMision($datos)){
+        $mision->RegistrarMision($datos);
             $response = 1;
-        }else{
-            $response = 2;
         }
         echo $response; 
 
