@@ -48,7 +48,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Lectura Sensores</h1>
+                                <h1>Gestion exportacion</h1>
                             </div>
                         </div>
                     </div>
@@ -73,37 +73,32 @@
             <div class="container">
                 <div class="card-deck mb-12 text-center">
                     <div class="card mb-6 box-shadow">
-                        <div class="card-header text-white" style="background-color: turquoise;">
+                    <div class="card-header text-white text-center" style="background-color: #18A8B4;" >
                             <h4 class="my-0 font-weight-normal">Solicitante</h4>
                         </div>
                         <div class="card-body">
                             <form action="#" method="post" novalidate="novalidate">
 
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <label for="cc-exp" class="control-label mb-1">Expiration</label>
-                                            <input id="cc-exp" name="cc-exp" type="tel" class="form-control cc-exp" value="" data-val="true" data-val-required="Please enter the card expiration" data-val-cc-exp="Please enter a valid month and year" placeholder="MM / YY">
-                                            <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <label for="x_card_code" class="control-label mb-1">Security code</label>
-                                        <div class="input-group">
-                                            <input id="x_card_code" name="x_card_code" type="tel" class="form-control cc-cvc" value="" data-val="true" data-val-required="Please enter the security code" data-val-cc-cvc="Please enter a valid security code" autocomplete="off">
-                                            <div class="input-group-addon">
-                                                <span class="fa fa-question-circle fa-lg" data-toggle="popover" data-container="body" data-html="true" data-title="Security Code" data-content="<div class='text-center one-card'>The 3 digit code on back of the card..<div class='visa-mc-cvc-preview'></div></div>" data-trigger="hover"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                            <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label for="Tipo Documento">Tipo persona</label>
+                                                        <select id="TipoPersona" name="Tipo_persona" class="form-control">
+                                                            <option></option>
+                                                            <option value="Natural">Natural</option>
+                                                            <option value="Juridica">Juridica</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="Numero Documento">* Numero Documento</label>
+                                                        <input type="text" name="Numero_Documento" class="form-control" id="Numero_Documento">
+                                                    </div>
+                                                </div>
                             </form>
-                            <button type="button" class="btn btn-sm  btn-danger">Misiones</button>
+                            <button type="button" class="btn btn-sm  btn-danger float-left">Misiones</button>
                         </div>
                     </div>
                     <div class="card mb-6 box-shadow">
-                        <div class="card-header text-white" style="background-color: turquoise;">
+                    <div class="card-header text-white text-center" style="background-color: #18A8B4;" >
                             <h4>Latitud GPS</h4>
                         </div>
                         <div class="card-body">

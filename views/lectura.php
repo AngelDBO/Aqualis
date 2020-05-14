@@ -20,10 +20,9 @@
             </div>
             <div class="top-right">
                 <?php require_once './content/menu.php'?>
-                </div>
+            </div>
         </header><!-- /header -->
         <!-- Header-->
-
         <div class="breadcrumbs">
             <div class="breadcrumbs-inner">
                 <div class="row m-0">

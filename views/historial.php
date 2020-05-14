@@ -52,7 +52,19 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="col-sm-8">
+                        <div class="page-header float-right">
+                            <div class="page-title">
+                                <ol class="breadcrumb text-right">
+                                    <li><a href="mision.php"><span class="badge badge-pill badge-primary">Registrar mision</span></a></li>
+                                    <li><a href="mediciones.php"><span class="badge badge-pill badge-danger">Registrar mediciones</span></a></li>
+                                    <li><a href="historial.php"><span class="badge badge-pill badge-success">Historial de mediciones</span></a></li>
+                                    <li><a href="lectura.php"><span class="badge badge-pill badge-warning">Lectura sensor</span></a></li>
+                                    <!--                                    <li class="active">Advanced</li>-->
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
