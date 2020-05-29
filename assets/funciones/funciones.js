@@ -22,19 +22,3 @@ function validarLogin() {
         });
     });
 }
-
-function ValidarFormPersonaN() {
-    $(document).ready(function() {
-        $('#bt-registrarCliente').click(function() {
-
-            if ($('#Numero_Documento').val() == "") {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'e documento',
-                });
-                return false;
-            } 
-        });
-    });
-}

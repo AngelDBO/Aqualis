@@ -73,26 +73,25 @@
             <div class="container">
                 <div class="card-deck mb-12 text-center">
                     <div class="card mb-6 box-shadow">
-                    <div class="card-header text-white text-center" style="background-color: #18A8B4;" >
+                        <div class="card-header text-white text-center" style="background-color: #18A8B4;" >
                             <h4 class="my-0 font-weight-normal">Solicitante</h4>
                         </div>
                         <div class="card-body">
                             <form action="#" method="post" novalidate="novalidate">
-
-                            <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                        <label for="Tipo Documento">Tipo persona</label>
-                                                        <select id="TipoPersona" name="Tipo_persona" class="form-control">
-                                                            <option></option>
-                                                            <option value="Natural">Natural</option>
-                                                            <option value="Juridica">Juridica</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="Numero Documento">* Numero Documento</label>
-                                                        <input type="text" name="Numero_Documento" class="form-control" id="Numero_Documento">
-                                                    </div>
-                                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="Tipo Documento">Tipo persona</label>
+                                        <select id="TipoPersona" name="Tipo_persona" class="form-control">
+                                            <option></option>
+                                            <option value="Natural">Natural</option>
+                                            <option value="Juridica">Juridica</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="Numero Documento">* Numero Documento</label>
+                                        <input type="text" name="Numero_Documento" class="form-control" id="Numero_Documento">
+                                    </div>
+                                </div>
                             </form>
                             <button type="button" class="btn btn-sm  btn-danger float-left">Misiones</button>
                         </div>

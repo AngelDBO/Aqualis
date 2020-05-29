@@ -3,53 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Prueba</title>
     <script src="http://127.0.0.1/aquialis/assets/jquery-3.2.1.js"></script>
 </head>
 <body>
-
-<div id="pplCount"></div>
+<div id="datos"></div>
 <input type="button" id="btn" value="Iniciar" onclick="Iniciar()">
-
-    
+   
 </body>
-
-
 <script>
-
 $( document ).ready(function() {
     console.log( "ready!" );
 });
-
-   function Iniciar() {
-    $(document).ready(function(){
-        $('#btn').click(function(){
-            function connect() {
+   function Iniciar() {         
     console.log('connecting')
-    var deviceID = "1b003b000747363335343832";
-    var accessToken = "9123cb666006da51e97339195aa16b2224c43278";
-    var eventSource = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
+    var ID = "1b003b000747363335343832";
+    var Token = "1e007d8dbfd59c22e97ec62998bd1555265fe076";
+    var eventSource = new EventSource("https://api.particle.io/v1/devices/" + ID + "/events/?access_token=" + Token);
 
     eventSource.addEventListener('open', (e) => {
-        console.log("Opened!"); },false)
+        console.log("Abierto!"); },false)
 
     eventSource.addEventListener('error', (e) => {
-        console.log("Errored!"); },false)
+        console.log("Error!"); },false)
 
-              return eventSource
-    
-    eventSource.addEventListener('Result', (e) => {
+    eventSource.addEventListener('Eventos', (e) => {
         let parsedData = JSON.parse(e.data)
-        console.log('Received data', parsedData)
-        pplCount.innerHTML = parsedData.data
+        console.log('Datos recibidos', parsedData)
+        datos.innerHTML = parsedData.data
     }, false)
-    }
-        });
-    });
-   }
-
     
-    </script>
-    
-
+   } 
+    </script>  
 </html>

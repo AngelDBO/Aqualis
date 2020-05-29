@@ -5,14 +5,10 @@ if (isset($_SESSION["user"])) {
     ?>
     <body>
         <!-- Left Panel -->
-
         <?php include './content/sidebar.php'; ?>
         <!-- Left Panel -->
-
-
         <!-- Right Panel -->
         <div id="right-panel" class="right-panel">
-
             <!-- Header-->
             <header id="header" class="header">
                 <div class="top-left">
@@ -23,11 +19,10 @@ if (isset($_SESSION["user"])) {
                     </div>
                 </div>
                 <div class="top-right">
-                <?php require_once './content/menu.php'?>
+                    <?php require_once './content/menu.php' ?>
                 </div>
             </header><!-- /header -->
             <!-- Header-->
-
             <div class="breadcrumbs">
                 <div class="breadcrumbs-inner">
                     <div class="row m-0">
@@ -54,7 +49,6 @@ if (isset($_SESSION["user"])) {
                     </div>
                 </div>
             </div>
-
             <div class="content">
                 <div class="animated fadeIn">
                     <div class="row">
@@ -67,7 +61,7 @@ if (isset($_SESSION["user"])) {
                                 <div class="card-body">
                                     <form id="F_mediciones" autocomplete="off">
                                         <div class="form-group">
-                                                <input type="text" name="IDu" id="id_mision" readonly hidden="">
+                                            <input type="text" name="IDu" id="id_mision" readonly hidden="">
                                             <label for="Usuario">Codigo mision</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon">
@@ -111,16 +105,11 @@ if (isset($_SESSION["user"])) {
                                         <hr>
                                     </form>
                                     <button type="button" class="btn btn-info" id="bt-registrarSensor" onclick="Registrar_Sensor();">Iniciar</button>
-
                                     <button type="button" class="btn btn-danger float-right" id="bt-registrarSensor" onclick="Registrar_Sensor();">Finalizar</button>
                                 </div>
                             </div>
-
                         </div>
                         <div class="col-xs-8 col-sm-8">
-
-
-                            <!--LISTA DE SENSORES-->
                             <div class="card">
                                 <div class="card-header text-white" style="background-color: #18A8B4;" >
                                     <strong>Lista de mediciones</strong>
@@ -129,11 +118,7 @@ if (isset($_SESSION["user"])) {
                                     <div id="tabla_sensor"></div>
                                 </div>
                             </div>
-
                         </div>
-
-
-
                     </div>
                 </div><!-- .animated -->
             </div><!-- .content -->
@@ -144,9 +129,9 @@ if (isset($_SESSION["user"])) {
                         <div class="col-sm-6">
                             Copyright &copy; <?php echo date('Y'); ?> Aqualis
                         </div>
-                        <div class="col-sm-6 text-right">
-                            Designed by <a href="https://colorlib.com">Colorlib</a>
-                        </div>
+                        <!-- <div class="col-sm-6 text-right">
+                             Designed by <a href="https://colorlib.com">Colorlib</a>
+                         </div> -->
                     </div>
                 </div>
             </footer>
@@ -171,7 +156,6 @@ if (isset($_SESSION["user"])) {
         </script>
         <script>
             initID();
-
         </script>
         <script>
             function fetch()
@@ -180,12 +164,8 @@ if (isset($_SESSION["user"])) {
                 document.getElementById("put").value = get;
             }
         </script>
-        <script>
-        
-        </script>
     </body>
     </html>
-
     <?php
 } else {
     header("location:../");
