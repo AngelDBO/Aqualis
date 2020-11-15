@@ -1,4 +1,3 @@
-
 <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
@@ -7,7 +6,6 @@
 <script src="../assets/plotly-latest.min.js"></script>
 <script src="../assets/jquery-3.2.1.js" type="text/javascript"></script>
 <script src="../ajax/Misiones.js"></script>
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
     <script>
         init();

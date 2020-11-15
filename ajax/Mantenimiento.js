@@ -39,7 +39,7 @@ function Select_Sensor() {
             data = $.parseJSON(r);
             if (data.length > 0) {
                  console.log(data);
-                select = "<option> -- </option>";
+                select = "<option selected disabled></option>";
                 $.each(data, function(key, value) {
                     select = select + "<option value=" + value[0] + ">" + value[1] + "</option>";
                 });

@@ -26,7 +26,7 @@ function ValidarUsuario() {
                         'Bienvenido al Sistema <h1 style="color: lightblue">Aquialis</h1>',
                         'success'
                         );
-                location.href = "views/inicio.php";
+                location.href = "views/lectura";
             } else if (response == 2) {
                 Swal.fire({
                     icon: 'error',
@@ -37,6 +37,7 @@ function ValidarUsuario() {
             }
         }
     });
+    return false;
 }
 
 function RegistrarUsuario() {
@@ -62,6 +63,7 @@ function RegistrarUsuario() {
             }
         }
     });
+    return false;
 }
 
 function ObtenerID(id) {

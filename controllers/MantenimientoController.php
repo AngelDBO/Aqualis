@@ -22,7 +22,7 @@ switch ($_REQUEST['opcion']) {
     case 'Listar_Mantenimiento':
             $datos = $Mantenimiento->Listar_Mantenimiento();
             if ($datos) {
-                $tabla = '<table class = "table table-striped table-hover">
+                $tabla = '<table class ="table table-hover">
                 <thead>
                     <tr>
                         <th>#</th>

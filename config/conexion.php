@@ -1,9 +1,7 @@
 <?php
 
 class conexion{
-    
-    static function conectar(){
-        
+    static function conectar(){       
         try {
             require ('../config/config.php');
             $base = new PDO(DNS, USER, PASSWORD);
@@ -14,6 +12,5 @@ class conexion{
         }   
     }  
 }
-
 
 ?> 

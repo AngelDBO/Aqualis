@@ -11,8 +11,8 @@ switch ($_REQUEST["opcion"]) {
 
         if ($Datos = $Usuario->ListarUsuarios()) {
 
-            $tabla = '<table id="bootstrap-data-table" class="table table-bordered table-hover">
-                        <thead class="thead-dark">
+            $tabla = '<table  class="table table-hover table-striped">
+                        <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Rol</th>
