@@ -61,7 +61,6 @@ switch ($_REQUEST['opcion']) {
                 "OP" =>"Aca ira botones",
                 "NOMBRE_MISION" => $value['NOMBRE_MISION'],
                 "LUGAR_MISION" => $value['LUGAR_MISION'],
-               // "COORDENADAS" => "<button value='$gps' onclick='gps()' id='btn-gps' class='fa fa-map-marker btn btn-warning'></button>",
                 "COORDENADAS" => "<button type='button' name={$value['COORDENADAS']} onclick='gps(this)' class='btn btn-danger btn-sm'><i class='fa fa-globe'></i></button>",
                 "TIPO_MEDICION" => $value['TIPO_MEDICION'],
                 "FECHA_INICIO" => $value['FECHA_INICIO'],

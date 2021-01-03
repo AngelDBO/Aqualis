@@ -21,11 +21,6 @@ function ValidarUsuario() {
         success: function(response) {
             //console.log(response);
             if (response == 1) {
-                Swal.fire(
-                        'Exito!',
-                        'Bienvenido al Sistema <h1 style="color: lightblue">Aquialis</h1>',
-                        'success'
-                        );
                 location.href = "views/lectura";
             } else if (response == 2) {
                 Swal.fire({

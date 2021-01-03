@@ -6,9 +6,9 @@
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <!-- ============= | INICIO | ================-->
-                <li>
+                <!---<li>
                     <a href="inicio"><i class="menu-icon fa fa-home" style="color: gray"></i>Home </a>
-                </li>
+                </li> -->
                 <!-- ============= | GESTION MISIONES | ================-->
                 <li >
                     <a href="javascript:void(0)" onclick="location.href = 'mision'"> <i class="menu-icon fa fa-database" style="color: gray"></i>Mision</a>
@@ -61,7 +61,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sliders" style="color: gray"></i>Configuracion</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="menu-icon fa fa-sliders"></i><a href="./usuario">Usuarios</a></li>
-                        <li><i class="menu-icon fa fa-toggle-on"></i><a href="./parametro">Parametros</a></li>
+                        <!--<li><i class="menu-icon fa fa-toggle-on"></i><a href="./parametro">Parametros</a></li>-->
                     </ul>
                 </li>
             </div>

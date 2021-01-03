@@ -11,9 +11,12 @@ switch ($_REQUEST['opcion']) {
     if ($datos) {
         $list[] = array(
             "ID" => $datos['ID'],
-            "CODIGO_MISION" => $datos['CODIGO_MISION']          
+            "CODIGO_MISION" => $datos['CODIGO_MISION'],
+            "ESTADO" => $datos['ESTADO']
         );
         echo json_encode($list);
+    }else{
+        echo 0;
     }      
     break;
 
@@ -26,7 +29,7 @@ switch ($_REQUEST['opcion']) {
         'TDS' => $_POST['tds'],
         'Latitud' => $_POST['latitud'],
         'Longitud' => $_POST['longitud'],
-        'Redox' => (isset($_POST['Redox'])) ? $_POST['Redox'] : '0',
+        'Redox' => $_POST['Redox'],
         'ConductividadElectrica' => (isset($_POST['ec'])) ? $_POST['Redox'] : '0'
     ];
     if($Medicion->RegistarMediciones($lecturas)){

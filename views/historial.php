@@ -7,7 +7,7 @@
         <div class="header-menu">
           <div class="top-right">
             <div class="header-menu">
-                <?php require_once './content/menu.php' ?>
+              <?php require_once './content/menu.php' ?>
             </div>
           </div>
         </div>
@@ -45,8 +45,8 @@
             <div class="card ">                                                    
               <div class="card-header text-white" style="background-color: #43c6e2;" >
                 <div class="page-title">
-                <h4 class="text-monospace font-weight-bold">Historial de misiones</h4>
-              </div>
+                  <h4 class="text-monospace font-weight-bold">Historial de misiones</h4>
+                </div>
               </div>
               <div class="card-body">
                 <table id="example" class="table table-hover table-bordered table-striped table-sm">
@@ -92,38 +92,64 @@
       alert(Arr);
     }
 
-    livedata()
-    function livedata(){
-     var table = $('#example').dataTable({
-      "bProcessing": true,
-      "serverSide": false,
-      "bFilter": true,
-      "ajax": "./../controllers/MisionController.php?opcion=Listar_Misiones",
-      "bPaginate": true,
-      "sPaginationType":"full_numbers",
-      "columnDefs": [
-      {"className": "dt-center", "targets": "_all"}
-      ],
-      "iDisplayLength": 25,
-      "language": {
-            "lengthMenu": "Mostrar _MENU_ registros por pagina",
-            "zeroRecords": "No encontrado - lo siento",
-            "info": "Mostrando pagina _PAGE_ de _PAGES_",
-            "infoEmpty": "No hay datos disponibles",
-            "infoFiltered": "(filtered from _MAX_ total records)"
-        },
-      "aoColumns": [
-      { mData: 'NOMBRE_MISION' },
-      { mData: 'LUGAR_MISION' },
-      { mData: 'COORDENADAS' },
-      { mData: 'TIPO_MEDICION' },
-      { mData: 'FECHA_INICIO' },
-      { mData: 'ESTADO' },
-      { mData: 'NOMBRE' },
-      { mData: 'TIMESTAMP' }
-      ]
-    });
-   }
- </script>
+    function format ( d ) {
+    // `d` is the original data object for the row
+    return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
+    '<tr>'+
+    '<td>Full name:</td>'+
+    '<td>'+d.Nombre+'</td>'+
+    '</tr>'+
+    '</table>';
+  }
+
+  $('#example tbody').on('click', 'td.details-control', function () {
+    var tr = $(this).closest('tr');
+    var row = table.row( tr );
+
+    if ( row.child.isShown() ) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+          }
+          else {
+            // Open this row
+            row.child( format(row.data()) ).show();
+            tr.addClass('shown');
+          }
+        } );
+
+  livedata()
+  function livedata(){
+   var table = $('#example').dataTable({
+    "bProcessing": true,
+    "serverSide": false,
+    "bFilter": true,
+    "ajax": "./../controllers/MisionController.php?opcion=Listar_Misiones",
+    "bPaginate": true,
+    "sPaginationType":"full_numbers",
+    "columnDefs": [
+    {"className": "dt-center", "targets": "_all"}
+    ],
+    "iDisplayLength": 10,
+    "language": {
+      "lengthMenu": "Mostrar _MENU_ registros por pagina",
+      "zeroRecords": "No encontrado - lo siento",
+      "info": "Mostrando pagina _PAGE_ de _PAGES_",
+      "infoEmpty": "No hay datos disponibles",
+      "infoFiltered": "(filtered from _MAX_ total records)"
+    },
+    "aoColumns": [
+    { mData: 'NOMBRE_MISION' },
+    { mData: 'LUGAR_MISION' },
+    { mData: 'COORDENADAS' },
+    { mData: 'TIPO_MEDICION' },
+    { mData: 'FECHA_INICIO' },
+    { mData: 'ESTADO' },
+    { mData: 'NOMBRE' },
+    { mData: 'TIMESTAMP' }
+    ]
+  });
+ }
+</script>
 </body>
 </html>

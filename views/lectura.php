@@ -70,7 +70,7 @@ if (isset($_SESSION["user"])) {
                             </div>
                         </div>
                     </div>
-                    <div class="card mb-4 box-shadow">
+                   <!-- <div class="card mb-4 box-shadow">
                         <div class="card-header text-white" style="background-color: #43c6e2;" >
                             <h4 class="text-monospace font-weight-bold">Total solidos disueltos</h4>
                         </div>
@@ -81,10 +81,10 @@ if (isset($_SESSION["user"])) {
                                 <img src="./../images/iconos/meter.png" alt="" class="img-responsibe">
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="card-deck mb-3 text-center">
-                    <div class="card mb-4 box-shadow">
+                    <!--<div class="card mb-4 box-shadow">
                         <div class="card-header text-white" style="background-color: #43c6e2;" >
                             <h4 class="text-monospace font-weight-bold">Conductividad eléctrica</h4>
                         </div>
@@ -95,20 +95,20 @@ if (isset($_SESSION["user"])) {
                                 <img src="./../images/iconos/ec.png" alt="" class="img-responsibe">
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                     <div class="card mb-4 box-shadow">
                         <div class="card-header text-white" style="background-color: #43c6e2;" >
                             <h4 class="text-monospace font-weight-bold">Potencial Redox (ORP)</h4>
                         </div>
                         <div class="card-body">
-                            <h3 id="val_temp">00.00 mV</h3>
+                            <h3 id="val_orp">00.00 mV</h3>
                             <div>
                                 <br>
                                 <img src="./../images/iconos/redox.png" alt="" class="img-responsibe">
                             </div>
                         </div>
                     </div>
-                    <div class="card mb-4 box-shadow">
+                    <!--<div class="card mb-4 box-shadow">
                         <div class="card-header text-white" style="background-color: #43c6e2;" >
                             <h4 class="text-monospace font-weight-bold">Turbidez</h4>
                         </div>
@@ -120,7 +120,7 @@ if (isset($_SESSION["user"])) {
                                 <div class="loader" id="turbidezLoader"></div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
 
                 <hr style="border: solid;color: #808080">
@@ -178,7 +178,7 @@ if (isset($_SESSION["user"])) {
 
                         function start() {
                             var deviceID = "1b003b000747363335343832";
-                            var accessToken = "bae556a48b468d057a483a77c9ba31767ce65bd8";
+                            var accessToken = "f3e94b1aeb3754abfdc3804c54253621aba58514";
                             var eventSource = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
                             eventSource.addEventListener('open', function (e) {
                                 console.log("Opened!");
@@ -197,6 +197,7 @@ if (isset($_SESSION["user"])) {
                                 let tds = data[3];
                                 let lat = data[4];
                                 let lon = data[5];
+                                let orp = data[6];
                                 //let longitud = data[1];
                                 //console.log( parsedData.data);
                                 //console.log(`Latitud: ${latitud}`);
@@ -209,6 +210,7 @@ if (isset($_SESSION["user"])) {
                                 $('#tds').html(tds + ` ppm`);
                                 $('#latitud').html(lat);
                                 $('#longitud').html(lon);
+                                $('#val_orp').html(orp + ` mV` );
                                 //$('#longitud').html(longitud);
 
 

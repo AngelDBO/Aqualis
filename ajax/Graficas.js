@@ -76,11 +76,11 @@ function ph(dataAreay, dataAreax){
 			scales: {
 				yAxes: [{
 					ticks: {
-						beginAtZero: false
+						beginAtZero: true
 					},
 					scaleLabel: {
 						display: true,
-						labelString: 'value pH',
+						labelString: 'Value pH',
 						fontColor: "#2b3338"
 					}
 				}],
@@ -146,7 +146,7 @@ function temperatura(datatemp, dataAreax){
 			scales: {
 				yAxes: [{
 					ticks: {
-						beginAtZero: false
+						beginAtZero: true
 					}
 				}]
 			}
@@ -233,7 +233,7 @@ function orp(dataORP, dataAreax){
 			scales: {
 				yAxes: [{
 					ticks: {
-						beginAtZero: false
+						beginAtZero: true
 					}
 				}]
 			}

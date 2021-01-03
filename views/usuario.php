@@ -5,14 +5,10 @@ if (isset($_SESSION["user"])) {
     ?>
     <body class="open">
         <!-- Left Panel -->
-
         <?php include './content/sidebar.php'; ?>
         <!-- Left Panel -->
-
-
         <!-- Right Panel -->
         <div id="right-panel" class="right-panel">
-
             <!-- Header-->
             <header id="header" class="header">
                 <!--<div class="top-left">
@@ -24,8 +20,6 @@ if (isset($_SESSION["user"])) {
                 </div> -->
                 <div class="top-right">
                     <div class="header-menu">
-
-
                         <div class="user-area dropdown float-right">
                             <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img class="user-avatar rounded-circle" src="./../images/admin.jpg" alt="User Avatar">
@@ -39,7 +33,6 @@ if (isset($_SESSION["user"])) {
                 </div>
             </header><!-- /header -->
             <!-- Header-->
-
             <div class="breadcrumbs">
                 <div class="breadcrumbs-inner">
                     <div class="row m-0">
@@ -53,7 +46,6 @@ if (isset($_SESSION["user"])) {
                     </div>
                 </div>
             </div>
-
             <div class="content">
                 <div class="animated fadeIn">
                     <div class="row">
@@ -64,9 +56,7 @@ if (isset($_SESSION["user"])) {
                                 </div>
                                 <div class="card-body">
                                     <!-- ============= | FORMULARIO REGISTRO USUARIO | ================-->
-
                                     <form id="F_Usuario" onsubmit="return RegistrarUsuario();" method="POST" autocomplete="off">
-
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="TipoUsuario">Rol</label>
@@ -110,7 +100,6 @@ if (isset($_SESSION["user"])) {
                                                     <input type="text" name="Apellido" class="form-control" id="Apellido">
                                                 </div>
                                             </div>
-
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
@@ -131,7 +120,6 @@ if (isset($_SESSION["user"])) {
                                                     <input type="password" name="pass" class="form-control" id="password" required="">
                                                 </div>
                                             </div>
-
                                             <div class="form-group col-md-3">
                                                 <label for="Estado">Estado</label>
                                                 <div class="input-group">
@@ -153,10 +141,7 @@ if (isset($_SESSION["user"])) {
                                 </div>
                             </div>
                         </div>
-
-
                         <!--Tabla de usuarios-->
-
                         <div class="col-xs-6 col-sm-6 col-lg-12">
                             <div class="card ">
                                 <div class="card-header text-white" style="background-color: #18A8B4;" >
@@ -169,7 +154,6 @@ if (isset($_SESSION["user"])) {
                                 </div>
                             </div>
                         </div>
-
                         <!--MODAL ACTUALIZAR USUARIO-->
                         <div class="modal fade" id="modal_usuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -256,7 +240,6 @@ if (isset($_SESSION["user"])) {
                                                     </select>
                                                 </div>
                                             </div>
-
                                         </form>
                                     </div>
                                     <div class="modal-footer">
@@ -268,8 +251,6 @@ if (isset($_SESSION["user"])) {
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div><!-- .animated -->
             </div><!-- .content -->

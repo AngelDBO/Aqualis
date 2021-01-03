@@ -1,8 +1,8 @@
 <footer class="site-footer">
     <div class="footer-inner bg-white">
         <div class="row">
-            <div class="col-sm-4">
-                Copyright &copy; 2020
+            <div class="col-sm-4" >
+                Copyright &copy; <?php echo date('Y');?>
             </div> 
             <div class="col-sm-8">
                <img src="./../images/logo.png" width="200px;" alt="">

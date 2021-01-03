@@ -102,8 +102,7 @@ switch ($_REQUEST['opcion']) {
         } else {
             $response = 2;
         }
-        echo $response;
-        
+        echo $response;     
     break;
 }
 

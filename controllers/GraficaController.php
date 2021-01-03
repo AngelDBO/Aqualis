@@ -33,14 +33,14 @@ switch ($_REQUEST['opcion']) {
 	case 'ListarNombre':
 	$datos = $grafica->ListarNombre();
 	if ($datos) {
-            for ($i = 0; $i < count($datos); $i++) {
-                $list[] = array(
-                    "0" => $datos[$i]['ID'],
-                    "1" => $datos[$i]['NOMBRE_MISION']
-                );
-            }
-            echo json_encode($list);
-        }
+		for ($i = 0; $i < count($datos); $i++) {
+			$list[] = array(
+				"0" => $datos[$i]['ID'],
+				"1" => $datos[$i]['NOMBRE_MISION']
+			);
+		}
+		echo json_encode($list);
+	}
 	break;
 }
 

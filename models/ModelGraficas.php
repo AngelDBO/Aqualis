@@ -19,7 +19,7 @@ class Graficas{
 	}
 
 	public function ListarNombre(){
-		$query = 'SELECT ID, NOMBRE_MISION FROM MISION';
+		$query = "SELECT ID, NOMBRE_MISION FROM MISION WHERE ESTADO = 'Exitosa'";
 		$base = $this->cnx->prepare($query);
 		if($base->execute()){
 			return $base->fetchALL(PDO::FETCH_ASSOC);

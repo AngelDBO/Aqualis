@@ -14,13 +14,6 @@ if (isset($_SESSION["user"])) {
         <div id="right-panel" class="right-panel">
             <!-- Header-->
             <header id="header" class="header">
-                <!--<div class="top-left">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="./"></a>
-                        <a class="navbar-brand hidden" href="./"></a>
-                        <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
-                    </div>
-                </div>-->
                 <div class="top-right">
                     <?php require_once './content/menu.php' ?>
                 </div>
@@ -115,17 +108,17 @@ if (isset($_SESSION["user"])) {
                                 </div>
                                 <div class="card-body">
                                     <table id="example" class="table table-hover">
-                                      <thead>
-                                        <tr>
-                                          <th>Temperatura</th>
-                                          <th>pH</th>
-                                          <th>Turbidez</th>
-                                          <th>EC</th>
-                                          <th>TDS</th>
-                                          <th>ORP</th>
-                                          <th>Timestamp</th>
-                                        </tr>
-                                      </thead>
+                                        <thead>
+                                            <tr>
+                                                <th>Temperatura</th>
+                                                <th>pH</th>
+                                                <th>Turbidez</th>
+                                                <th>EC</th>
+                                                <th>TDS</th>
+                                                <th>ORP</th>
+                                                <th>Timestamp</th>
+                                            </tr>
+                                        </thead>
                                     </table>
                                 </div>
                             </div>
@@ -139,7 +132,7 @@ if (isset($_SESSION["user"])) {
         <!-- Right Panel -->
 
         <!-- Scripts -->
-        
+
         <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>  
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
@@ -155,8 +148,6 @@ if (isset($_SESSION["user"])) {
         <script src="../ajax/Sensor.js"></script>
         <script>
             $('#closeC').attr("style", "pointer-events: none;");
-            $('#Tipo_Medicion').prop('disabled', true);
-            $('#btn-estado').prop('disabled', true);
 
             function fetch()
             {
@@ -164,14 +155,14 @@ if (isset($_SESSION["user"])) {
                 document.getElementById("put").value = get;
             }
 
-            function iniciar(){
+            function iniciar() {
 
                 if ($('#put').val() == "") {
                     Swal.fire(
-                      'Aviso!',
-                      'Debes establecer un tiempo de lectura',
-                      'warning'
-                    )
+                        'Aviso!',
+                        'Debes establecer un tiempo de lectura',
+                        'warning'
+                        )
                 } else {
                     start();
                     time();
@@ -182,119 +173,135 @@ if (isset($_SESSION["user"])) {
                 }
             }
 
-            function time(){
+            function time() {
                 var timer2 = $('#put').val() + ":01";
                 console.log(timer2);
-                var interval = setInterval(function() {
-                  var timer = timer2.split(':');
-                  //by parsing integer, I avoid all extra string processing
-                  var minutes = parseInt(timer[0], 10);
-                  var seconds = parseInt(timer[1], 10);
-                  --seconds;
-                  minutes = (seconds < 0) ? --minutes : minutes;
-                  seconds = (seconds < 0) ? 59 : seconds;
-                  seconds = (seconds < 10) ? '0' + seconds : seconds;
-                  //minutes = (minutes < 10) ?  minutes : minutes;
-                  $('.countdown').html("Finaliza en: " + minutes + ':' + seconds);
-                  if ((seconds <= 0) && (minutes <= 0)) clearInterval(interval);
-                  timer2 = minutes + ':' + seconds;
-                  if ((seconds <= 0) && (minutes <= 0)) $("#closeC").trigger("click")
-                  timer2 = minutes + ':' + seconds;
-                  if ((seconds <= 0) && (minutes <= 0)) $('#btn-estado').prop('disabled', false)         
-                  timer2 = minutes + ':' + seconds;
-                  
-                }, 1000);
+                var interval = setInterval(function () {
+                    var timer = timer2.split(':');
+                                                //by parsing integer, I avoid all extra string processing
+                                                var minutes = parseInt(timer[0], 10);
+                                                var seconds = parseInt(timer[1], 10);
+                                                --seconds;
+                                                minutes = (seconds < 0) ? --minutes : minutes;
+                                                seconds = (seconds < 0) ? 59 : seconds;
+                                                seconds = (seconds < 10) ? '0' + seconds : seconds;
+                                                //minutes = (minutes < 10) ?  minutes : minutes;
+                                                $('.countdown').html("Finaliza en: " + minutes + ':' + seconds);
+                                                if ((seconds <= 0) && (minutes <= 0))
+                                                    clearInterval(interval);
+                                                timer2 = minutes + ':' + seconds;
+                                                if ((seconds <= 0) && (minutes <= 0))
+                                                    $("#closeC").trigger("click")
+                                                timer2 = minutes + ':' + seconds;
+                                                if ((seconds <= 0) && (minutes <= 0))
+                                                    $('#btn-estado').prop('disabled', false)
+                                                timer2 = minutes + ':' + seconds;
+
+                                            }, 1000);
 
             }
-               
-            function start() {
-               var deviceID = "1b003b000747363335343832";
-               var accessToken = "bae556a48b468d057a483a77c9ba31767ce65bd8";
-               var eventSource = new EventSource("https://api.spark.io/v1/devices/"+deviceID+"/events/?access_token="+accessToken);
-               eventSource.addEventListener('open', function(e) { console.log("Opened!"); },false);
-               eventSource.addEventListener('error', function(e) { console.log("Errored!"); },false);
-               $('#closeC').click(function(){ 
-                eventSource.close();
-                console.log("Closed"); 
-                Swal.fire(
-                      'Fin!',
-                      'La lectura ha finalizado!',
-                      'success'
-                    )
-                });
-               eventSource.addEventListener('data', function(e) {
-                var parsedData = JSON.parse(e.data);
-                var data = parsedData.data.split(",");
-                let turbidez = data[0];
-                let ph = data[1];
-                let temperatura = data[2];
-                let tds = data[3];
-                let lat = data[4];
-                let lon = data[5];
-                let idmision = $('#id_mision').val();
-                enviar(idmision, turbidez, ph, temperatura, tds, lat, lon)
-                $('#example').DataTable().ajax.reload(null, false)
-            }, false);
-           }
 
-           function enviar(idmision, turbidez, ph, temperatura, tds, lat, lon){
-            cadena = "idmision=" + idmision +"&turbidez=" + turbidez +"&ph=" + ph +"&temperatura=" + temperatura + "&tds=" + tds + "&latitud=" + lat + "&longitud=" + lon;
-            $.ajax({
-                type: "POST",
-                data: cadena,
-                url: "./../controllers/MedicionController.php?opcion=RegistrarDatos",
-                success: function(r) {
+            function start() {
+                var deviceID = "1b003b000747363335343832";
+                var accessToken = "f3e94b1aeb3754abfdc3804c54253621aba58514";
+                var eventSource = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
+                eventSource.addEventListener('open', function (e) {
+                    console.log("Opened!");
+                }, false);
+                eventSource.addEventListener('error', function (e) {
+                    console.log("Errored!");
+                }, false);
+                $('#closeC').click(function () {
+                    eventSource.close();
+                    console.log("Closed");
+                    Swal.fire(
+                        'Fin!',
+                        'La lectura ha finalizado!',
+                        'success'
+                        )
+                });
+                eventSource.addEventListener('data', function (e) {
+                    var parsedData = JSON.parse(e.data);
+                    var data = parsedData.data.split(",");
+                    let turbidez = data[0];
+                    let ph = data[1];
+                    let temperatura = data[2];
+                    let tds = data[3];
+                    let lat = data[4];
+                    let lon = data[5];
+                    let orp = data[6];
+                    let idmision = $('#id_mision').val();
+                    enviar(idmision, turbidez, ph, temperatura, tds, lat, lon, orp)
+                    $('#example').DataTable().ajax.reload(null, false)
+                }, false);
+            }
+
+            function enviar(idmision, turbidez, ph, temperatura, tds, lat, lon, orp) {
+                cadena = "idmision=" + idmision + "&turbidez=" + turbidez + "&ph=" + ph + "&temperatura=" + temperatura + "&tds=" + tds + "&latitud=" + lat + "&longitud=" + lon + "&Redox=" + orp;
+               console.log(cadena);
+               $.ajax({
+                    type: "POST",
+                    data: cadena,
+                    url: "./../controllers/MedicionController.php?opcion=RegistrarDatos",
+                    success: function (r) {
                         console.log(r);
                     }
                 });
             }
             livedata()
-            function livedata(){
-               var table = $('#example').dataTable({
+            function livedata() {
+                var table = $('#example').dataTable({
                     "bProcessing": true,
                     "serverSide": false,
                     "bFilter": false,
                     "ajax": "./../controllers/MedicionController.php?opcion=LiveData",
                     "bPaginate": false,
-                    "sPaginationType":"full_numbers",
+                    "sPaginationType": "full_numbers",
                     "columnDefs": [
-                        {"className": "dt-center", "targets": "_all"}
+                    {"className": "dt-center", "targets": "_all"}
                     ],
                     "iDisplayLength": 25,
                     "aoColumns": [
-                    { mData: 'TEMPERATURA' },
-                    { mData: 'PH' },
-                    { mData: 'TURBIDEZ' },
-                    { mData: 'EC' },
-                    { mData: 'TDS' },
-                    { mData: 'REDOX' },
-                    { mData: 'FECHA_MEDICION' }
+                    {mData: 'TEMPERATURA'},
+                    {mData: 'PH'},
+                    {mData: 'TURBIDEZ'},
+                    {mData: 'EC'},
+                    {mData: 'TDS'},
+                    {mData: 'REDOX'},
+                    {mData: 'FECHA_MEDICION'}
                     ]
-                    });
+                });
             }
 
-            function estado(){
+            function estado() {
                 cadena = "id=" + $('#id_mision').val() + "&estado=" + $('#Tipo_Medicion').val();
                 $.ajax({
                     type: 'POST',
                     data: cadena,
                     url: "./../controllers/MisionController.php?opcion=Estado_mision",
-                    success: function(r){
+                    success: function (r) {
                         console.log(r);
                         if (r == 1) {
-                            Swal.fire(
-                              'Exito!',
-                              'Estado asignado correctamente!',
-                              'success'
-                            )
+                            Swal.fire({
+                                title: 'Aviso',
+                                text: "Estado asigando con exito",
+                                icon: 'success',
+                                allowOutsideClick: false
+                            }).then(function (result) {
+                                if (result.value) {
+                                    window.location = "mision";
+                                }
+                            })
                         }
                     }
                 });
             }
-    </script>
-</body>
-</html>
-<?php
+
+
+        </script>
+    </body>
+    </html>
+    <?php
 } else {
     header("location:../");
 }

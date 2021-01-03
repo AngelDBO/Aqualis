@@ -7,13 +7,7 @@ if (isset($_SESSION["user"])) {
         <?= include './content/sidebar.php'; ?>
         <div id="right-panel" class="right-panel">
             <header id="header" class="header">
-                <div class="top-left">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="./"><img src="../images/logo.png" alt="Logo"></a>
-                        <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
-                        <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
-                    </div>
-                </div>
+                
                 <div class="top-right">
                     <?php require_once './content/menu.php'?>
                 </div>
@@ -198,7 +192,7 @@ if (isset($_SESSION["user"])) {
                 $('#datePicker').val(today);
             }
 
-            var access_token = 'bae556a48b468d057a483a77c9ba31767ce65bd8';
+            var access_token = 'f3e94b1aeb3754abfdc3804c54253621aba58514';
             var device_id = '1b003b000747363335343832';
             function getData(variable){
                 if (variable == 'latitud') {
